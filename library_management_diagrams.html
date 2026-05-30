@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Management System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Library Management System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Library Management System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/library_management_diagrams.html" />
+  <meta property="og:title" content="Library Management System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Library Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/library_management_diagrams.html" />
+  <meta property="twitter:title" content="Library Management System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Library Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/library_management_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdf6ec;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #5c2d00, #c0622a);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #fff3e0;
+      color: #c0622a;
+      border: 1px solid #ffcc80;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #c0622a; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #c0622a, #f6a35c);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Library Management System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    MB(("Member"))
+    LB(("Librarian"))
+    AD(("Admin"))
+  end
+
+  subgraph Library Management System
+    UC1[Register / Login]
+    UC2[Search Book]
+    UC3[View Book Details]
+    UC4[Borrow Book]
+    UC5[Return Book]
+    UC6[Reserve Book]
+    UC7[Pay Fine]
+    UC8[View Borrow History]
+    UC9[Add Book]
+    UC10[Remove Book]
+    UC11[Issue Book to Member]
+    UC12[Manage Members]
+    UC13[Send Due Reminder]
+    UC14[Generate Report]
+  end
+
+  MB --> UC1
+  MB --> UC2
+  MB --> UC3
+  MB --> UC4
+  MB --> UC5
+  MB --> UC6
+  MB --> UC7
+  MB --> UC8
+  LB --> UC9
+  LB --> UC10
+  LB --> UC11
+  LB --> UC13
+  UC4 --> UC11
+  AD --> UC12
+  AD --> UC14
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Member Logs In]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Search[Search for Book]
+  Search --> Found{Book Found?}
+  Found -- No --> Search
+  Found -- Yes --> View[View Book Details]
+  View --> Avail{Book Available?}
+  Avail -- No --> Reserve[Reserve the Book]
+  Reserve --> Notify[Notify When Available]
+  Notify --> End([End])
+  Avail -- Yes --> Borrow[Request to Borrow]
+  Borrow --> Librarian[Librarian Issues Book]
+  Librarian --> Due[Set Due Date]
+  Due --> Return{Returned on Time?}
+  Return -- Yes --> ReturnBook[Return Book]
+  Return -- No --> Fine[Calculate Fine]
+  Fine --> PayFine[Member Pays Fine]
+  PayFine --> ReturnBook
+  ReturnBook --> Update[Update Book Status]
+  Update --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Member
+  participant WebApp
+  participant BookService
+  participant BorrowService
+  participant FineService
+  participant NotificationService
+  actor Librarian
+
+  Member->>WebApp: Login
+  WebApp-->>Member: Dashboard
+
+  Member->>WebApp: Search Book
+  WebApp->>BookService: searchBook(title)
+  BookService-->>WebApp: bookList
+  WebApp-->>Member: Show Results
+
+  Member->>WebApp: Request Borrow
+  WebApp->>BorrowService: borrowRequest(memberId, bookId)
+  BorrowService->>BookService: checkAvailability(bookId)
+  BookService-->>BorrowService: Available
+
+  BorrowService-->>WebApp: Request Sent to Librarian
+  Librarian->>WebApp: Issue Book
+  WebApp->>BorrowService: issueBook(memberId, bookId, dueDate)
+  BorrowService-->>WebApp: Issued
+  WebApp->>NotificationService: sendDueReminder(memberId, dueDate)
+  NotificationService-->>Member: Due Date Email
+
+  Member->>WebApp: Return Book
+  WebApp->>BorrowService: returnBook(borrowId)
+  BorrowService->>FineService: calculateFine(borrowId)
+  FineService-->>BorrowService: fineAmount
+  BorrowService-->>WebApp: Return Processed
+  WebApp-->>Member: Fine Details if any
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Available : Book added to library
+
+  Available --> Reserved : Member reserves
+  Reserved --> Available : Reservation cancelled
+  Reserved --> Borrowed : Librarian issues
+
+  Available --> Borrowed : Librarian issues directly
+
+  Borrowed --> Overdue : Due date passed
+  Borrowed --> Returned : Returned on time
+
+  Overdue --> Returned : Member returns with fine
+  Returned --> Available : Book back on shelf
+
+  Available --> Lost : Reported lost
+  Lost --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  MB["Member"]
+  WEB["WebApp"]
+  BS["BookService"]
+  BRS["BorrowService"]
+  FS["FineService"]
+  NS["NotificationService"]
+  LB["Librarian"]
+  DB["Database"]
+
+  MB  -- "1: login()" --> WEB
+  WEB -- "2: authenticate()" --> DB
+  DB  -- "3: userInfo" --> WEB
+
+  MB  -- "4: searchBook(title)" --> WEB
+  WEB -- "5: fetchBooks()" --> BS
+  BS  -- "6: queryDB()" --> DB
+  DB  -- "7: bookList" --> BS
+  BS  -- "8: results" --> WEB
+
+  MB  -- "9: requestBorrow(bookId)" --> WEB
+  WEB -- "10: checkAvailability()" --> BS
+  BS  -- "11: available" --> WEB
+  WEB -- "12: createBorrowRequest()" --> BRS
+  BRS -- "13: saveRequest()" --> DB
+  BRS -- "14: notifyLibrarian()" --> NS
+  NS  -- "15: alert" --> LB
+
+  LB  -- "16: issueBook()" --> WEB
+  WEB -- "17: updateBorrow()" --> BRS
+  BRS -- "18: setDueDate()" --> DB
+  BRS -- "19: sendReminder()" --> NS
+  NS  -- "20: due date email" --> MB
+
+  MB  -- "21: returnBook()" --> WEB
+  WEB -- "22: processReturn()" --> BRS
+  BRS -- "23: calcFine()" --> FS
+  FS  -- "24: fineAmount" --> WEB
+  WEB -- "25: updateBookStatus()" --> BS
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +logout()
+  }
+
+  class Member {
+    +String memberId
+    +String address
+    +int borrowLimit
+    +searchBook()
+    +borrowBook()
+    +returnBook()
+    +reserveBook()
+  }
+
+  class Librarian {
+    +addBook()
+    +removeBook()
+    +issueBook()
+    +manageMembers()
+  }
+
+  class Admin {
+    +manageUsers()
+    +generateReport()
+  }
+
+  class Book {
+    +int bookId
+    +String title
+    +String author
+    +String ISBN
+    +String genre
+    +String status
+    +int totalCopies
+    +int availableCopies
+    +addCopy()
+    +removeCopy()
+  }
+
+  class BorrowRecord {
+    +int borrowId
+    +Date issueDate
+    +Date dueDate
+    +Date returnDate
+    +String status
+    +issue()
+    +returnBook()
+  }
+
+  class Reservation {
+    +int reserveId
+    +Date reserveDate
+    +String status
+    +confirm()
+    +cancel()
+  }
+
+  class Fine {
+    +int fineId
+    +float amount
+    +String status
+    +calculate()
+    +pay()
+  }
+
+  class Category {
+    +int categoryId
+    +String name
+  }
+
+  User <|-- Member
+  User <|-- Librarian
+  User <|-- Admin
+
+  Member "1" --> "0..*" BorrowRecord : has
+  Member "1" --> "0..*" Reservation : makes
+  BorrowRecord "0..*" --> "1" Book : for
+  Reservation "0..*" --> "1" Book : for
+  BorrowRecord "1" --> "0..1" Fine : generates
+  Book "0..*" --> "1" Category : belongs to
+  Librarian "1" --> "0..*" Book : manages
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    BOOK[Book Service]
+    BORROW[Borrow Service]
+    RESERVE[Reservation Service]
+    FINE[Fine Service]
+    NOTIF[Notification Service]
+    REPORT[Report Service]
+    SEARCH[Search Service]
+  end
+
+  subgraph Data Layer
+    DB[(Main Database)]
+    CACHE[(Redis Cache)]
+  end
+
+  subgraph External
+    EMAIL[Email Provider]
+    SMS[SMS Gateway]
+  end
+
+  WEB    --> AUTH
+  MOB    --> AUTH
+  WEB    --> SEARCH
+  SEARCH --> BOOK
+  SEARCH --> CACHE
+  WEB    --> BORROW
+  BORROW --> BOOK
+  BORROW --> FINE
+  BORROW --> NOTIF
+  WEB    --> RESERVE
+  RESERVE --> BOOK
+  RESERVE --> NOTIF
+  NOTIF  --> EMAIL
+  NOTIF  --> SMS
+  BOOK   --> DB
+  BORROW --> DB
+  RESERVE --> DB
+  FINE   --> DB
+  AUTH   --> DB
+  REPORT --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.library
+    subgraph controller
+      BC[BookController]
+      BRC[BorrowController]
+      RC[ReservationController]
+      FC[FineController]
+      UC[UserController]
+    end
+
+    subgraph service
+      BS[BookService]
+      BRS[BorrowService]
+      RS[ReservationService]
+      FS[FineService]
+      NS[NotificationService]
+      SS[SearchService]
+      RPS[ReportService]
+    end
+
+    subgraph model
+      BM[Book]
+      BRM[BorrowRecord]
+      RM[Reservation]
+      FM[Fine]
+      UM[User]
+      CM[Category]
+    end
+
+    subgraph repository
+      BR[BookRepo]
+      BRR[BorrowRepo]
+      RR[ReservationRepo]
+      FR[FineRepo]
+      UR[UserRepo]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      EmailUtil[EmailUtil]
+      FineUtil[FineCalculator]
+      SearchUtil[SearchUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+    Kiosk[Library Self-Service Kiosk]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge
+      LB[Load Balancer\nNGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1\nSpring Boot]
+      APP2[App Server 2\nSpring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Book Service]
+      SVC2[Borrow Service]
+      SVC3[Fine Service]
+      SVC4[Reservation Service]
+      SVC5[Notification Service]
+      SVC6[Search Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL\nPrimary DB)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis\nSearch Cache)]
+    end
+  end
+
+  subgraph External Services
+    SENDGRID[SendGrid\nEmail]
+    SMSAPI[SMS Gateway]
+  end
+
+  Browser --> LB
+  Mobile  --> LB
+  Kiosk   --> LB
+  LB   --> APP1
+  LB   --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP1 --> SVC6
+  APP2 --> SVC3
+  APP2 --> SVC4
+  APP2 --> SVC5
+  SVC6 --> REDIS
+  SVC5 --> SENDGRID
+  SVC5 --> SMSAPI
+  SVC1 --> DB
+  SVC2 --> DB
+  SVC3 --> DB
+  SVC4 --> DB
+  DB   --> REPLICA
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Library Management System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

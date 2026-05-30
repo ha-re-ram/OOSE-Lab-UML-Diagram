@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foreign Trading System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Foreign Trading System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Foreign Trading System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/foreign_trading_system_diagrams.html" />
+  <meta property="og:title" content="Foreign Trading System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Foreign Trading System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/foreign_trading_system_diagrams.html" />
+  <meta property="twitter:title" content="Foreign Trading System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Foreign Trading System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/foreign_trading_system_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0fff4;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #1a3a2a, #276749);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #e6ffed;
+      color: #276749;
+      border: 1px solid #9ae6b4;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #276749; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #276749, #48bb78);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Foreign Trading System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    TR(("Trader"))
+    BK(("Broker"))
+    AD(("Admin"))
+    BNK(("Bank"))
+  end
+
+  subgraph Foreign Trading System
+    UC1[Register / Login]
+    UC2[View Exchange Rates]
+    UC3[Place Trade Order]
+    UC4[Buy Currency]
+    UC5[Sell Currency]
+    UC6[Cancel Order]
+    UC7[View Portfolio]
+    UC8[View Trade History]
+    UC9[Process Payment]
+    UC10[Manage Accounts]
+    UC11[Monitor Trades]
+    UC12[Generate Report]
+  end
+
+  TR  --> UC1
+  TR  --> UC2
+  TR  --> UC3
+  UC3 --> UC4
+  UC3 --> UC5
+  TR  --> UC6
+  TR  --> UC7
+  TR  --> UC8
+  BK  --> UC11
+  BK  --> UC3
+  UC3 --> UC9
+  BNK --> UC9
+  AD  --> UC10
+  AD  --> UC12
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Trader Logs In]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Dashboard[View Dashboard]
+  Dashboard --> Rate[Check Exchange Rates]
+  Rate --> Decide{Trade Decision}
+  Decide --> Buy[Place Buy Order]
+  Decide --> Sell[Place Sell Order]
+
+  Buy  --> Details[Enter Currency, Amount, Rate]
+  Sell --> Details
+
+  Details --> Validate{Valid Order?}
+  Validate -- No --> Details
+  Validate -- Yes --> Balance{Sufficient Funds?}
+  Balance -- No --> Decline[Decline Order]
+  Balance -- Yes --> Execute[Execute Trade]
+  Execute --> Payment[Process Payment via Bank]
+  Payment --> PayOK{Payment OK?}
+  PayOK -- No --> Decline
+  PayOK -- Yes --> Confirm[Confirm Trade]
+  Confirm --> Update[Update Portfolio]
+  Update --> Notify[Notify Trader]
+  Notify --> End([End])
+  Decline --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Trader
+  participant WebApp
+  participant TradeService
+  participant ExchangeService
+  participant PaymentService
+  participant Bank
+  participant NotificationService
+
+  Trader->>WebApp: Login
+  WebApp-->>Trader: Dashboard
+
+  Trader->>WebApp: Check Exchange Rates
+  WebApp->>ExchangeService: getLiveRates()
+  ExchangeService-->>WebApp: ratesList
+  WebApp-->>Trader: Show Rates
+
+  Trader->>WebApp: Place Trade Order (BUY/SELL)
+  WebApp->>TradeService: createOrder(traderId, currency, amount)
+  TradeService->>ExchangeService: validateRate(currency)
+  ExchangeService-->>TradeService: currentRate
+
+  TradeService->>PaymentService: processPayment(amount)
+  PaymentService->>Bank: debitAccount(amount)
+  Bank-->>PaymentService: Success
+
+  PaymentService-->>TradeService: Payment Done
+  TradeService->>TradeService: executeOrder()
+  TradeService-->>WebApp: Order Confirmed
+
+  TradeService->>NotificationService: notifyTrader(orderId)
+  NotificationService-->>Trader: Trade Confirmation Email/SMS
+  WebApp-->>Trader: Show Confirmation
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Initiated : Trader places order
+
+  Initiated --> Validating : System validates
+  Validating --> Rejected : Invalid order
+  Validating --> Pending : Order valid
+
+  Pending --> Processing : Funds verified
+  Pending --> Cancelled : Trader cancels
+
+  Processing --> Executed : Trade completed
+  Processing --> Failed : Bank error
+
+  Executed --> Settled : Settlement done
+  Settled --> Closed : Trade closed
+
+  Failed --> Pending : Retry
+  Rejected --> [*]
+  Cancelled --> [*]
+  Closed --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  TR["Trader"]
+  WEB["WebApp"]
+  TS["TradeService"]
+  ES["ExchangeService"]
+  PS["PaymentService"]
+  BNK["Bank"]
+  NS["NotificationService"]
+  DB["Database"]
+
+  TR  -- "1: login()" --> WEB
+  WEB -- "2: authenticate()" --> DB
+  DB  -- "3: userDetails" --> WEB
+
+  TR  -- "4: checkRates()" --> WEB
+  WEB -- "5: getLiveRates()" --> ES
+  ES  -- "6: ratesList" --> WEB
+  WEB -- "7: displayRates" --> TR
+
+  TR  -- "8: placeOrder()" --> WEB
+  WEB -- "9: createOrder()" --> TS
+  TS  -- "10: validateRate()" --> ES
+  ES  -- "11: currentRate" --> TS
+  TS  -- "12: saveOrder(PENDING)" --> DB
+  TS  -- "13: processPayment()" --> PS
+  PS  -- "14: debitAccount()" --> BNK
+  BNK -- "15: success" --> PS
+  PS  -- "16: paymentOK" --> TS
+  TS  -- "17: executeOrder()" --> DB
+  TS  -- "18: notifyTrader()" --> NS
+  NS  -- "19: email/SMS" --> TR
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +logout()
+  }
+
+  class Trader {
+    +String accountNo
+    +float walletBalance
+    +placeOrder()
+    +viewPortfolio()
+    +viewHistory()
+  }
+
+  class Broker {
+    +String brokerCode
+    +monitorTrades()
+    +approveOrder()
+  }
+
+  class Admin {
+    +manageAccounts()
+    +generateReport()
+  }
+
+  class TradeOrder {
+    +int orderId
+    +String type
+    +String currencyPair
+    +float amount
+    +float rate
+    +String status
+    +DateTime createdAt
+    +execute()
+    +cancel()
+  }
+
+  class Currency {
+    +String code
+    +String name
+    +float currentRate
+    +getRate()
+  }
+
+  class Portfolio {
+    +int portfolioId
+    +float totalValue
+    +updateHoldings()
+    +getBalance()
+  }
+
+  class Payment {
+    +int paymentId
+    +float amount
+    +String status
+    +String method
+    +process()
+    +refund()
+  }
+
+  class Transaction {
+    +int transactionId
+    +DateTime timestamp
+    +float buyRate
+    +float sellRate
+    +float profit
+    +settle()
+  }
+
+  User <|-- Trader
+  User <|-- Broker
+  User <|-- Admin
+  Trader "1" --> "0..*" TradeOrder : places
+  Trader "1" --> "1" Portfolio : owns
+  TradeOrder "1" --> "1" Currency : involves
+  TradeOrder "1" --> "1" Payment : has
+  TradeOrder "1" --> "1" Transaction : creates
+  Portfolio "1" --> "0..*" Currency : holds
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    TRADE[Trade Service]
+    EXCHANGE[Exchange Rate Service]
+    PAYMENT[Payment Service]
+    PORTFOLIO[Portfolio Service]
+    NOTIF[Notification Service]
+    REPORT[Report Service]
+  end
+
+  subgraph Data Layer
+    DB[(Trade Database)]
+    CACHE[(Redis\nRate Cache)]
+    LOG[(Audit Log)]
+  end
+
+  subgraph External
+    FOREX[Forex Rate API]
+    BANK[Bank API]
+    SMS[SMS Gateway]
+    EMAIL[Email Provider]
+  end
+
+  WEB      --> AUTH
+  MOB      --> AUTH
+  WEB      --> TRADE
+  WEB      --> EXCHANGE
+  TRADE    --> EXCHANGE
+  TRADE    --> PAYMENT
+  TRADE    --> PORTFOLIO
+  TRADE    --> NOTIF
+  EXCHANGE --> FOREX
+  EXCHANGE --> CACHE
+  PAYMENT  --> BANK
+  NOTIF    --> SMS
+  NOTIF    --> EMAIL
+  TRADE    --> DB
+  TRADE    --> LOG
+  PORTFOLIO --> DB
+  REPORT   --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.foreigntrading
+    subgraph controller
+      TC[TradeController]
+      EC[ExchangeController]
+      PC[PortfolioController]
+      UC[UserController]
+      RC[ReportController]
+    end
+
+    subgraph service
+      TS[TradeService]
+      ES[ExchangeService]
+      PS[PaymentService]
+      PFS[PortfolioService]
+      NS[NotificationService]
+      RS[ReportService]
+    end
+
+    subgraph model
+      TOM[TradeOrder]
+      CM[Currency]
+      PM[Portfolio]
+      PAM[Payment]
+      TRM[Transaction]
+      UM[User]
+    end
+
+    subgraph repository
+      TR[TradeRepository]
+      CR[CurrencyRepository]
+      PR[PortfolioRepository]
+      UR[UserRepository]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      RateUtil[RateUtil]
+      AuditUtil[AuditUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge Layer
+      WAF[Web App Firewall]
+      LB[Load Balancer\nNGINX]
+    end
+
+    subgraph App Tier
+      APP1[App Server 1\nSpring Boot]
+      APP2[App Server 2\nSpring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Trade Service]
+      SVC2[Exchange Rate Service]
+      SVC3[Payment Service]
+      SVC4[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL\nPrimary DB)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis\nRate Cache)]
+      AUDIT[(Audit Log DB)]
+    end
+  end
+
+  subgraph External Services
+    FOREXAPI[Forex Rate API]
+    BANKAPI[Bank Payment API]
+    TWILIO[Twilio SMS]
+    SENDGRID[SendGrid Email]
+  end
+
+  Browser --> WAF
+  Mobile  --> WAF
+  WAF --> LB
+  LB  --> APP1
+  LB  --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP2 --> SVC3
+  APP2 --> SVC4
+  SVC2 --> FOREXAPI
+  SVC2 --> REDIS
+  SVC3 --> BANKAPI
+  SVC4 --> TWILIO
+  SVC4 --> SENDGRID
+  SVC1 --> DB
+  SVC3 --> DB
+  DB   --> REPLICA
+  SVC1 --> AUDIT
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Foreign Trading System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

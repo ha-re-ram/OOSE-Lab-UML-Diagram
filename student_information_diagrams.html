@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Information System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Student Information System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Student Information System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/student_information_diagrams.html" />
+  <meta property="og:title" content="Student Information System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Student Information System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/student_information_diagrams.html" />
+  <meta property="twitter:title" content="Student Information System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Student Information System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/student_information_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4ff;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #1a237e, #3949ab);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #e8eaf6;
+      color: #3949ab;
+      border: 1px solid #9fa8da;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #3949ab; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #3949ab, #7986cb);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Student Information System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    ST(("Student"))
+    TC(("Teacher"))
+    AD(("Admin"))
+    PR(("Parent"))
+  end
+
+  subgraph Student Information System
+    UC1[Register / Login]
+    UC2[View Profile]
+    UC3[Enroll in Course]
+    UC4[View Timetable]
+    UC5[View Grades]
+    UC6[View Attendance]
+    UC7[Pay Fee]
+    UC8[Download Certificate]
+    UC9[Enter Grades]
+    UC10[Mark Attendance]
+    UC11[View Class Report]
+    UC12[Manage Students]
+    UC13[Manage Courses]
+    UC14[Generate Report]
+    UC15[View Child Progress]
+  end
+
+  ST --> UC1
+  ST --> UC2
+  ST --> UC3
+  ST --> UC4
+  ST --> UC5
+  ST --> UC6
+  ST --> UC7
+  ST --> UC8
+  TC --> UC9
+  TC --> UC10
+  TC --> UC11
+  TC --> UC4
+  AD --> UC12
+  AD --> UC13
+  AD --> UC14
+  PR --> UC15
+  PR --> UC6
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Student Logs In]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Dashboard[View Dashboard]
+  Dashboard --> Choice{Choose Action}
+
+  Choice --> Enroll[Browse & Enroll in Course]
+  Enroll --> FeeCheck{Fee Paid?}
+  FeeCheck -- No --> PayFee[Pay Course Fee]
+  PayFee --> FeeCheck
+  FeeCheck -- Yes --> Confirm[Enrollment Confirmed]
+  Confirm --> Timetable[View Timetable]
+  Timetable --> End([End])
+
+  Choice --> Attend[View Attendance]
+  Attend --> AttOK{Attendance OK?}
+  AttOK -- No --> Alert[Show Low Attendance Alert]
+  Alert --> End
+  AttOK -- Yes --> End
+
+  Choice --> Grades[View Grades]
+  Grades --> Pass{Passed All?}
+  Pass -- Yes --> Cert[Download Certificate]
+  Pass -- No --> Improve[View Weak Subjects]
+  Cert --> End
+  Improve --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Student
+  participant WebApp
+  participant CourseService
+  participant FeeService
+  participant GradeService
+  participant NotificationService
+  actor Teacher
+
+  Student->>WebApp: Login
+  WebApp-->>Student: Dashboard
+
+  Student->>WebApp: Browse & Select Course
+  WebApp->>CourseService: getCourses()
+  CourseService-->>WebApp: courseList
+  WebApp-->>Student: Show Courses
+
+  Student->>WebApp: Enroll in Course
+  WebApp->>FeeService: checkFeeStatus(studentId)
+  FeeService-->>WebApp: Fee Pending
+
+  Student->>WebApp: Pay Fee
+  WebApp->>FeeService: processFee(studentId, amount)
+  FeeService-->>WebApp: Payment Done
+
+  WebApp->>CourseService: enrollStudent(studentId, courseId)
+  CourseService-->>WebApp: Enrolled
+  WebApp->>NotificationService: sendConfirmation(studentId)
+  NotificationService-->>Student: Enrollment Email
+
+  Teacher->>WebApp: Enter Grades
+  WebApp->>GradeService: saveGrades(studentId, courseId, marks)
+  GradeService-->>WebApp: Saved
+  GradeService->>NotificationService: notifyStudent(studentId)
+  NotificationService-->>Student: Grade Update Email
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Registered : Admin registers student
+
+  Registered --> Enrolled : Student enrolls in course
+  Enrolled --> FeePending : Fee not paid
+  FeePending --> Active : Fee paid
+
+  Enrolled --> Active : Fee already paid
+
+  Active --> Suspended : Low attendance or dues
+  Suspended --> Active : Issue resolved
+
+  Active --> Examination : Exam period begins
+  Examination --> Passed : Clears all exams
+  Examination --> Failed : Fails one or more
+
+  Failed --> Enrolled : Re-enrolled for repeat
+  Passed --> Graduated : Completes all credits
+
+  Graduated --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  ST["Student"]
+  WEB["WebApp"]
+  CS["CourseService"]
+  FS["FeeService"]
+  GS["GradeService"]
+  AS["AttendanceService"]
+  NS["NotificationService"]
+  TC["Teacher"]
+  DB["Database"]
+
+  ST  -- "1: login()" --> WEB
+  WEB -- "2: authenticate()" --> DB
+  DB  -- "3: userInfo" --> WEB
+
+  ST  -- "4: browseCourses()" --> WEB
+  WEB -- "5: getCourses()" --> CS
+  CS  -- "6: fetchCourses()" --> DB
+  DB  -- "7: courseList" --> CS
+
+  ST  -- "8: enrollCourse()" --> WEB
+  WEB -- "9: checkFee()" --> FS
+  FS  -- "10: feePending" --> WEB
+  ST  -- "11: payFee()" --> WEB
+  WEB -- "12: processFee()" --> FS
+  FS  -- "13: feeOK" --> WEB
+  WEB -- "14: enrollStudent()" --> CS
+  CS  -- "15: saveEnrollment()" --> DB
+  CS  -- "16: sendConfirmation()" --> NS
+  NS  -- "17: email" --> ST
+
+  TC  -- "18: markAttendance()" --> WEB
+  WEB -- "19: saveAttendance()" --> AS
+  AS  -- "20: storeInDB()" --> DB
+
+  TC  -- "21: enterGrades()" --> WEB
+  WEB -- "22: saveGrades()" --> GS
+  GS  -- "23: updateDB()" --> DB
+  GS  -- "24: notifyStudent()" --> NS
+  NS  -- "25: grade email" --> ST
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +logout()
+  }
+
+  class Student {
+    +String studentId
+    +String department
+    +int semester
+    +Date dob
+    +enrollCourse()
+    +viewGrades()
+    +viewAttendance()
+    +payFee()
+  }
+
+  class Teacher {
+    +String teacherId
+    +String subject
+    +enterGrades()
+    +markAttendance()
+    +viewClassReport()
+  }
+
+  class Admin {
+    +manageStudents()
+    +manageCourses()
+    +generateReport()
+  }
+
+  class Course {
+    +int courseId
+    +String title
+    +String code
+    +int credits
+    +String status
+    +open()
+    +close()
+  }
+
+  class Enrollment {
+    +int enrollId
+    +Date enrollDate
+    +String status
+    +confirm()
+    +cancel()
+  }
+
+  class Grade {
+    +int gradeId
+    +float marks
+    +String grade
+    +String result
+    +assign()
+  }
+
+  class Attendance {
+    +int attendId
+    +Date date
+    +String status
+    +float percentage
+    +mark()
+  }
+
+  class Fee {
+    +int feeId
+    +float amount
+    +Date dueDate
+    +String status
+    +pay()
+    +generateReceipt()
+  }
+
+  class Timetable {
+    +int ttId
+    +String day
+    +String time
+    +String room
+  }
+
+  User <|-- Student
+  User <|-- Teacher
+  User <|-- Admin
+
+  Student "1" --> "0..*" Enrollment : makes
+  Enrollment "0..*" --> "1" Course : for
+  Student "1" --> "0..*" Grade : receives
+  Grade "0..*" --> "1" Course : in
+  Teacher "1" --> "0..*" Course : teaches
+  Student "1" --> "0..*" Attendance : has
+  Student "1" --> "0..*" Fee : pays
+  Course "1" --> "0..*" Timetable : scheduled in
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    STUDENT[Student Service]
+    COURSE[Course Service]
+    GRADE[Grade Service]
+    ATTEND[Attendance Service]
+    FEE[Fee Service]
+    NOTIF[Notification Service]
+    REPORT[Report Service]
+  end
+
+  subgraph Data Layer
+    DB[(Main Database)]
+    CACHE[(Redis Cache)]
+  end
+
+  subgraph External
+    PAYGATE[Payment Gateway]
+    EMAIL[Email Provider]
+    SMS[SMS Gateway]
+  end
+
+  WEB    --> AUTH
+  MOB    --> AUTH
+  WEB    --> STUDENT
+  WEB    --> COURSE
+  WEB    --> GRADE
+  WEB    --> ATTEND
+  WEB    --> FEE
+  FEE    --> PAYGATE
+  FEE    --> NOTIF
+  GRADE  --> NOTIF
+  ATTEND --> NOTIF
+  NOTIF  --> EMAIL
+  NOTIF  --> SMS
+  COURSE --> CACHE
+  STUDENT --> DB
+  COURSE --> DB
+  GRADE  --> DB
+  ATTEND --> DB
+  FEE    --> DB
+  REPORT --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.studentinfo
+    subgraph controller
+      SC[StudentController]
+      CC[CourseController]
+      GC[GradeController]
+      AC[AttendanceController]
+      FC[FeeController]
+      UC[UserController]
+    end
+
+    subgraph service
+      SS[StudentService]
+      CS[CourseService]
+      GS[GradeService]
+      AS[AttendanceService]
+      FS[FeeService]
+      NS[NotificationService]
+      RS[ReportService]
+    end
+
+    subgraph model
+      SM[Student]
+      CM[Course]
+      GM[Grade]
+      AM[Attendance]
+      FM[Fee]
+      EM[Enrollment]
+      UM[User]
+      TM[Timetable]
+    end
+
+    subgraph repository
+      SR[StudentRepo]
+      CR[CourseRepo]
+      GR[GradeRepo]
+      AR[AttendanceRepo]
+      FR[FeeRepo]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      EmailUtil[EmailUtil]
+      PDFUtil[PDFUtil]
+      GradeUtil[GradeUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+    Kiosk[Campus Kiosk]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge
+      LB[Load Balancer\nNGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1\nSpring Boot]
+      APP2[App Server 2\nSpring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Student Service]
+      SVC2[Course Service]
+      SVC3[Grade Service]
+      SVC4[Attendance Service]
+      SVC5[Fee Service]
+      SVC6[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL\nPrimary DB)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis Cache)]
+    end
+  end
+
+  subgraph External Services
+    PAYAPI[Payment Gateway\nRazorpay]
+    EMAILAPI[SendGrid Email]
+    SMSAPI[Twilio SMS]
+  end
+
+  Browser --> LB
+  Mobile  --> LB
+  Kiosk   --> LB
+  LB   --> APP1
+  LB   --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP1 --> SVC3
+  APP2 --> SVC4
+  APP2 --> SVC5
+  APP2 --> SVC6
+  SVC2 --> REDIS
+  SVC5 --> PAYAPI
+  SVC6 --> EMAILAPI
+  SVC6 --> SMSAPI
+  SVC1 --> DB
+  SVC2 --> DB
+  SVC3 --> DB
+  SVC4 --> DB
+  SVC5 --> DB
+  DB   --> REPLICA
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Student Information System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

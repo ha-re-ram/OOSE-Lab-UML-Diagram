@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Bank – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Book Bank (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Book Bank, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/bookbank_diagrams.html" />
+  <meta property="og:title" content="Book Bank – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Book Bank designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/bookbank_diagrams.html" />
+  <meta property="twitter:title" content="Book Bank – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Book Bank designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/bookbank_diagrams.html" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Code+Pro:wght@400;500&family=Lato:wght@300;400;700&display=swap');
+
+  :root {
+    --bg: #0f1117;
+    --card: #181c27;
+    --border: #2a2f42;
+    --accent: #e8c97a;
+    --accent2: #7ab8e8;
+    --text: #dde3f0;
+    --muted: #7a8099;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px 60px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+
+  header p {
+    color: var(--muted);
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(620px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .badge {
+    background: var(--accent);
+    color: #0f1117;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+  }
+
+  .card-header h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.5px;
+  }
+
+  .card-body {
+    padding: 24px;
+    overflow-x: auto;
+    background: #13161f;
+  }
+
+  .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mermaid svg {
+    max-width: 100%;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Book Bank System</h1>
+  <p>UML Diagrams — All 9 Views</p>
+</header>
+
+<div class="grid">
+
+  <!-- 1. Use Case -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">01</span>
+      <h2>Use Case Diagram</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Book Bank System
+    UC1(Search Book)
+    UC2(Borrow Book)
+    UC3(Return Book)
+    UC4(Donate Book)
+    UC5(Manage Books)
+    UC6(View Reports)
+  end
+  Student -->|uses| UC1
+  Student -->|uses| UC2
+  Student -->|uses| UC3
+  Student -->|uses| UC4
+  Admin -->|uses| UC5
+  Admin -->|uses| UC6
+  Admin -->|uses| UC3
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Activity -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">02</span>
+      <h2>Activity Diagram – Borrow Book</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  A([Start]) --> B[Student searches book]
+  B --> C{Book available?}
+  C -- No --> D[Notify not available]
+  D --> E([End])
+  C -- Yes --> F[Student requests borrow]
+  F --> G[Admin verifies ID]
+  G --> H{ID valid?}
+  H -- No --> I[Reject request]
+  I --> E
+  H -- Yes --> J[Issue book]
+  J --> K[Update stock]
+  K --> L[Set due date]
+  L --> E
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Sequence -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">03</span>
+      <h2>Sequence Diagram – Borrow Book</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  participant S as Student
+  participant UI as Portal
+  participant SYS as System
+  participant DB as Database
+
+  S->>UI: Search book
+  UI->>SYS: Query request
+  SYS->>DB: Fetch book info
+  DB-->>SYS: Book details
+  SYS-->>UI: Show results
+  S->>UI: Request borrow
+  UI->>SYS: Borrow request
+  SYS->>DB: Check availability
+  DB-->>SYS: Available
+  SYS->>DB: Update stock & record
+  DB-->>SYS: Confirmed
+  SYS-->>UI: Borrow success
+  UI-->>S: Confirmation + due date
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. State Machine -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">04</span>
+      <h2>State Machine – Book Lifecycle</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Available : Book donated / added
+  Available --> Borrowed : Student borrows
+  Borrowed --> Available : Student returns
+  Borrowed --> Overdue : Due date passed
+  Overdue --> Available : Book returned + fine paid
+  Available --> UnderRepair : Damaged
+  UnderRepair --> Available : Repaired
+  Available --> Removed : Book discarded
+  Removed --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Communication -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">05</span>
+      <h2>Communication Diagram</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  STU[Student]
+  ADMIN[Admin]
+  SYS[Book Bank System]
+  DB[(Database)]
+  NOTIF[Notification Service]
+
+  STU -- "1: Search / Borrow / Return" --> SYS
+  ADMIN -- "2: Manage Books / Reports" --> SYS
+  SYS -- "3: Read / Write records" --> DB
+  SYS -- "4: Send alerts / reminders" --> NOTIF
+  NOTIF -- "5: Notify" --> STU
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Class -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">06</span>
+      <h2>Class Diagram</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +login()
+    +logout()
+  }
+  class Student {
+    +String studentId
+    +borrowBook()
+    +returnBook()
+  }
+  class Admin {
+    +manageBooks()
+    +viewReports()
+  }
+  class Book {
+    +int bookId
+    +String title
+    +String author
+    +int quantity
+    +checkAvailability()
+  }
+  class BorrowRecord {
+    +int recordId
+    +Date borrowDate
+    +Date dueDate
+    +Date returnDate
+    +calculateFine()
+  }
+
+  User <|-- Student
+  User <|-- Admin
+  Student "1" --> "0..*" BorrowRecord
+  BorrowRecord "1" --> "1" Book
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Component -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">07</span>
+      <h2>Component Diagram</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Frontend
+    UI[Web Portal]
+  end
+  subgraph Backend
+    AUTH[Auth Module]
+    BOOK[Book Management]
+    BORROW[Borrow & Return]
+    REPORT[Reports Module]
+    NOTIFY[Notification Module]
+  end
+  subgraph Data
+    DB[(MySQL Database)]
+    CACHE[(Cache)]
+  end
+
+  UI --> AUTH
+  UI --> BOOK
+  UI --> BORROW
+  UI --> REPORT
+  BORROW --> NOTIFY
+  AUTH --> DB
+  BOOK --> DB
+  BORROW --> DB
+  REPORT --> DB
+  BOOK --> CACHE
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Package -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">08</span>
+      <h2>Package Diagram</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph presentation ["📦 Presentation Layer"]
+    P1[StudentUI]
+    P2[AdminUI]
+  end
+  subgraph service ["📦 Service Layer"]
+    S1[AuthService]
+    S2[BookService]
+    S3[BorrowService]
+    S4[NotificationService]
+  end
+  subgraph repository ["📦 Repository Layer"]
+    R1[UserRepo]
+    R2[BookRepo]
+    R3[BorrowRepo]
+  end
+  subgraph database ["📦 Database Layer"]
+    D1[(BookBankDB)]
+  end
+
+  presentation --> service
+  service --> repository
+  repository --> database
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Deployment -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">09</span>
+      <h2>Deployment Diagram</h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client ["🖥 Client Device"]
+    BROWSER[Web Browser]
+  end
+  subgraph WebServer ["☁ Web Server"]
+    NGINX[Nginx Reverse Proxy]
+    APP[Node.js App Server]
+  end
+  subgraph DBServer ["🗄 Database Server"]
+    MYSQL[(MySQL DB)]
+    REDIS[(Redis Cache)]
+  end
+  subgraph External ["📬 External Services"]
+    EMAIL[Email / SMS Service]
+  end
+
+  BROWSER -- HTTPS --> NGINX
+  NGINX --> APP
+  APP --> MYSQL
+  APP --> REDIS
+  APP --> EMAIL
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #a0aec0; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 40px;">Book Bank — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #63b3ed; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      background: '#13161f',
+      primaryColor: '#2a3050',
+      primaryTextColor: '#dde3f0',
+      primaryBorderColor: '#7ab8e8',
+      lineColor: '#7ab8e8',
+      secondaryColor: '#1e2235',
+      tertiaryColor: '#1a1e2e',
+      edgeLabelBackground: '#1a1e2e',
+      clusterBkg: '#1a1e2e',
+      clusterBorder: '#2a2f42',
+      titleColor: '#e8c97a',
+      nodeBorder: '#7ab8e8',
+      nodeTextColor: '#dde3f0',
+      fontFamily: 'Lato, sans-serif'
+    }
+  });
+</script>
+</body>
+</html>

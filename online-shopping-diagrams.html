@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Shopping – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Online Shopping (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Online Shopping, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online-shopping-diagrams.html" />
+  <meta property="og:title" content="Online Shopping – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Online Shopping designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online-shopping-diagrams.html" />
+  <meta property="twitter:title" content="Online Shopping – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Online Shopping designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online-shopping-diagrams.html" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #13161e;
+    --border: #1e2330;
+    --accent: #4f9eff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #64748b;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+  }
+
+  header p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 580px), 1fr));
+    gap: 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .2s, border-color .2s;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: #2e3650;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .badge {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: grid; place-items: center;
+    font-family: 'Syne', sans-serif;
+    font-size: .75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .card-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .card-header span.sub {
+    font-size: .78rem;
+    color: var(--muted);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .card-body {
+    padding: 24px;
+    overflow-x: auto;
+  }
+
+  .mermaid {
+    background: transparent !important;
+  }
+
+  /* Badge colors per diagram */
+  .b1 { background: #1a3a5c; color: #4f9eff; }
+  .b2 { background: #1a3d2e; color: #34d399; }
+  .b3 { background: #3d2a1a; color: #fb923c; }
+  .b4 { background: #3b1a3d; color: #c084fc; }
+  .b5 { background: #1a3d3d; color: #22d3ee; }
+  .b6 { background: #3d3a1a; color: #fbbf24; }
+  .b7 { background: #1a2c3d; color: #60a5fa; }
+  .b8 { background: #2e1a3d; color: #a78bfa; }
+  .b9 { background: #1a3d28; color: #4ade80; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🛒 Online Shopping — UML Diagrams</h1>
+  <p>All 9 diagram types • Mermaid rendered</p>
+</header>
+
+<div class="grid">
+
+  <!-- 1. Use Case -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b1">UC</div>
+      <h2>1. Use Case Diagram</h2>
+      <span class="sub">Actors & Goals</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  Customer((Customer))
+  Admin((Admin))
+  Payment((Payment\nGateway))
+
+  Customer --> Browse[Browse Products]
+  Customer --> Search[Search Products]
+  Customer --> AddCart[Add to Cart]
+  Customer --> Checkout[Checkout]
+  Customer --> TrackOrder[Track Order]
+  Customer --> WriteReview[Write Review]
+
+  Checkout --> MakePayment[Make Payment]
+  MakePayment --> Payment
+
+  Admin --> ManageProducts[Manage Products]
+  Admin --> ManageOrders[Manage Orders]
+  Admin --> ManageUsers[Manage Users]
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Activity -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b2">AC</div>
+      <h2>2. Activity Diagram</h2>
+      <span class="sub">Order Flow</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  A([Start]) --> B[Browse / Search Products]
+  B --> C[View Product Details]
+  C --> D{Add to Cart?}
+  D -- No --> B
+  D -- Yes --> E[Update Cart]
+  E --> F{Checkout?}
+  F -- No --> B
+  F -- Yes --> G[Enter Shipping Info]
+  G --> H[Select Payment Method]
+  H --> I{Payment OK?}
+  I -- No --> H
+  I -- Yes --> J[Place Order]
+  J --> K[Send Confirmation Email]
+  K --> L[Process & Ship]
+  L --> M([End])
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Sequence -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b3">SQ</div>
+      <h2>3. Sequence Diagram</h2>
+      <span class="sub">Place Order</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor C as Customer
+  participant W as Web App
+  participant S as Order Service
+  participant P as Payment API
+  participant DB as Database
+
+  C->>W: Add item to cart
+  W->>S: Create cart session
+  C->>W: Proceed to checkout
+  W->>S: Submit order details
+  S->>P: Request payment
+  P-->>S: Payment confirmed
+  S->>DB: Save order
+  DB-->>S: Order ID returned
+  S-->>W: Order success
+  W-->>C: Show confirmation
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. State Machine -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b4">SM</div>
+      <h2>4. State Machine Diagram</h2>
+      <span class="sub">Order States</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Pending : Order Placed
+  Pending --> Confirmed : Payment Success
+  Pending --> Cancelled : Payment Failed
+  Confirmed --> Processing : Admin Approves
+  Processing --> Shipped : Dispatched
+  Shipped --> Delivered : Customer Receives
+  Delivered --> Returned : Return Requested
+  Returned --> Refunded : Refund Processed
+  Delivered --> [*]
+  Refunded --> [*]
+  Cancelled --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Communication -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b5">CO</div>
+      <h2>5. Communication Diagram</h2>
+      <span class="sub">Object Interaction</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  C[Customer] -->|1. browseProducts| PC[Product Catalog]
+  C -->|2. addToCart| CT[Cart]
+  CT -->|3. calculateTotal| OR[Order]
+  OR -->|4. processPayment| PG[Payment Gateway]
+  PG -->|5. confirmPayment| OR
+  OR -->|6. notifyShipping| SH[Shipping Service]
+  SH -->|7. sendTracking| C
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Class -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b6">CL</div>
+      <h2>6. Class Diagram</h2>
+      <span class="sub">Data Model</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class Customer {
+    +int id
+    +string name
+    +string email
+    +login()
+    +placeOrder()
+  }
+  class Product {
+    +int id
+    +string name
+    +float price
+    +int stock
+    +getDetails()
+  }
+  class Cart {
+    +int id
+    +addItem()
+    +removeItem()
+    +getTotal()
+  }
+  class Order {
+    +int id
+    +string status
+    +Date createdAt
+    +confirm()
+    +cancel()
+  }
+  class Payment {
+    +string method
+    +float amount
+    +string status
+    +process()
+  }
+
+  Customer "1" --> "1" Cart
+  Cart "1" --> "many" Product
+  Customer "1" --> "many" Order
+  Order "1" --> "1" Payment
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Component -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b7">CP</div>
+      <h2>7. Component Diagram</h2>
+      <span class="sub">System Components</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Frontend
+    UI[Web / Mobile UI]
+  end
+  subgraph Backend
+    AS[Auth Service]
+    PS[Product Service]
+    CS[Cart Service]
+    OS[Order Service]
+    NS[Notification Service]
+  end
+  subgraph External
+    PG[Payment Gateway]
+    ES[Email / SMS]
+  end
+  subgraph Data
+    DB[(Database)]
+    CH[(Cache)]
+  end
+
+  UI --> AS
+  UI --> PS
+  UI --> CS
+  UI --> OS
+  OS --> PG
+  OS --> NS
+  NS --> ES
+  PS --> CH
+  OS --> DB
+  CS --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Package -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b8">PK</div>
+      <h2>8. Package Diagram</h2>
+      <span class="sub">Module Structure</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.shop
+    subgraph user
+      U1[Customer]
+      U2[Admin]
+      U3[AuthManager]
+    end
+    subgraph catalog
+      C1[Product]
+      C2[Category]
+      C3[Review]
+    end
+    subgraph order
+      O1[Order]
+      O2[Cart]
+      O3[OrderItem]
+    end
+    subgraph payment
+      P1[Payment]
+      P2[Invoice]
+      P3[Refund]
+    end
+    subgraph shipping
+      S1[Shipment]
+      S2[TrackingInfo]
+    end
+  end
+
+  user --> catalog
+  order --> catalog
+  order --> user
+  order --> payment
+  order --> shipping
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Deployment -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b9">DP</div>
+      <h2>9. Deployment Diagram</h2>
+      <span class="sub">Infrastructure</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client
+    Browser[Web Browser]
+    App[Mobile App]
+  end
+  subgraph CDN
+    CF[CloudFront / CDN]
+  end
+  subgraph WebTier["Web Tier (Load Balanced)"]
+    LB[Load Balancer]
+    W1[Web Server 1]
+    W2[Web Server 2]
+  end
+  subgraph AppTier["App Tier (Microservices)"]
+    MS1[Product Service]
+    MS2[Order Service]
+    MS3[Auth Service]
+  end
+  subgraph DataTier["Data Tier"]
+    PG[(PostgreSQL)]
+    RD[(Redis Cache)]
+    S3[(S3 Storage)]
+  end
+
+  Browser --> CF
+  App --> CF
+  CF --> LB
+  LB --> W1 & W2
+  W1 & W2 --> MS1 & MS2 & MS3
+  MS1 --> RD
+  MS2 --> PG
+  MS1 --> S3
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #a0aec0; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 40px;">Online Shopping — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #63b3ed; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      background: '#13161e',
+      primaryColor: '#1e3a5f',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#4f9eff',
+      lineColor: '#4f9eff',
+      secondaryColor: '#1a2c3d',
+      tertiaryColor: '#1e2330',
+      edgeLabelBackground: '#13161e',
+      actorBkg: '#1e3a5f',
+      actorBorder: '#4f9eff',
+      actorTextColor: '#e2e8f0',
+      noteBkgColor: '#1a3d2e',
+      noteTextColor: '#34d399',
+      activationBkgColor: '#1e2330',
+      sequenceNumberColor: '#e2e8f0',
+      labelBoxBkgColor: '#1e2330',
+      labelTextColor: '#e2e8f0',
+      loopTextColor: '#e2e8f0',
+      signalColor: '#4f9eff',
+      signalTextColor: '#e2e8f0'
+    },
+    flowchart: { curve: 'basis', htmlLabels: true },
+    sequence: { useMaxWidth: true },
+    stateDiagram: { useMaxWidth: true }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Software Personnel Management System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Software Personnel Management System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Software Personnel Management System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/Software_personnel_management_system.html" />
+  <meta property="og:title" content="Software Personnel Management System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Software Personnel Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/Software_personnel_management_system.html" />
+  <meta property="twitter:title" content="Software Personnel Management System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Software Personnel Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/Software_personnel_management_system.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #1a3c34, #2d8a6a);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #e6fffa;
+      color: #2d8a6a;
+      border: 1px solid #b2f5ea;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #2d8a6a; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #2d8a6a, #48bb78);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Software Personnel Management System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    E(("Employee"))
+    M(("Manager"))
+    HR(("HR Admin"))
+  end
+
+  subgraph Personnel Management System
+    UC1[Login]
+    UC2[View Profile]
+    UC3[Apply Leave]
+    UC4[View Payslip]
+    UC5[Submit Timesheet]
+    UC6[Approve Leave]
+    UC7[Assign Project]
+    UC8[View Team Report]
+    UC9[Add Employee]
+    UC10[Manage Salary]
+    UC11[Generate Report]
+  end
+
+  E --> UC1
+  E --> UC2
+  E --> UC3
+  E --> UC4
+  E --> UC5
+  M --> UC6
+  M --> UC7
+  M --> UC8
+  HR --> UC9
+  HR --> UC10
+  HR --> UC11
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Employee Logs In]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Dashboard[View Dashboard]
+
+  Dashboard --> Choice{Choose Action}
+
+  Choice --> A[Apply Leave]
+  Choice --> B[Submit Timesheet]
+  Choice --> C[View Payslip]
+
+  A --> LA[Fill Leave Form]
+  LA --> LS[Submit to Manager]
+  LS --> MA{Manager Approves?}
+  MA -- Yes --> LApproved[Leave Approved]
+  MA -- No --> LRejected[Leave Rejected]
+  LApproved --> Notify[Notify Employee]
+  LRejected --> Notify
+
+  B --> TS[Fill Hours & Tasks]
+  TS --> TSSubmit[Submit Timesheet]
+  TSSubmit --> TSReview[Manager Reviews]
+
+  C --> PS[Display Payslip]
+
+  Notify --> End([End])
+  TSReview --> End
+  PS --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Employee
+  participant WebApp
+  participant LeaveService
+  participant NotificationService
+  participant Database
+
+  Employee->>WebApp: Login
+  WebApp-->>Employee: Dashboard
+
+  Employee->>WebApp: Apply Leave (dates, reason)
+  WebApp->>LeaveService: submitLeave(empId, details)
+  LeaveService->>Database: saveLeave(PENDING)
+  Database-->>LeaveService: leaveId
+  LeaveService->>NotificationService: notifyManager(leaveId)
+  NotificationService-->>WebApp: Manager Notified
+
+  actor Manager
+  NotificationService-->>Manager: Email Notification
+
+  Manager->>WebApp: Review Leave Request
+  WebApp->>LeaveService: approveLeave(leaveId)
+  LeaveService->>Database: updateLeave(APPROVED)
+  LeaveService->>NotificationService: notifyEmployee(approved)
+  NotificationService-->>Employee: Leave Approved Email
+  WebApp-->>Manager: Confirmation
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Applied : HR adds employee
+
+  Applied --> Active : Profile completed
+  Active --> OnLeave : Leave approved
+
+  OnLeave --> Active : Leave ends
+
+  Active --> OnProject : Assigned to project
+  OnProject --> Active : Project completed
+
+  Active --> Resigned : Employee resigns
+  Active --> Terminated : HR terminates
+
+  Resigned --> Inactive : Exit process done
+  Terminated --> Inactive : Exit process done
+
+  Inactive --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  EMP["Employee"]
+  WEB["WebApp"]
+  LS["LeaveService"]
+  PS["PayrollService"]
+  NS["NotificationService"]
+  DB["Database"]
+  MGR["Manager"]
+
+  EMP -- "1: login()" --> WEB
+  WEB -- "2: authenticate()" --> DB
+  DB -- "3: userDetails" --> WEB
+
+  EMP -- "4: applyLeave()" --> WEB
+  WEB -- "5: submitLeave()" --> LS
+  LS -- "6: saveLeave(PENDING)" --> DB
+  LS -- "7: notifyManager()" --> NS
+  NS -- "8: email alert" --> MGR
+
+  MGR -- "9: approveLeave()" --> WEB
+  WEB -- "10: updateStatus(APPROVED)" --> LS
+  LS -- "11: updateDB()" --> DB
+  LS -- "12: notifyEmployee()" --> NS
+  NS -- "13: email to employee" --> EMP
+
+  EMP -- "14: viewPayslip()" --> WEB
+  WEB -- "15: getPayslip()" --> PS
+  PS -- "16: fetchSalary()" --> DB
+  DB -- "17: salaryData" --> PS
+  PS -- "18: payslip" --> WEB
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +logout()
+  }
+
+  class Employee {
+    +int empId
+    +String designation
+    +String department
+    +Date joiningDate
+    +viewProfile()
+    +applyLeave()
+    +submitTimesheet()
+  }
+
+  class Manager {
+    +approveLeave()
+    +assignProject()
+    +viewTeamReport()
+  }
+
+  class HRAdmin {
+    +addEmployee()
+    +manageSalary()
+    +generateReport()
+  }
+
+  class Leave {
+    +int leaveId
+    +Date fromDate
+    +Date toDate
+    +String reason
+    +String status
+    +submit()
+    +cancel()
+  }
+
+  class Payroll {
+    +int payrollId
+    +float basicSalary
+    +float bonus
+    +float deductions
+    +float netPay
+    +generate()
+  }
+
+  class Project {
+    +int projectId
+    +String title
+    +Date startDate
+    +Date endDate
+    +String status
+  }
+
+  class Timesheet {
+    +int sheetId
+    +Date workDate
+    +float hoursWorked
+    +String taskDesc
+    +submit()
+  }
+
+  User <|-- Employee
+  User <|-- Manager
+  User <|-- HRAdmin
+
+  Employee "1" --> "0..*" Leave : applies
+  Employee "1" --> "1" Payroll : has
+  Employee "0..*" --> "0..*" Project : assigned to
+  Employee "1" --> "0..*" Timesheet : submits
+  Manager "1" --> "0..*" Employee : manages
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    UI[Web Browser / Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    EMP_SVC[Employee Service]
+    LEAVE[Leave Service]
+    PAYROLL[Payroll Service]
+    PROJECT[Project Service]
+    NOTIF[Notification Service]
+    REPORT[Report Service]
+  end
+
+  subgraph Data Layer
+    DB[(PostgreSQL DB)]
+    CACHE[(Redis Cache)]
+  end
+
+  subgraph External
+    EMAIL[Email Provider\nSendGrid]
+    SMS[SMS Provider\nTwilio]
+  end
+
+  UI --> AUTH
+  UI --> EMP_SVC
+  UI --> LEAVE
+  UI --> PAYROLL
+  UI --> PROJECT
+
+  LEAVE --> NOTIF
+  PAYROLL --> NOTIF
+  NOTIF --> EMAIL
+  NOTIF --> SMS
+
+  EMP_SVC --> DB
+  LEAVE --> DB
+  PAYROLL --> DB
+  PROJECT --> DB
+  AUTH --> DB
+  REPORT --> DB
+  EMP_SVC --> CACHE
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.personnel
+    subgraph controller
+      EC[EmployeeController]
+      LC[LeaveController]
+      PC[PayrollController]
+      PRC[ProjectController]
+    end
+
+    subgraph service
+      ES[EmployeeService]
+      LS[LeaveService]
+      PS[PayrollService]
+      NS[NotificationService]
+      RS[ReportService]
+    end
+
+    subgraph model
+      EM[Employee]
+      LM[Leave]
+      PM[Payroll]
+      PRM[Project]
+      TM[Timesheet]
+    end
+
+    subgraph repository
+      ER[EmployeeRepository]
+      LR[LeaveRepository]
+      PR[PayrollRepository]
+    end
+
+    subgraph util
+      JU[JWTUtil]
+      EU[EmailUtil]
+      RU[ReportUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client
+    Browser[Web Browser]
+    MobileApp[Mobile App]
+  end
+
+  subgraph Cloud - AWS / Azure
+    subgraph Load Balancer
+      LB[NGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1\nSpring Boot]
+      APP2[App Server 2\nSpring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Auth Service]
+      SVC2[Employee Service]
+      SVC3[Leave Service]
+      SVC4[Payroll Service]
+      SVC5[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(Primary DB\nPostgreSQL)]
+      REPLICA[(Replica DB)]
+      REDIS[(Redis Cache)]
+    end
+  end
+
+  subgraph External Services
+    SENDGRID[SendGrid\nEmail]
+    TWILIO[Twilio\nSMS]
+  end
+
+  Browser --> LB
+  MobileApp --> LB
+  LB --> APP1
+  LB --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP2 --> SVC3
+  APP2 --> SVC4
+  SVC3 --> SVC5
+  SVC4 --> SVC5
+  SVC5 --> SENDGRID
+  SVC5 --> TWILIO
+  SVC2 --> DB
+  SVC3 --> DB
+  SVC4 --> DB
+  DB --> REPLICA
+  SVC2 --> REDIS
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Software Personnel Management System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

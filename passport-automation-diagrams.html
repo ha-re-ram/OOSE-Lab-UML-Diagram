@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passport Automation System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Passport Automation System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Passport Automation System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/passport-automation-diagrams.html" />
+  <meta property="og:title" content="Passport Automation System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Passport Automation System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/passport-automation-diagrams.html" />
+  <meta property="twitter:title" content="Passport Automation System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Passport Automation System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/passport-automation-diagrams.html" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Inter:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f0f4f8;
+    --surface: #ffffff;
+    --border: #dde3ee;
+    --accent: #1a4fa0;
+    --accent2: #c8311a;
+    --gold: #b8860b;
+    --text: #1a2340;
+    --muted: #6b7a99;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(26,79,160,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(200,49,26,0.06) 0%, transparent 50%);
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  header h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.9rem, 4.5vw, 3rem);
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  header h1 span {
+    color: var(--accent2);
+  }
+
+  header p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: .95rem;
+  }
+
+  .divider {
+    width: 60px; height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 4px;
+    margin: 16px auto 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 600px), 1fr));
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(26,67,160,0.07);
+    transition: transform .2s, box-shadow .2s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(26,67,160,0.13);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, #f7f9fd, #fff);
+  }
+
+  .badge {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: grid; place-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+    flex-shrink: 0;
+  }
+
+  .card-header h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .card-header .sub {
+    font-size: .76rem;
+    color: var(--muted);
+    margin-left: auto;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+
+  .card-body {
+    padding: 24px;
+    overflow-x: auto;
+  }
+
+  .mermaid svg { max-width: 100%; }
+
+  .b1 { background: #dbeafe; color: #1e40af; }
+  .b2 { background: #dcfce7; color: #166534; }
+  .b3 { background: #ffedd5; color: #9a3412; }
+  .b4 { background: #ede9fe; color: #6d28d9; }
+  .b5 { background: #cffafe; color: #155e75; }
+  .b6 { background: #fef9c3; color: #854d0e; }
+  .b7 { background: #e0e7ff; color: #3730a3; }
+  .b8 { background: #fce7f3; color: #9d174d; }
+  .b9 { background: #d1fae5; color: #065f46; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">🛂 UML Diagrams</div>
+  <h1>Passport <span>Automation</span> System</h1>
+  <p>All 9 diagram types • Use Case · Activity · Sequence · State · Communication · Class · Component · Package · Deployment</p>
+  <div class="divider"></div>
+</header>
+
+<div class="grid">
+
+  <!-- 1. Use Case -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b1">UC</div>
+      <h2>1. Use Case Diagram</h2>
+      <span class="sub">Actors & Goals</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  AP((Applicant))
+  OF((Passport\nOfficer))
+  AD((Admin))
+  PO((Police\nVerifier))
+  SY((System))
+
+  AP --> RA[Register Account]
+  AP --> FA[Fill Application]
+  AP --> UP[Upload Documents]
+  AP --> SP[Schedule Appointment]
+  AP --> FP[Pay Fee]
+  AP --> TS[Track Status]
+  AP --> CP[Collect Passport]
+
+  OF --> VA[Verify Documents]
+  OF --> IA[Interview Applicant]
+  OF --> AA[Approve / Reject]
+
+  PO --> PC[Police Verification]
+
+  AD --> MU[Manage Users]
+  AD --> GR[Generate Reports]
+  AD --> MA[Manage Appointments]
+
+  SY --> SN[Send Notifications]
+  SY --> PR[Print Passport]
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Activity -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b2">AC</div>
+      <h2>2. Activity Diagram</h2>
+      <span class="sub">Application Flow</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  A([Start]) --> B[Applicant Registers Online]
+  B --> C[Fill Application Form]
+  C --> D[Upload Required Documents]
+  D --> E[Pay Application Fee]
+  E --> F{Payment\nSuccessful?}
+  F -- No --> E
+  F -- Yes --> G[Schedule Appointment]
+  G --> H[Visit Passport Office]
+  H --> I[Biometric & Photo Capture]
+  I --> J[Document Verification by Officer]
+  J --> K{Documents\nValid?}
+  K -- No --> L[Notify Applicant / Resubmit]
+  L --> D
+  K -- Yes --> M[Police Verification]
+  M --> N{Verification\nCleared?}
+  N -- No --> O[Reject & Notify]
+  N -- Yes --> P[Approve Application]
+  P --> Q[Print Passport]
+  Q --> R[Dispatch / Ready for Collection]
+  R --> S([End])
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Sequence -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b3">SQ</div>
+      <h2>3. Sequence Diagram</h2>
+      <span class="sub">Application Submission</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor AP as Applicant
+  participant WP as Web Portal
+  participant AS as App Service
+  participant PS as Payment Service
+  participant OF as Officer System
+  participant DB as Database
+
+  AP->>WP: Register & Login
+  WP->>AS: Create applicant profile
+  AP->>WP: Fill & submit form
+  WP->>AS: Validate form data
+  AS->>DB: Save draft application
+  AP->>WP: Pay fee
+  WP->>PS: Process payment
+  PS-->>WP: Payment confirmed
+  WP->>AS: Mark payment done
+  AS->>DB: Update status → Submitted
+  AS-->>AP: Confirmation + Appointment slot
+  AP->>OF: Visit office – Biometrics
+  OF->>AS: Upload biometrics & verify docs
+  AS->>DB: Update status → Under Review
+  AS-->>AP: SMS/Email notification
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. State Machine -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b4">SM</div>
+      <h2>4. State Machine Diagram</h2>
+      <span class="sub">Application Lifecycle</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Draft : Applicant fills form
+  Draft --> Submitted : Fee paid
+  Submitted --> AppointmentScheduled : Slot booked
+  AppointmentScheduled --> BiometricsCaptured : Visit office
+  BiometricsCaptured --> DocumentVerification : Officer reviews
+  DocumentVerification --> PoliceVerification : Docs approved
+  DocumentVerification --> Rejected : Docs invalid
+  PoliceVerification --> Approved : Clearance received
+  PoliceVerification --> Rejected : Failed verification
+  Approved --> Printing : Sent to print
+  Printing --> Dispatched : Passport printed
+  Dispatched --> Delivered : Collected / Delivered
+  Rejected --> [*]
+  Delivered --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Communication -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b5">CO</div>
+      <h2>5. Communication Diagram</h2>
+      <span class="sub">Object Interactions</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  AP[Applicant] -->|1. submitApplication| PF[Application Form]
+  PF -->|2. validateDocuments| DV[Document Verifier]
+  AP -->|3. makePayment| PG[Payment Gateway]
+  PG -->|4. confirmPayment| PF
+  PF -->|5. scheduleAppointment| AS[Appointment Scheduler]
+  AS -->|6. notifyApplicant| AP
+  DV -->|7. requestPoliceCheck| PC[Police Verification]
+  PC -->|8. sendClearance| OF[Officer System]
+  OF -->|9. approveAndPrint| PP[Passport Printer]
+  PP -->|10. dispatchPassport| AP
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Class -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b6">CL</div>
+      <h2>6. Class Diagram</h2>
+      <span class="sub">Data Model</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class Applicant {
+    +int id
+    +string name
+    +string dob
+    +string email
+    +string phone
+    +register()
+    +login()
+    +trackStatus()
+  }
+  class Application {
+    +int appId
+    +string status
+    +Date submittedOn
+    +string passportType
+    +submit()
+    +cancel()
+  }
+  class Document {
+    +int docId
+    +string type
+    +string filePath
+    +boolean isVerified
+    +upload()
+    +verify()
+  }
+  class Appointment {
+    +int apptId
+    +Date dateTime
+    +string location
+    +string status
+    +schedule()
+    +reschedule()
+  }
+  class Officer {
+    +int officerId
+    +string name
+    +string role
+    +verifyDocs()
+    +approveApp()
+  }
+  class Passport {
+    +string passportNo
+    +Date issueDate
+    +Date expiryDate
+    +string type
+    +print()
+    +dispatch()
+  }
+  class Payment {
+    +int payId
+    +float amount
+    +string status
+    +string method
+    +process()
+  }
+
+  Applicant "1" --> "many" Application
+  Application "1" --> "many" Document
+  Application "1" --> "1" Appointment
+  Application "1" --> "1" Payment
+  Application "1" --> "1" Passport
+  Officer "1" --> "many" Application
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Component -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b7">CP</div>
+      <h2>7. Component Diagram</h2>
+      <span class="sub">System Components</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Frontend["Frontend Layer"]
+    WEB[Web Portal]
+    MOB[Mobile App]
+  end
+  subgraph Backend["Backend Services"]
+    AUTH[Auth Service]
+    APPS[Application Service]
+    DOC[Document Service]
+    PAY[Payment Service]
+    APT[Appointment Service]
+    NOT[Notification Service]
+    PRINT[Print Service]
+  end
+  subgraph External["External Systems"]
+    PGW[Payment Gateway]
+    POL[Police Dept API]
+    SMS[SMS / Email API]
+    COUR[Courier Service]
+  end
+  subgraph Data["Data Layer"]
+    DB[(Main Database)]
+    FS[(File Storage)]
+    CACHE[(Cache)]
+  end
+
+  WEB & MOB --> AUTH
+  WEB & MOB --> APPS
+  APPS --> DOC
+  APPS --> PAY
+  APPS --> APT
+  APPS --> NOT
+  APPS --> PRINT
+  PAY --> PGW
+  APPS --> POL
+  NOT --> SMS
+  PRINT --> COUR
+  DOC --> FS
+  APPS --> DB
+  AUTH --> CACHE
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Package -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b8">PK</div>
+      <h2>8. Package Diagram</h2>
+      <span class="sub">Module Structure</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph gov.passport
+    subgraph user_pkg["user"]
+      U1[Applicant]
+      U2[Officer]
+      U3[Admin]
+      U4[AuthManager]
+    end
+    subgraph application_pkg["application"]
+      A1[Application]
+      A2[ApplicationForm]
+      A3[StatusTracker]
+    end
+    subgraph document_pkg["document"]
+      D1[Document]
+      D2[DocumentVerifier]
+      D3[FileUploader]
+    end
+    subgraph payment_pkg["payment"]
+      P1[Payment]
+      P2[FeeCalculator]
+      P3[Receipt]
+    end
+    subgraph appointment_pkg["appointment"]
+      AP1[Appointment]
+      AP2[Scheduler]
+      AP3[SlotManager]
+    end
+    subgraph passport_pkg["passport"]
+      PP1[Passport]
+      PP2[PrintManager]
+      PP3[Dispatcher]
+    end
+    subgraph notification_pkg["notification"]
+      N1[EmailNotifier]
+      N2[SMSNotifier]
+    end
+  end
+
+  user_pkg --> application_pkg
+  application_pkg --> document_pkg
+  application_pkg --> payment_pkg
+  application_pkg --> appointment_pkg
+  application_pkg --> passport_pkg
+  passport_pkg --> notification_pkg
+  application_pkg --> notification_pkg
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Deployment -->
+  <div class="card">
+    <div class="card-header">
+      <div class="badge b9">DP</div>
+      <h2>9. Deployment Diagram</h2>
+      <span class="sub">Infrastructure</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Citizens["Citizen Devices"]
+    BR[Web Browser]
+    MA[Mobile App]
+  end
+  subgraph GovCloud["Government Cloud"]
+    subgraph DMZ["DMZ / Edge"]
+      LB[Load Balancer]
+      WAF[Web Firewall]
+    end
+    subgraph AppTier["Application Servers"]
+      AP1[App Server 1]
+      AP2[App Server 2]
+    end
+    subgraph ServiceTier["Microservice Cluster"]
+      S1[Auth Service]
+      S2[Application Service]
+      S3[Document Service]
+      S4[Print Service]
+    end
+    subgraph DataTier["Data Tier"]
+      PDB[(PostgreSQL\nPrimary)]
+      RDB[(PostgreSQL\nReplica)]
+      RD[(Redis Cache)]
+      OB[(Object Storage\nDocs & Photos)]
+    end
+  end
+  subgraph External["External Gov Systems"]
+    POL[Police Dept Server]
+    PAY[Payment Gateway]
+    POST[Postal / Courier]
+  end
+
+  BR & MA --> WAF --> LB
+  LB --> AP1 & AP2
+  AP1 & AP2 --> S1 & S2 & S3 & S4
+  S2 --> PDB --> RDB
+  S1 --> RD
+  S3 --> OB
+  S2 --> POL
+  S2 --> PAY
+  S4 --> POST
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Passport Automation System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+      background: '#ffffff',
+      primaryColor: '#dbeafe',
+      primaryTextColor: '#1a2340',
+      primaryBorderColor: '#1a4fa0',
+      lineColor: '#1a4fa0',
+      secondaryColor: '#e0e7ff',
+      tertiaryColor: '#f0f4f8',
+      edgeLabelBackground: '#f0f4f8',
+      actorBkg: '#dbeafe',
+      actorBorder: '#1a4fa0',
+      actorTextColor: '#1a2340',
+      noteBkgColor: '#fef9c3',
+      noteTextColor: '#854d0e',
+      signalColor: '#1a4fa0',
+      signalTextColor: '#1a2340',
+      labelBoxBkgColor: '#e0e7ff',
+      labelTextColor: '#1a2340',
+      loopTextColor: '#1a2340',
+      activationBkgColor: '#dbeafe'
+    },
+    flowchart: { curve: 'basis', htmlLabels: true },
+    sequence: { useMaxWidth: true },
+    stateDiagram: { useMaxWidth: true }
+  });
+</script>
+</body>
+</html>

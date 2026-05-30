@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airline/Railway Reservation System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Airline/Railway Reservation System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Airline/Railway Reservation System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/AirlineorRailway_reservation_system.html" />
+  <meta property="og:title" content="Airline/Railway Reservation System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Airline/Railway Reservation System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/AirlineorRailway_reservation_system.html" />
+  <meta property="twitter:title" content="Airline/Railway Reservation System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Airline/Railway Reservation System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/AirlineorRailway_reservation_system.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #1a365d, #2b6cb0);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #ebf8ff;
+      color: #2b6cb0;
+      border: 1px solid #bee3f8;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #2b6cb0; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #2b6cb0, #4299e1);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.25rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Airline / Railway Reservation System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    P(("Passenger"))
+    A(("Admin"))
+    S(("System"))
+  end
+
+  subgraph Reservation System
+    UC1[Search Flights/Trains]
+    UC2[Book Ticket]
+    UC3[Cancel Booking]
+    UC4[View Booking]
+    UC5[Make Payment]
+    UC6[Generate Ticket]
+    UC7[Manage Schedules]
+    UC8[Manage Users]
+    UC9[Send Notification]
+  end
+
+  P --> UC1
+  P --> UC2
+  P --> UC3
+  P --> UC4
+  UC2 --> UC5
+  UC5 --> UC6
+  UC6 --> UC9
+  A --> UC7
+  A --> UC8
+  S --> UC9
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Login / Register]
+  Login --> Search[Search Flight or Train]
+  Search --> Results{Results Found?}
+  Results -- No --> Search
+  Results -- Yes --> Select[Select Journey]
+  Select --> Seats[Choose Seats]
+  Seats --> Passenger[Enter Passenger Details]
+  Passenger --> Review[Review Booking]
+  Review --> Pay[Make Payment]
+  Pay --> PStatus{Payment Success?}
+  PStatus -- No --> Pay
+  PStatus -- Yes --> Confirm[Confirm Booking]
+  Confirm --> Ticket[Generate E-Ticket]
+  Ticket --> Notify[Send Email / SMS]
+  Notify --> End([End])
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Passenger
+  participant WebApp
+  participant BookingService
+  participant PaymentGateway
+  participant NotificationService
+  participant Database
+
+  Passenger->>WebApp: Search Flight/Train
+  WebApp->>BookingService: searchJourneys(origin, dest, date)
+  BookingService->>Database: fetchAvailableJourneys()
+  Database-->>BookingService: journeyList
+  BookingService-->>WebApp: journeyResults
+  WebApp-->>Passenger: Show Results
+
+  Passenger->>WebApp: Select & Book
+  WebApp->>BookingService: createBooking(details)
+  BookingService->>Database: saveBooking(PENDING)
+  Database-->>BookingService: bookingId
+
+  BookingService->>PaymentGateway: initiatePayment(amount)
+  PaymentGateway-->>BookingService: paymentStatus SUCCESS
+
+  BookingService->>Database: updateBooking(CONFIRMED)
+  BookingService->>NotificationService: sendTicket(email, ticketData)
+  NotificationService-->>Passenger: Email / SMS Ticket
+  BookingService-->>WebApp: Booking Confirmed
+  WebApp-->>Passenger: Show Confirmation
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Initiated : Passenger starts booking
+
+  Initiated --> SeatSelected : Select seat
+  SeatSelected --> DetailsEntered : Enter passenger info
+  DetailsEntered --> PendingPayment : Proceed to payment
+
+  PendingPayment --> PaymentFailed : Payment declined
+  PaymentFailed --> PendingPayment : Retry payment
+
+  PendingPayment --> Confirmed : Payment successful
+
+  Confirmed --> Cancelled : Passenger cancels
+  Confirmed --> Completed : Journey completed
+
+  Cancelled --> Refunded : Refund processed
+  Refunded --> [*]
+  Completed --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  P["Passenger\n(Client)"]
+  W["WebApp\n(UI)"]
+  B["BookingService"]
+  DB["Database"]
+  PG["PaymentGateway"]
+  NS["NotificationService"]
+
+  P -- "1: searchJourney()" --> W
+  W -- "2: searchJourneys()" --> B
+  B -- "3: query()" --> DB
+  DB -- "4: journeyList" --> B
+  B -- "5: results" --> W
+  W -- "6: selectJourney()" --> P
+
+  P -- "7: bookJourney()" --> W
+  W -- "8: createBooking()" --> B
+  B -- "9: saveBooking()" --> DB
+  B -- "10: pay(amount)" --> PG
+  PG -- "11: SUCCESS" --> B
+  B -- "12: updateStatus(CONFIRMED)" --> DB
+  B -- "13: sendTicket()" --> NS
+  NS -- "14: email/SMS" --> P
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String phone
+    +login()
+    +register()
+  }
+
+  class Passenger {
+    +String passportNo
+    +Date dob
+    +searchJourney()
+    +bookTicket()
+    +cancelTicket()
+  }
+
+  class Admin {
+    +manageSchedule()
+    +manageUsers()
+    +viewReports()
+  }
+
+  class Journey {
+    +int journeyId
+    +String origin
+    +String destination
+    +DateTime departure
+    +DateTime arrival
+    +int totalSeats
+    +int availableSeats
+    +getAvailableSeats()
+  }
+
+  class Booking {
+    +int bookingId
+    +String status
+    +DateTime bookingDate
+    +float totalAmount
+    +confirm()
+    +cancel()
+  }
+
+  class Seat {
+    +int seatNo
+    +String seatType
+    +boolean isAvailable
+    +reserve()
+    +release()
+  }
+
+  class Payment {
+    +int paymentId
+    +float amount
+    +String method
+    +String status
+    +processPayment()
+    +refund()
+  }
+
+  class Ticket {
+    +String ticketNo
+    +String pnr
+    +generate()
+    +download()
+  }
+
+  User <|-- Passenger
+  User <|-- Admin
+  Passenger "1" --> "0..*" Booking : makes
+  Booking "1" --> "1..*" Seat : includes
+  Booking "1" --> "1" Payment : has
+  Booking "1" --> "1" Ticket : generates
+  Journey "1" --> "1..*" Seat : contains
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    UI[Web / Mobile UI]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    SEARCH[Search Service]
+    BOOK[Booking Service]
+    PAY[Payment Service]
+    NOTIF[Notification Service]
+    TICKET[Ticket Service]
+  end
+
+  subgraph Data Layer
+    DB[(Main Database)]
+    CACHE[(Cache)]
+  end
+
+  subgraph External
+    PG[Payment Gateway API]
+    EMAIL[Email / SMS Provider]
+  end
+
+  UI --> AUTH
+  UI --> SEARCH
+  UI --> BOOK
+  BOOK --> PAY
+  BOOK --> TICKET
+  PAY --> PG
+  TICKET --> NOTIF
+  NOTIF --> EMAIL
+  SEARCH --> CACHE
+  BOOK --> DB
+  AUTH --> DB
+  TICKET --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.reservation
+    subgraph ui
+      WebController[WebController]
+      MobileController[MobileController]
+    end
+
+    subgraph service
+      UserService[UserService]
+      BookingService[BookingService]
+      PaymentService[PaymentService]
+      NotificationService[NotificationService]
+      TicketService[TicketService]
+    end
+
+    subgraph model
+      UserModel[User]
+      BookingModel[Booking]
+      JourneyModel[Journey]
+      SeatModel[Seat]
+      PaymentModel[Payment]
+      TicketModel[Ticket]
+    end
+
+    subgraph repository
+      UserRepo[UserRepository]
+      BookingRepo[BookingRepository]
+      JourneyRepo[JourneyRepository]
+    end
+
+    subgraph external
+      PayGateway[PaymentGateway]
+      EmailSMS[EmailSMSProvider]
+    end
+  end
+
+  ui --> service
+  service --> model
+  service --> repository
+  service --> external
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Load Balancer
+      LB[NGINX Load Balancer]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1\nNode.js]
+      APP2[App Server 2\nNode.js]
+    end
+
+    subgraph Microservices
+      MS1[Auth Service]
+      MS2[Booking Service]
+      MS3[Payment Service]
+      MS4[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB1[(Primary DB\nPostgreSQL)]
+      DB2[(Replica DB)]
+      REDIS[(Redis Cache)]
+    end
+  end
+
+  subgraph External Services
+    PAYAPI[Payment Gateway\nStripe / Razorpay]
+    NOTIFY[Email / SMS\nSendGrid / Twilio]
+  end
+
+  Browser --> LB
+  Mobile --> LB
+  LB --> APP1
+  LB --> APP2
+  APP1 --> MS1
+  APP1 --> MS2
+  APP2 --> MS3
+  APP2 --> MS4
+  MS2 --> DB1
+  MS1 --> DB1
+  DB1 --> DB2
+  MS2 --> REDIS
+  MS3 --> PAYAPI
+  MS4 --> NOTIFY
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Airline/Railway Reservation System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Ticketing System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the E-Ticketing System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="E-Ticketing System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/eticket_system_diagrams.html" />
+  <meta property="og:title" content="E-Ticketing System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the E-Ticketing System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/eticket_system_diagrams.html" />
+  <meta property="twitter:title" content="E-Ticketing System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the E-Ticketing System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/eticket_system_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #fff5f5; color: #2d3748; }
+    header {
+      background: linear-gradient(135deg, #6b0000, #c53030);
+      color: white; text-align: center; padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+    nav {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; padding: 16px 20px; background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1); position: sticky; top: 0; z-index: 100;
+    }
+    nav a {
+      text-decoration: none; background: #fff5f5; color: #c53030;
+      border: 1px solid #feb2b2; padding: 6px 14px; border-radius: 20px;
+      font-size: 0.82rem; font-weight: 600; transition: background .2s;
+    }
+    nav a:hover { background: #c53030; color: #fff; }
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+    .card {
+      background: #fff; border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08); margin-bottom: 40px; overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #c53030, #fc8181);
+      color: white; padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block; background: rgba(255,255,255,.25);
+      border-radius: 12px; padding: 2px 10px; font-size: .75rem;
+      margin-left: 10px; vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+    footer { text-align: center; padding: 20px; font-size: .82rem; color: #718096; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>E-Ticketing System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE -->
+  <div class="card" id="usecase">
+    <div class="card-header"><h2>1. Use Case Diagram <span>Use Case</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    US(("User"))
+    OR(("Organizer"))
+    AD(("Admin"))
+    AG(("Agent"))
+  end
+  subgraph E-Ticketing System
+    UC1[Register and Login]
+    UC2[Browse Events]
+    UC3[Search Event]
+    UC4[Book Ticket]
+    UC5[Select Seat]
+    UC6[Make Payment]
+    UC7[Download Ticket]
+    UC8[Cancel Ticket]
+    UC9[Get Refund]
+    UC10[Create Event]
+    UC11[Manage Event]
+    UC12[View Sales Report]
+    UC13[Scan Ticket at Venue]
+    UC14[Manage Users]
+  end
+  US --> UC1
+  US --> UC2
+  US --> UC3
+  US --> UC4
+  UC4 --> UC5
+  UC4 --> UC6
+  UC6 --> UC7
+  US --> UC8
+  UC8 --> UC9
+  OR --> UC10
+  OR --> UC11
+  OR --> UC12
+  AG --> UC13
+  AD --> UC14
+  AD --> UC12
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY -->
+  <div class="card" id="activity">
+    <div class="card-header"><h2>2. Activity Diagram <span>Activity</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[User Logs In]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Browse[Browse or Search Events]
+  Browse --> Select[Select Event]
+  Select --> Avail{Tickets Available?}
+  Avail -- No --> Wait[Join Waitlist]
+  Wait --> End([End])
+  Avail -- Yes --> Seat[Choose Seat and Category]
+  Seat --> Review[Review Booking]
+  Review --> Pay[Make Payment]
+  Pay --> PayOK{Payment OK?}
+  PayOK -- No --> Pay
+  PayOK -- Yes --> GenTicket[Generate E-Ticket with QR]
+  GenTicket --> Notify[Send via Email and SMS]
+  Notify --> Download[User Downloads Ticket]
+  Download --> Scan[Scan at Venue Entry]
+  Scan --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE -->
+  <div class="card" id="sequence">
+    <div class="card-header"><h2>3. Sequence Diagram <span>Sequence</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor User
+  participant WebApp
+  participant EventService
+  participant BookingService
+  participant PaymentService
+  participant TicketService
+  participant NotificationService
+
+  User->>WebApp: Login
+  WebApp-->>User: Dashboard
+
+  User->>WebApp: Search and Select Event
+  WebApp->>EventService: getEvent(eventId)
+  EventService-->>WebApp: eventInfo and seats
+  WebApp-->>User: Show Event Details
+
+  User->>WebApp: Book Ticket and Choose Seat
+  WebApp->>BookingService: createBooking(userId, eventId, seatId)
+  BookingService-->>WebApp: bookingId
+
+  WebApp->>PaymentService: initiatePayment(amount)
+  PaymentService-->>WebApp: Payment Success
+
+  WebApp->>BookingService: confirmBooking(bookingId)
+  BookingService->>TicketService: generateTicket(bookingId)
+  TicketService-->>BookingService: QR Ticket
+
+  BookingService->>NotificationService: sendTicket(userId, ticket)
+  NotificationService-->>User: Email and SMS with Ticket
+  WebApp-->>User: Booking Confirmed
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE -->
+  <div class="card" id="state">
+    <div class="card-header"><h2>4. State Machine Diagram <span>State Machine</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Initiated : User selects event
+
+  Initiated --> SeatSelected : Seat chosen
+  SeatSelected --> PendingPayment : Proceed to pay
+
+  PendingPayment --> PaymentFailed : Payment declined
+  PaymentFailed --> PendingPayment : Retry
+
+  PendingPayment --> Confirmed : Payment success
+
+  Confirmed --> Downloaded : User downloads ticket
+  Downloaded --> Used : Ticket scanned at venue
+
+  Confirmed --> CancelRequested : User cancels
+  CancelRequested --> Refunded : Refund processed
+
+  Used --> [*]
+  Refunded --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION -->
+  <div class="card" id="communication">
+    <div class="card-header"><h2>5. Communication Diagram <span>Communication</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  US["User"]
+  WEB["WebApp"]
+  ES["EventService"]
+  BS["BookingService"]
+  PS["PaymentService"]
+  TS["TicketService"]
+  NS["NotificationService"]
+  DB["Database"]
+
+  US  -- "1: login()" --> WEB
+  WEB -- "2: authenticate()" --> DB
+  DB  -- "3: userInfo" --> WEB
+
+  US  -- "4: searchEvent()" --> WEB
+  WEB -- "5: getEvent()" --> ES
+  ES  -- "6: fetchFromDB()" --> DB
+  DB  -- "7: eventData" --> ES
+  ES  -- "8: eventInfo" --> WEB
+  WEB -- "9: showEvent" --> US
+
+  US  -- "10: bookTicket()" --> WEB
+  WEB -- "11: createBooking()" --> BS
+  BS  -- "12: saveBooking(PENDING)" --> DB
+  WEB -- "13: initiatePayment()" --> PS
+  PS  -- "14: paymentSuccess" --> WEB
+  WEB -- "15: confirmBooking()" --> BS
+  BS  -- "16: generateTicket()" --> TS
+  TS  -- "17: QR ticket" --> BS
+  BS  -- "18: saveTicket()" --> DB
+  BS  -- "19: sendTicket()" --> NS
+  NS  -- "20: email and SMS" --> US
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS -->
+  <div class="card" id="class">
+    <div class="card-header"><h2>6. Class Diagram <span>Class</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String phone
+    +login()
+    +register()
+  }
+
+  class Organizer {
+    +String orgName
+    +createEvent()
+    +manageEvent()
+    +viewSales()
+  }
+
+  class Admin {
+    +manageUsers()
+    +generateReport()
+  }
+
+  class Event {
+    +int eventId
+    +String title
+    +String venue
+    +DateTime eventDate
+    +String category
+    +int totalSeats
+    +int availableSeats
+    +publish()
+    +cancel()
+  }
+
+  class Seat {
+    +int seatId
+    +String seatNo
+    +String category
+    +float price
+    +boolean isAvailable
+    +reserve()
+    +release()
+  }
+
+  class Booking {
+    +int bookingId
+    +DateTime bookingDate
+    +float totalAmount
+    +String status
+    +confirm()
+    +cancel()
+  }
+
+  class Ticket {
+    +int ticketId
+    +String ticketNo
+    +String qrCode
+    +boolean isUsed
+    +generate()
+    +validate()
+  }
+
+  class Payment {
+    +int paymentId
+    +float amount
+    +String method
+    +String status
+    +process()
+    +refund()
+  }
+
+  class Refund {
+    +int refundId
+    +float amount
+    +String status
+    +Date processedOn
+    +process()
+  }
+
+  User <|-- Organizer
+  User <|-- Admin
+
+  User "1" --> "0..*" Booking : makes
+  Booking "0..*" --> "1" Event : for
+  Booking "1" --> "1..*" Seat : includes
+  Booking "1" --> "1" Payment : paid via
+  Booking "1" --> "1" Ticket : generates
+  Booking "1" --> "0..1" Refund : has
+  Event "1" --> "1..*" Seat : contains
+  Organizer "1" --> "0..*" Event : creates
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT -->
+  <div class="card" id="component">
+    <div class="card-header"><h2>7. Component Diagram <span>Component</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+    KIOSK[Venue Kiosk Scanner]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    EVENT[Event Service]
+    BOOK[Booking Service]
+    SEAT[Seat Service]
+    PAY[Payment Service]
+    TICKET[Ticket Service]
+    NOTIF[Notification Service]
+    REPORT[Report Service]
+  end
+
+  subgraph Data Layer
+    DB[(Main Database)]
+    CACHE[(Redis Cache)]
+    QR[(QR Code Store)]
+  end
+
+  subgraph External
+    PAYGATE[Payment Gateway]
+    EMAIL[Email Provider]
+    SMS[SMS Gateway]
+  end
+
+  WEB   --> AUTH
+  MOB   --> AUTH
+  WEB   --> EVENT
+  EVENT --> CACHE
+  WEB   --> BOOK
+  BOOK  --> SEAT
+  BOOK  --> PAY
+  PAY   --> PAYGATE
+  BOOK  --> TICKET
+  TICKET --> QR
+  BOOK  --> NOTIF
+  NOTIF --> EMAIL
+  NOTIF --> SMS
+  KIOSK --> TICKET
+  EVENT --> DB
+  BOOK  --> DB
+  SEAT  --> DB
+  PAY   --> DB
+  REPORT --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE -->
+  <div class="card" id="package">
+    <div class="card-header"><h2>8. Package Diagram <span>Package</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.eticket
+    subgraph controller
+      EC[EventController]
+      BC[BookingController]
+      TC[TicketController]
+      PC[PaymentController]
+      UC[UserController]
+    end
+
+    subgraph service
+      ES[EventService]
+      BS[BookingService]
+      TS[TicketService]
+      PS[PaymentService]
+      SS[SeatService]
+      NS[NotificationService]
+      RS[ReportService]
+    end
+
+    subgraph model
+      EM[Event]
+      BM[Booking]
+      TM[Ticket]
+      SM[Seat]
+      PM[Payment]
+      RM[Refund]
+      UM[User]
+    end
+
+    subgraph repository
+      ER[EventRepo]
+      BR[BookingRepo]
+      TR[TicketRepo]
+      SR[SeatRepo]
+      UR[UserRepo]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      QRUtil[QRCodeUtil]
+      EmailUtil[EmailUtil]
+      PDFUtil[PDFUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT -->
+  <div class="card" id="deployment">
+    <div class="card-header"><h2>9. Deployment Diagram <span>Deployment</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+    Scanner[Venue QR Scanner]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge
+      CDN[CDN CloudFront]
+      LB[Load Balancer NGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1 Node.js]
+      APP2[App Server 2 Node.js]
+    end
+
+    subgraph Microservices
+      SVC1[Event Service]
+      SVC2[Booking Service]
+      SVC3[Ticket Service]
+      SVC4[Payment Service]
+      SVC5[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL Primary)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis Cache)]
+      S3[(S3 QR and Ticket Storage)]
+    end
+  end
+
+  subgraph External Services
+    PAYAPI[Stripe Payment API]
+    EMAILAPI[SendGrid Email]
+    SMSAPI[Twilio SMS]
+  end
+
+  Browser  --> CDN
+  Mobile   --> CDN
+  CDN --> LB
+  Scanner  --> SVC3
+  LB  --> APP1
+  LB  --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP2 --> SVC3
+  APP2 --> SVC4
+  APP2 --> SVC5
+  SVC1 --> REDIS
+  SVC3 --> S3
+  SVC4 --> PAYAPI
+  SVC5 --> EMAILAPI
+  SVC5 --> SMSAPI
+  SVC1 --> DB
+  SVC2 --> DB
+  SVC3 --> DB
+  SVC4 --> DB
+  DB   --> REPLICA
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">E-Ticketing System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

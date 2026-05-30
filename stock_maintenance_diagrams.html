@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Maintenance System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Stock Maintenance System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Stock Maintenance System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/stock_maintenance_diagrams.html" />
+  <meta property="og:title" content="Stock Maintenance System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Stock Maintenance System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/stock_maintenance_diagrams.html" />
+  <meta property="twitter:title" content="Stock Maintenance System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Stock Maintenance System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/stock_maintenance_diagrams.html" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #13161e;
+    --card: #1a1e2a;
+    --border: #252b3b;
+    --accent: #4f8ef7;
+    --accent2: #a78bfa;
+    --green: #34d399;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --label: #94a3b8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 48px 40px 32px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, #0d0f14 0%, #131a2e 100%);
+  }
+
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #4f8ef7, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  header p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .badge {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--label);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .badge:hover, .badge.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(79,142,247,0.08);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .diagram-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .diagram-card:hover {
+    border-color: #2e3a55;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .card-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: rgba(79,142,247,0.1);
+    border: 1px solid rgba(79,142,247,0.25);
+    border-radius: 6px;
+    padding: 3px 8px;
+    min-width: 32px;
+    text-align: center;
+  }
+
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .card-type {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .card-body {
+    padding: 28px 24px;
+    overflow-x: auto;
+  }
+
+  .mermaid {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Stock Maintenance System</h1>
+  <p>9 UML Diagrams — Use Case · Activity · Sequence · State Machine · Communication · Class · Component · Package · Deployment</p>
+  <div class="badge-row">
+    <span class="badge">Use Case</span>
+    <span class="badge">Activity</span>
+    <span class="badge">Sequence</span>
+    <span class="badge">State Machine</span>
+    <span class="badge">Communication</span>
+    <span class="badge">Class</span>
+    <span class="badge">Component</span>
+    <span class="badge">Package</span>
+    <span class="badge">Deployment</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- 1. Use Case -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">01</span>
+      <span class="card-title">Use Case Diagram</span>
+      <span class="card-type">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart LR
+  Admin(["👤 Admin"])
+  Manager(["👤 Manager"])
+  Supplier(["👤 Supplier"])
+
+  Admin --> UC1["Add Product"]
+  Admin --> UC2["Update Stock"]
+  Admin --> UC3["Delete Product"]
+  Admin --> UC4["Generate Report"]
+  Manager --> UC2
+  Manager --> UC4
+  Manager --> UC5["View Stock"]
+  Manager --> UC6["Create Purchase Order"]
+  Supplier --> UC7["Receive Purchase Order"]
+  Supplier --> UC8["Deliver Stock"]
+  UC2 --> UC9["Send Low Stock Alert"]
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Activity -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">02</span>
+      <span class="card-title">Activity Diagram</span>
+      <span class="card-type">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  A([Start]) --> B[Login]
+  B --> C{Valid User?}
+  C -- No --> B
+  C -- Yes --> D[View Dashboard]
+  D --> E{Action?}
+  E --> F[Add Product]
+  E --> G[Update Stock]
+  E --> H[Generate Report]
+  F --> I[Enter Product Details]
+  I --> J[Save to Database]
+  G --> K[Select Product]
+  K --> L[Modify Quantity]
+  L --> M{Stock Low?}
+  M -- Yes --> N[Send Alert]
+  M -- No --> O[Update Record]
+  N --> O
+  H --> P[Select Report Type]
+  P --> Q[Display Report]
+  J --> R([End])
+  O --> R
+  Q --> R
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Sequence -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">03</span>
+      <span class="card-title">Sequence Diagram</span>
+      <span class="card-type">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor User
+  participant UI as Web UI
+  participant App as App Server
+  participant DB as Database
+  participant Notif as Notification
+
+  User->>UI: Login
+  UI->>App: Authenticate
+  App->>DB: Verify Credentials
+  DB-->>App: Valid
+  App-->>UI: Dashboard
+
+  User->>UI: Update Stock
+  UI->>App: Send Stock Update
+  App->>DB: Update Quantity
+  DB-->>App: Updated
+  App->>App: Check Threshold
+  alt Stock Low
+    App->>Notif: Send Low Stock Alert
+    Notif-->>User: Email/SMS Alert
+  end
+  App-->>UI: Success Message
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. State Machine -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">04</span>
+      <span class="card-title">State Machine Diagram</span>
+      <span class="card-type">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Available : Product Added
+
+  Available --> LowStock : Quantity < Threshold
+  LowStock --> Available : Stock Replenished
+  Available --> OutOfStock : Quantity = 0
+  LowStock --> OutOfStock : Quantity = 0
+  OutOfStock --> Available : Stock Replenished
+
+  Available --> OnOrder : Purchase Order Created
+  OnOrder --> Available : Delivery Received
+
+  Available --> Discontinued : Admin Discontinues
+  Discontinued --> [*] : Product Removed
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Communication -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">05</span>
+      <span class="card-title">Communication Diagram</span>
+      <span class="card-type">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart LR
+  U["👤 User"] -- "1: Login Request" --> UI["UI Layer"]
+  UI -- "2: Authenticate" --> Auth["Auth Module"]
+  Auth -- "3: Query User" --> DB[("Database")]
+  DB -- "4: Return Data" --> Auth
+  Auth -- "5: Token" --> UI
+  UI -- "6: Update Stock" --> StockMgr["Stock Manager"]
+  StockMgr -- "7: Write Record" --> DB
+  StockMgr -- "8: Check Level" --> Alert["Alert Module"]
+  Alert -- "9: Notify" --> U
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Class -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">06</span>
+      <span class="card-title">Class Diagram</span>
+      <span class="card-type">Structural</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String role
+    +login()
+    +logout()
+  }
+
+  class Product {
+    +int productId
+    +String name
+    +String category
+    +float price
+    +getDetails()
+  }
+
+  class Stock {
+    +int stockId
+    +int quantity
+    +int threshold
+    +updateQuantity()
+    +isLow() bool
+  }
+
+  class PurchaseOrder {
+    +int orderId
+    +Date orderDate
+    +String status
+    +create()
+    +approve()
+  }
+
+  class Supplier {
+    +int supplierId
+    +String name
+    +String contact
+    +deliver()
+  }
+
+  class Report {
+    +int reportId
+    +String type
+    +Date generatedOn
+    +generate()
+  }
+
+  User "1" --> "many" PurchaseOrder : creates
+  PurchaseOrder "many" --> "1" Supplier : sentTo
+  Product "1" --> "1" Stock : has
+  PurchaseOrder "many" --> "many" Product : contains
+  User "1" --> "many" Report : generates
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Component -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">07</span>
+      <span class="card-title">Component Diagram</span>
+      <span class="card-type">Structural</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  subgraph Frontend["🖥 Frontend"]
+    UI["Web UI"]
+  end
+
+  subgraph Backend["⚙️ Backend"]
+    Auth["Auth Service"]
+    StockSvc["Stock Service"]
+    OrderSvc["Order Service"]
+    ReportSvc["Report Service"]
+    AlertSvc["Alert Service"]
+  end
+
+  subgraph DataLayer["🗄 Data Layer"]
+    DB[("MySQL DB")]
+    Cache["Redis Cache"]
+  end
+
+  subgraph External["🌐 External"]
+    Email["Email Service"]
+    SMS["SMS Gateway"]
+  end
+
+  UI --> Auth
+  UI --> StockSvc
+  UI --> OrderSvc
+  UI --> ReportSvc
+  StockSvc --> AlertSvc
+  StockSvc --> DB
+  StockSvc --> Cache
+  OrderSvc --> DB
+  ReportSvc --> DB
+  Auth --> DB
+  AlertSvc --> Email
+  AlertSvc --> SMS
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Package -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">08</span>
+      <span class="card-title">Package Diagram</span>
+      <span class="card-type">Structural</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  subgraph SMS["com.stock.system"]
+    subgraph UI_Pkg["ui"]
+      Dashboard["Dashboard"]
+      ProductView["ProductView"]
+      OrderView["OrderView"]
+    end
+
+    subgraph Service_Pkg["service"]
+      AuthService["AuthService"]
+      StockService["StockService"]
+      OrderService["OrderService"]
+      ReportService["ReportService"]
+    end
+
+    subgraph Model_Pkg["model"]
+      UserModel["User"]
+      ProductModel["Product"]
+      StockModel["Stock"]
+      OrderModel["PurchaseOrder"]
+    end
+
+    subgraph Repo_Pkg["repository"]
+      UserRepo["UserRepository"]
+      StockRepo["StockRepository"]
+      OrderRepo["OrderRepository"]
+    end
+
+    subgraph Util_Pkg["util"]
+      AlertUtil["AlertUtil"]
+      ReportUtil["ReportUtil"]
+    end
+  end
+
+  UI_Pkg --> Service_Pkg
+  Service_Pkg --> Model_Pkg
+  Service_Pkg --> Repo_Pkg
+  Service_Pkg --> Util_Pkg
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Deployment -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-num">09</span>
+      <span class="card-title">Deployment Diagram</span>
+      <span class="card-type">Structural</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  subgraph Client["💻 Client Device"]
+    Browser["Web Browser"]
+  end
+
+  subgraph WebServer["🌐 Web Server (Nginx)"]
+    StaticFiles["Static Files (HTML/CSS/JS)"]
+  end
+
+  subgraph AppServer["⚙️ Application Server (Node.js)"]
+    AppCode["App Services"]
+    SessionMgr["Session Manager"]
+  end
+
+  subgraph DBServer["🗄 Database Server"]
+    MySQL[("MySQL Database")]
+    Redis[("Redis Cache")]
+  end
+
+  subgraph Notification["📬 Notification Server"]
+    EmailSvc["Email Service"]
+    SMSSvc["SMS Gateway"]
+  end
+
+  Browser -- "HTTPS" --> StaticFiles
+  Browser -- "REST API" --> AppCode
+  AppCode --> SessionMgr
+  AppCode -- "SQL" --> MySQL
+  AppCode -- "Cache" --> Redis
+  AppCode --> EmailSvc
+  AppCode --> SMSSvc
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #a0aec0; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 40px;">Stock Maintenance System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #63b3ed; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      background: '#1a1e2a',
+      primaryColor: '#1e2a45',
+      primaryTextColor: '#e2e8f0',
+      primaryBorderColor: '#4f8ef7',
+      lineColor: '#64748b',
+      secondaryColor: '#252b3b',
+      tertiaryColor: '#13161e',
+      edgeLabelBackground: '#1a1e2a',
+      fontFamily: 'DM Sans, sans-serif',
+      fontSize: '13px'
+    },
+    flowchart: { curve: 'basis', padding: 20 },
+    sequence: { actorFontFamily: 'DM Mono', noteFontFamily: 'DM Sans' }
+  });
+</script>
+</body>
+</html>

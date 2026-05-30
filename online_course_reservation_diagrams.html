@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Course Reservation System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Online Course Reservation System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Online Course Reservation System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online_course_reservation_diagrams.html" />
+  <meta property="og:title" content="Online Course Reservation System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Online Course Reservation System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online_course_reservation_diagrams.html" />
+  <meta property="twitter:title" content="Online Course Reservation System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Online Course Reservation System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online_course_reservation_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f0ff; color: #2d3748; }
+    header {
+      background: linear-gradient(135deg, #2d0060, #6b21a8);
+      color: white; text-align: center; padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+    nav {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; padding: 16px 20px; background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1); position: sticky; top: 0; z-index: 100;
+    }
+    nav a {
+      text-decoration: none; background: #f3e8ff; color: #6b21a8;
+      border: 1px solid #d8b4fe; padding: 6px 14px; border-radius: 20px;
+      font-size: 0.82rem; font-weight: 600; transition: background .2s;
+    }
+    nav a:hover { background: #6b21a8; color: #fff; }
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+    .card {
+      background: #fff; border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08); margin-bottom: 40px; overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #6b21a8, #a855f7);
+      color: white; padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block; background: rgba(255,255,255,.25);
+      border-radius: 12px; padding: 2px 10px; font-size: .75rem;
+      margin-left: 10px; vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+    footer { text-align: center; padding: 20px; font-size: .82rem; color: #718096; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Online Course Reservation System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE -->
+  <div class="card" id="usecase">
+    <div class="card-header"><h2>1. Use Case Diagram <span>Use Case</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    ST(("Student"))
+    IN(("Instructor"))
+    AD(("Admin"))
+  end
+
+  subgraph Online Course Reservation System
+    UC1[Register and Login]
+    UC2[Browse Courses]
+    UC3[Search Course]
+    UC4[View Course Details]
+    UC5[Reserve Course]
+    UC6[Make Payment]
+    UC7[View Enrolled Courses]
+    UC8[Watch Lectures]
+    UC9[Download Materials]
+    UC10[Submit Assignment]
+    UC11[View Certificate]
+    UC12[Rate and Review]
+    UC13[Create Course]
+    UC14[Upload Lectures]
+    UC15[Grade Assignment]
+    UC16[Manage Users]
+    UC17[Generate Report]
+    UC18[Manage Categories]
+  end
+
+  ST --> UC1
+  ST --> UC2
+  ST --> UC3
+  ST --> UC4
+  ST --> UC5
+  UC5 --> UC6
+  ST --> UC7
+  ST --> UC8
+  ST --> UC9
+  ST --> UC10
+  ST --> UC11
+  ST --> UC12
+  IN --> UC13
+  IN --> UC14
+  IN --> UC15
+  AD --> UC16
+  AD --> UC17
+  AD --> UC18
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY -->
+  <div class="card" id="activity">
+    <div class="card-header"><h2>2. Activity Diagram <span>Activity</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Student Logs In]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Browse[Browse or Search Courses]
+  Browse --> Select[Select Course]
+  Select --> View[View Course Details]
+  View --> Decide{Reserve Course?}
+  Decide -- No --> Browse
+  Decide -- Yes --> Pay[Make Payment]
+  Pay --> PayOK{Payment OK?}
+  PayOK -- No --> Pay
+  PayOK -- Yes --> Enroll[Enrollment Confirmed]
+  Enroll --> Notify[Send Confirmation Email]
+  Notify --> Watch[Watch Lectures]
+  Watch --> Submit[Submit Assignments]
+  Submit --> Grade{Graded by Instructor?}
+  Grade -- No --> Submit
+  Grade -- Yes --> Progress{Course Completed?}
+  Progress -- No --> Watch
+  Progress -- Yes --> Cert[Download Certificate]
+  Cert --> Review[Rate and Review Course]
+  Review --> End([End])
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE -->
+  <div class="card" id="sequence">
+    <div class="card-header"><h2>3. Sequence Diagram <span>Sequence</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Student
+  participant WebApp
+  participant CourseService
+  participant PaymentService
+  participant EnrollService
+  participant NotificationService
+  actor Instructor
+
+  Student->>WebApp: Login
+  WebApp-->>Student: Dashboard
+
+  Student->>WebApp: Search and Select Course
+  WebApp->>CourseService: getCourseDetails(courseId)
+  CourseService-->>WebApp: courseInfo
+  WebApp-->>Student: Show Course Details
+
+  Student->>WebApp: Reserve Course
+  WebApp->>PaymentService: initiatePayment(amount)
+  PaymentService-->>WebApp: Payment Success
+
+  WebApp->>EnrollService: enrollStudent(studentId, courseId)
+  EnrollService-->>WebApp: Enrollment Confirmed
+  WebApp->>NotificationService: sendConfirmation(studentId)
+  NotificationService-->>Student: Confirmation Email
+
+  Student->>WebApp: Watch Lecture
+  WebApp->>CourseService: getLecture(lectureId)
+  CourseService-->>WebApp: lectureContent
+  WebApp-->>Student: Play Lecture
+
+  Student->>WebApp: Submit Assignment
+  WebApp->>CourseService: saveAssignment(studentId, file)
+  CourseService-->>WebApp: Submitted
+
+  Instructor->>WebApp: Grade Assignment
+  WebApp->>CourseService: saveGrade(studentId, marks)
+  CourseService->>NotificationService: notifyStudent(studentId)
+  NotificationService-->>Student: Grade Notification
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE -->
+  <div class="card" id="state">
+    <div class="card-header"><h2>4. State Machine Diagram <span>State Machine</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Available : Instructor publishes course
+
+  Available --> Reserved : Student reserves
+  Reserved --> PaymentPending : Proceed to pay
+  PaymentPending --> PaymentFailed : Payment declined
+  PaymentFailed --> PaymentPending : Retry
+
+  PaymentPending --> Enrolled : Payment success
+
+  Enrolled --> InProgress : Student starts lecture
+  InProgress --> OnHold : Student pauses
+
+  OnHold --> InProgress : Student resumes
+
+  InProgress --> Completed : All lectures done
+  Completed --> Certified : Certificate issued
+
+  Enrolled --> Cancelled : Student cancels
+  Cancelled --> Refunded : Refund processed
+
+  Certified --> [*]
+  Refunded --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION -->
+  <div class="card" id="communication">
+    <div class="card-header"><h2>5. Communication Diagram <span>Communication</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  ST["Student"]
+  WEB["WebApp"]
+  CS["CourseService"]
+  PS["PaymentService"]
+  ES["EnrollService"]
+  NS["NotificationService"]
+  IN["Instructor"]
+  DB["Database"]
+
+  ST  -- "1: login()" --> WEB
+  WEB -- "2: authenticate()" --> DB
+  DB  -- "3: userInfo" --> WEB
+
+  ST  -- "4: searchCourse()" --> WEB
+  WEB -- "5: getCourses()" --> CS
+  CS  -- "6: fetchDB()" --> DB
+  DB  -- "7: courseList" --> CS
+  CS  -- "8: results" --> WEB
+
+  ST  -- "9: reserveCourse()" --> WEB
+  WEB -- "10: initiatePayment()" --> PS
+  PS  -- "11: paymentSuccess" --> WEB
+  WEB -- "12: enrollStudent()" --> ES
+  ES  -- "13: saveEnrollment()" --> DB
+  ES  -- "14: sendConfirmation()" --> NS
+  NS  -- "15: email to student" --> ST
+
+  ST  -- "16: watchLecture()" --> WEB
+  WEB -- "17: getLecture()" --> CS
+  CS  -- "18: streamContent()" --> DB
+
+  ST  -- "19: submitAssignment()" --> WEB
+  WEB -- "20: saveAssignment()" --> CS
+  CS  -- "21: storeFile()" --> DB
+
+  IN  -- "22: gradeAssignment()" --> WEB
+  WEB -- "23: saveGrade()" --> CS
+  CS  -- "24: notifyStudent()" --> NS
+  NS  -- "25: grade email" --> ST
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS -->
+  <div class="card" id="class">
+    <div class="card-header"><h2>6. Class Diagram <span>Class</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +register()
+  }
+
+  class Student {
+    +String studentId
+    +browseCourses()
+    +reserveCourse()
+    +watchLecture()
+    +submitAssignment()
+    +viewCertificate()
+  }
+
+  class Instructor {
+    +String instructorId
+    +String expertise
+    +createCourse()
+    +uploadLecture()
+    +gradeAssignment()
+  }
+
+  class Admin {
+    +manageUsers()
+    +manageCategories()
+    +generateReport()
+  }
+
+  class Course {
+    +int courseId
+    +String title
+    +String description
+    +float price
+    +String level
+    +String status
+    +int duration
+    +publish()
+    +unpublish()
+  }
+
+  class Lecture {
+    +int lectureId
+    +String title
+    +String videoURL
+    +int duration
+    +String material
+    +upload()
+    +stream()
+  }
+
+  class Enrollment {
+    +int enrollId
+    +DateTime enrollDate
+    +float progress
+    +String status
+    +confirm()
+    +cancel()
+  }
+
+  class Assignment {
+    +int assignId
+    +String title
+    +String fileURL
+    +DateTime submittedOn
+    +float marks
+    +submit()
+    +grade()
+  }
+
+  class Payment {
+    +int paymentId
+    +float amount
+    +String method
+    +String status
+    +process()
+    +refund()
+  }
+
+  class Certificate {
+    +int certId
+    +String certNo
+    +Date issueDate
+    +generate()
+    +download()
+  }
+
+  class Review {
+    +int reviewId
+    +int rating
+    +String comment
+    +submit()
+  }
+
+  class Category {
+    +int categoryId
+    +String name
+  }
+
+  User <|-- Student
+  User <|-- Instructor
+  User <|-- Admin
+
+  Instructor "1" --> "0..*" Course : creates
+  Course "1" --> "0..*" Lecture : has
+  Course "0..*" --> "1" Category : belongs to
+  Student "1" --> "0..*" Enrollment : makes
+  Enrollment "0..*" --> "1" Course : for
+  Enrollment "1" --> "1" Payment : paid via
+  Enrollment "1" --> "0..1" Certificate : earns
+  Student "1" --> "0..*" Assignment : submits
+  Assignment "0..*" --> "1" Course : for
+  Student "1" --> "0..*" Review : writes
+  Review "0..*" --> "1" Course : about
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT -->
+  <div class="card" id="component">
+    <div class="card-header"><h2>7. Component Diagram <span>Component</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    COURSE[Course Service]
+    ENROLL[Enrollment Service]
+    PAY[Payment Service]
+    LECTURE[Lecture Service]
+    ASSIGN[Assignment Service]
+    CERT[Certificate Service]
+    NOTIF[Notification Service]
+    SEARCH[Search Service]
+    REPORT[Report Service]
+  end
+
+  subgraph Data Layer
+    DB[(Main Database)]
+    CACHE[(Redis Cache)]
+    STORAGE[(File Storage S3)]
+  end
+
+  subgraph External
+    PAYGATE[Payment Gateway]
+    EMAIL[Email Provider]
+    VIDEO[Video CDN]
+  end
+
+  WEB    --> AUTH
+  MOB    --> AUTH
+  WEB    --> SEARCH
+  SEARCH --> CACHE
+  WEB    --> COURSE
+  WEB    --> ENROLL
+  ENROLL --> PAY
+  PAY    --> PAYGATE
+  WEB    --> LECTURE
+  LECTURE --> VIDEO
+  LECTURE --> STORAGE
+  WEB    --> ASSIGN
+  ASSIGN --> STORAGE
+  ENROLL --> CERT
+  CERT   --> STORAGE
+  ENROLL --> NOTIF
+  ASSIGN --> NOTIF
+  NOTIF  --> EMAIL
+  COURSE --> DB
+  ENROLL --> DB
+  ASSIGN --> DB
+  AUTH   --> DB
+  REPORT --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE -->
+  <div class="card" id="package">
+    <div class="card-header"><h2>8. Package Diagram <span>Package</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.coursereservation
+    subgraph controller
+      CC[CourseController]
+      EC[EnrollController]
+      LC[LectureController]
+      AC[AssignController]
+      UC[UserController]
+      CTC[CertController]
+    end
+
+    subgraph service
+      CS[CourseService]
+      ES[EnrollService]
+      LS[LectureService]
+      AS[AssignService]
+      PS[PaymentService]
+      NS[NotificationService]
+      CTS[CertService]
+      SS[SearchService]
+    end
+
+    subgraph model
+      CM[Course]
+      EM[Enrollment]
+      LM[Lecture]
+      AM[Assignment]
+      PM[Payment]
+      CTM[Certificate]
+      UM[User]
+      RM[Review]
+      CAT[Category]
+    end
+
+    subgraph repository
+      CR[CourseRepo]
+      ER[EnrollRepo]
+      LR[LectureRepo]
+      AR[AssignRepo]
+      UR[UserRepo]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      EmailUtil[EmailUtil]
+      FileUtil[FileUtil]
+      PDFUtil[PDFUtil]
+      VideoUtil[VideoUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT -->
+  <div class="card" id="deployment">
+    <div class="card-header"><h2>9. Deployment Diagram <span>Deployment</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge
+      CDN[CDN CloudFront]
+      LB[Load Balancer NGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1 Spring Boot]
+      APP2[App Server 2 Spring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Course Service]
+      SVC2[Enrollment Service]
+      SVC3[Lecture Service]
+      SVC4[Assignment Service]
+      SVC5[Certificate Service]
+      SVC6[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL Primary)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis Cache)]
+      S3[(S3 Videos and Files)]
+    end
+  end
+
+  subgraph External Services
+    PAYAPI[Stripe Payment API]
+    EMAILAPI[SendGrid Email]
+    VIDEOCDN[Video CDN Vimeo]
+  end
+
+  Browser --> CDN
+  Mobile  --> CDN
+  CDN --> LB
+  LB  --> APP1
+  LB  --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP1 --> SVC3
+  APP2 --> SVC4
+  APP2 --> SVC5
+  APP2 --> SVC6
+  SVC3 --> VIDEOCDN
+  SVC3 --> S3
+  SVC4 --> S3
+  SVC5 --> S3
+  SVC2 --> PAYAPI
+  SVC6 --> EMAILAPI
+  SVC1 --> REDIS
+  SVC1 --> DB
+  SVC2 --> DB
+  SVC4 --> DB
+  SVC5 --> DB
+  DB   --> REPLICA
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Online Course Reservation System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

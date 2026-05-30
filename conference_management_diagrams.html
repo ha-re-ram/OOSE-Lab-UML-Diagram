@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conference Management System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Conference Management System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Conference Management System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/conference_management_diagrams.html" />
+  <meta property="og:title" content="Conference Management System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Conference Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/conference_management_diagrams.html" />
+  <meta property="twitter:title" content="Conference Management System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Conference Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/conference_management_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdf4ff;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #4a0072, #9c27b0);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #f3e5f5;
+      color: #7b1fa2;
+      border: 1px solid #ce93d8;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #7b1fa2; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #7b1fa2, #ba68c8);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Conference Management System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    AT(("Attendee"))
+    AU(("Author"))
+    RV(("Reviewer"))
+    OG(("Organizer"))
+    AD(("Admin"))
+  end
+
+  subgraph Conference Management System
+    UC1[Register / Login]
+    UC2[Register for Conference]
+    UC3[Submit Paper]
+    UC4[Track Submission]
+    UC5[Review Paper]
+    UC6[Accept or Reject Paper]
+    UC7[Create Conference]
+    UC8[Manage Schedule]
+    UC9[Assign Reviewers]
+    UC10[Send Notifications]
+    UC11[Make Payment]
+    UC12[Generate Report]
+    UC13[Download Certificate]
+  end
+
+  AT --> UC1
+  AT --> UC2
+  UC2 --> UC11
+  AT --> UC13
+  AU --> UC1
+  AU --> UC3
+  AU --> UC4
+  RV --> UC5
+  RV --> UC6
+  OG --> UC7
+  OG --> UC8
+  OG --> UC9
+  OG --> UC10
+  AD --> UC12
+  AD --> UC1
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Login / Register]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Role{User Role?}
+
+  Role -- Attendee --> Reg[Browse Conferences]
+  Reg --> RegConf[Register for Conference]
+  RegConf --> Pay[Make Payment]
+  Pay --> PayOK{Payment OK?}
+  PayOK -- No --> Pay
+  PayOK -- Yes --> Ticket[Get Confirmation & Ticket]
+  Ticket --> Cert[Download Certificate After Event]
+  Cert --> End([End])
+
+  Role -- Author --> Submit[Submit Research Paper]
+  Submit --> Review[Paper Assigned to Reviewer]
+  Review --> Decision{Review Decision}
+  Decision -- Rejected --> Revise[Revise & Resubmit]
+  Revise --> Review
+  Decision -- Accepted --> Notify[Notify Author]
+  Notify --> Present[Present at Conference]
+  Present --> End
+
+  Role -- Organizer --> Create[Create Conference]
+  Create --> Schedule[Set Schedule & Sessions]
+  Schedule --> Assign[Assign Reviewers]
+  Assign --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Author
+  participant WebApp
+  participant PaperService
+  participant ReviewService
+  participant NotificationService
+  actor Reviewer
+  actor Organizer
+
+  Author->>WebApp: Login & Submit Paper
+  WebApp->>PaperService: submitPaper(authorId, paperDetails)
+  PaperService-->>WebApp: submissionId
+  WebApp-->>Author: Submission Confirmed
+
+  Organizer->>WebApp: Assign Reviewer
+  WebApp->>ReviewService: assignReviewer(paperId, reviewerId)
+  ReviewService->>NotificationService: notifyReviewer(paperId)
+  NotificationService-->>Reviewer: Review Request Email
+
+  Reviewer->>WebApp: Submit Review
+  WebApp->>ReviewService: submitReview(paperId, feedback, decision)
+  ReviewService->>PaperService: updateStatus(ACCEPTED / REJECTED)
+  PaperService->>NotificationService: notifyAuthor(decision)
+  NotificationService-->>Author: Decision Email
+
+  actor Attendee
+  Attendee->>WebApp: Register for Conference
+  WebApp->>PaperService: registerAttendee(attendeeId, confId)
+  WebApp-->>Attendee: Registration & Ticket Confirmed
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Submitted : Author submits paper
+
+  Submitted --> UnderReview : Reviewer assigned
+  UnderReview --> Reviewed : Review submitted
+
+  Reviewed --> Accepted : Decision accepted
+  Reviewed --> Rejected : Decision rejected
+  Reviewed --> RevisionNeeded : Minor changes needed
+
+  RevisionNeeded --> Submitted : Author resubmits
+
+  Accepted --> Scheduled : Added to conference schedule
+  Scheduled --> Presented : Presented at conference
+  Presented --> [*]
+
+  Rejected --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  AU["Author"]
+  WEB["WebApp"]
+  PS["PaperService"]
+  RS["ReviewService"]
+  NS["NotificationService"]
+  RV["Reviewer"]
+  OG["Organizer"]
+  DB["Database"]
+
+  AU  -- "1: login()" --> WEB
+  WEB -- "2: authenticate()" --> DB
+
+  AU  -- "3: submitPaper()" --> WEB
+  WEB -- "4: savePaper()" --> PS
+  PS  -- "5: storeInDB()" --> DB
+  PS  -- "6: confirmSubmission" --> WEB
+  WEB -- "7: showConfirmation" --> AU
+
+  OG  -- "8: assignReviewer()" --> WEB
+  WEB -- "9: setReviewer()" --> RS
+  RS  -- "10: updateDB()" --> DB
+  RS  -- "11: notifyReviewer()" --> NS
+  NS  -- "12: email to reviewer" --> RV
+
+  RV  -- "13: submitReview()" --> WEB
+  WEB -- "14: saveReview()" --> RS
+  RS  -- "15: updatePaperStatus()" --> PS
+  PS  -- "16: updateDB()" --> DB
+  PS  -- "17: notifyAuthor()" --> NS
+  NS  -- "18: decision email" --> AU
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +register()
+  }
+
+  class Attendee {
+    +registerConference()
+    +makePayment()
+    +downloadCertificate()
+  }
+
+  class Author {
+    +submitPaper()
+    +trackSubmission()
+    +revisePaper()
+  }
+
+  class Reviewer {
+    +reviewPaper()
+    +submitFeedback()
+  }
+
+  class Organizer {
+    +createConference()
+    +manageSchedule()
+    +assignReviewer()
+  }
+
+  class Conference {
+    +int confId
+    +String title
+    +String venue
+    +Date startDate
+    +Date endDate
+    +String status
+    +publish()
+    +cancel()
+  }
+
+  class Paper {
+    +int paperId
+    +String title
+    +String abstract
+    +String fileURL
+    +String status
+    +submit()
+    +withdraw()
+  }
+
+  class Review {
+    +int reviewId
+    +String feedback
+    +String decision
+    +int score
+    +submit()
+  }
+
+  class Registration {
+    +int regId
+    +DateTime regDate
+    +String status
+    +confirm()
+    +cancel()
+  }
+
+  class Payment {
+    +int paymentId
+    +float amount
+    +String status
+    +process()
+  }
+
+  class Session {
+    +int sessionId
+    +String topic
+    +DateTime time
+    +String hall
+  }
+
+  User <|-- Attendee
+  User <|-- Author
+  User <|-- Reviewer
+  User <|-- Organizer
+
+  Organizer "1" --> "0..*" Conference : creates
+  Conference "1" --> "0..*" Session : has
+  Author "1" --> "0..*" Paper : submits
+  Paper "0..*" --> "1" Conference : submitted to
+  Paper "1" --> "0..*" Review : receives
+  Review "0..*" --> "1" Reviewer : done by
+  Attendee "1" --> "0..*" Registration : makes
+  Registration "1" --> "1" Payment : paid via
+  Registration "0..*" --> "1" Conference : for
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    CONF[Conference Service]
+    PAPER[Paper Service]
+    REVIEW[Review Service]
+    REG[Registration Service]
+    PAY[Payment Service]
+    NOTIF[Notification Service]
+    CERT[Certificate Service]
+  end
+
+  subgraph Data Layer
+    DB[(Main Database)]
+    FILES[(File Storage\nPapers & Certs)]
+    CACHE[(Redis Cache)]
+  end
+
+  subgraph External
+    PAYGATE[Payment Gateway]
+    EMAIL[Email Provider]
+    SMS[SMS Gateway]
+  end
+
+  WEB   --> AUTH
+  MOB   --> AUTH
+  WEB   --> CONF
+  WEB   --> PAPER
+  PAPER --> FILES
+  WEB   --> REVIEW
+  WEB   --> REG
+  REG   --> PAY
+  PAY   --> PAYGATE
+  REG   --> NOTIF
+  PAPER --> NOTIF
+  REVIEW --> NOTIF
+  NOTIF --> EMAIL
+  NOTIF --> SMS
+  CERT  --> FILES
+  CONF  --> DB
+  PAPER --> DB
+  REVIEW --> DB
+  REG   --> DB
+  AUTH  --> CACHE
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.conference
+    subgraph controller
+      CC[ConferenceController]
+      PC[PaperController]
+      RVC[ReviewController]
+      RC[RegistrationController]
+      UC[UserController]
+    end
+
+    subgraph service
+      CS[ConferenceService]
+      PS[PaperService]
+      RVS[ReviewService]
+      RS[RegistrationService]
+      PAY[PaymentService]
+      NS[NotificationService]
+      CERTS[CertificateService]
+    end
+
+    subgraph model
+      CM[Conference]
+      PM[Paper]
+      RVM[Review]
+      RM[Registration]
+      UM[User]
+      SM[Session]
+      PAM[Payment]
+    end
+
+    subgraph repository
+      CR[ConferenceRepo]
+      PR[PaperRepo]
+      RVR[ReviewRepo]
+      RR[RegistrationRepo]
+      UR[UserRepo]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      EmailUtil[EmailUtil]
+      FileUtil[FileUtil]
+      PDFUtil[PDFUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge
+      CDN[CDN\nCloudFront]
+      LB[Load Balancer\nNGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1\nSpring Boot]
+      APP2[App Server 2\nSpring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Conference Service]
+      SVC2[Paper Service]
+      SVC3[Review Service]
+      SVC4[Registration Service]
+      SVC5[Notification Service]
+      SVC6[Certificate Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL\nPrimary DB)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis Cache)]
+      S3[(S3 Storage\nPapers & Certs)]
+    end
+  end
+
+  subgraph External Services
+    PAYAPI[Payment Gateway\nStripe]
+    EMAILAPI[SendGrid Email]
+    SMSAPI[Twilio SMS]
+  end
+
+  Browser --> CDN
+  Mobile  --> CDN
+  CDN --> LB
+  LB  --> APP1
+  LB  --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP2 --> SVC3
+  APP2 --> SVC4
+  APP2 --> SVC5
+  APP1 --> SVC6
+  SVC2 --> S3
+  SVC6 --> S3
+  SVC4 --> PAYAPI
+  SVC5 --> EMAILAPI
+  SVC5 --> SMSAPI
+  SVC1 --> DB
+  SVC2 --> DB
+  SVC3 --> DB
+  SVC4 --> DB
+  DB   --> REPLICA
+  SVC1 --> REDIS
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Conference Management System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

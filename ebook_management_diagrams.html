@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Book Management System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the E-Book Management System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="E-Book Management System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/ebook_management_diagrams.html" />
+  <meta property="og:title" content="E-Book Management System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the E-Book Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/ebook_management_diagrams.html" />
+  <meta property="twitter:title" content="E-Book Management System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the E-Book Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/ebook_management_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8f0;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #7b2d00, #dd6b20);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #fff3e0;
+      color: #dd6b20;
+      border: 1px solid #fbd38d;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #dd6b20; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #dd6b20, #f6ad55);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>E-Book Management System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    R(("Reader"))
+    A(("Admin"))
+    AU(("Author"))
+  end
+
+  subgraph E-Book Management System
+    UC1[Register / Login]
+    UC2[Search Book]
+    UC3[Browse Catalogue]
+    UC4[Purchase Book]
+    UC5[Download Book]
+    UC6[Read Online]
+    UC7[Write Review]
+    UC8[Upload Book]
+    UC9[Manage Books]
+    UC10[Manage Users]
+    UC11[View Reports]
+  end
+
+  R  --> UC1
+  R  --> UC2
+  R  --> UC3
+  R  --> UC4
+  UC4 --> UC5
+  R  --> UC6
+  R  --> UC7
+  AU --> UC1
+  AU --> UC8
+  AU --> UC9
+  A  --> UC9
+  A  --> UC10
+  A  --> UC11
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Login / Register]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Browse[Browse / Search Books]
+  Browse --> Select[Select a Book]
+  Select --> Preview[View Preview]
+  Preview --> Decision{Purchase?}
+  Decision -- No --> Browse
+  Decision -- Yes --> Cart[Add to Cart]
+  Cart --> Pay[Make Payment]
+  Pay --> PayStatus{Payment OK?}
+  PayStatus -- No --> Pay
+  PayStatus -- Yes --> Confirm[Confirm Purchase]
+  Confirm --> Choice{Read or Download?}
+  Choice -- Read Online --> Reader[Open Online Reader]
+  Choice -- Download --> Download[Download E-Book File]
+  Reader --> Review[Write Review]
+  Download --> Review
+  Review --> End([End])
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Reader
+  participant WebApp
+  participant BookService
+  participant PaymentService
+  participant DownloadService
+  participant NotificationService
+  participant Database
+
+  Reader->>WebApp: Search Book
+  WebApp->>BookService: searchBooks(keyword)
+  BookService->>Database: fetchBooks(keyword)
+  Database-->>BookService: bookList
+  BookService-->>WebApp: results
+  WebApp-->>Reader: Show Book List
+
+  Reader->>WebApp: Select & Purchase Book
+  WebApp->>PaymentService: initiatePayment(amount)
+  PaymentService-->>WebApp: Payment Success
+
+  WebApp->>BookService: createOrder(readerId, bookId)
+  BookService->>Database: saveOrder(CONFIRMED)
+  Database-->>BookService: orderId
+
+  WebApp->>DownloadService: generateDownloadLink(bookId)
+  DownloadService-->>WebApp: downloadURL
+
+  WebApp->>NotificationService: sendReceipt(email, downloadURL)
+  NotificationService-->>Reader: Email with Download Link
+  WebApp-->>Reader: Show Confirmation + Download
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Uploaded : Author uploads book
+
+  Uploaded --> UnderReview : Admin reviews
+  UnderReview --> Rejected : Fails review
+  UnderReview --> Published : Approved
+
+  Rejected --> Uploaded : Author re-uploads
+
+  Published --> Purchased : Reader buys
+  Purchased --> Downloading : Reader downloads
+  Purchased --> Reading : Reader reads online
+
+  Downloading --> Downloaded : Download complete
+  Reading --> Reviewed : Reader writes review
+
+  Downloaded --> Reviewed : Reader writes review
+  Reviewed --> [*]
+
+  Published --> Unpublished : Admin removes
+  Unpublished --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  RDR["Reader"]
+  WEB["WebApp"]
+  BS["BookService"]
+  PS["PaymentService"]
+  DS["DownloadService"]
+  NS["NotificationService"]
+  DB["Database"]
+
+  RDR -- "1: searchBook(keyword)" --> WEB
+  WEB -- "2: fetchBooks()" --> BS
+  BS  -- "3: query()" --> DB
+  DB  -- "4: bookList" --> BS
+  BS  -- "5: results" --> WEB
+  WEB -- "6: showResults" --> RDR
+
+  RDR -- "7: purchaseBook(bookId)" --> WEB
+  WEB -- "8: initiatePayment()" --> PS
+  PS  -- "9: paymentSuccess" --> WEB
+  WEB -- "10: saveOrder()" --> BS
+  BS  -- "11: storeOrder()" --> DB
+  WEB -- "12: generateLink()" --> DS
+  DS  -- "13: downloadURL" --> WEB
+  WEB -- "14: sendReceipt()" --> NS
+  NS  -- "15: email to reader" --> RDR
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +register()
+  }
+
+  class Reader {
+    +searchBook()
+    +purchaseBook()
+    +downloadBook()
+    +writeReview()
+  }
+
+  class Author {
+    +uploadBook()
+    +editBook()
+    +viewSales()
+  }
+
+  class Admin {
+    +approveBook()
+    +manageUsers()
+    +viewReports()
+  }
+
+  class Book {
+    +int bookId
+    +String title
+    +String genre
+    +float price
+    +String fileURL
+    +String status
+    +publish()
+    +unpublish()
+  }
+
+  class Order {
+    +int orderId
+    +DateTime orderDate
+    +float amount
+    +String status
+    +confirm()
+    +cancel()
+  }
+
+  class Review {
+    +int reviewId
+    +int rating
+    +String comment
+    +DateTime date
+    +submit()
+  }
+
+  class Payment {
+    +int paymentId
+    +float amount
+    +String method
+    +String status
+    +process()
+    +refund()
+  }
+
+  class Category {
+    +int categoryId
+    +String name
+    +String description
+  }
+
+  User <|-- Reader
+  User <|-- Author
+  User <|-- Admin
+  Author "1" --> "0..*" Book : writes
+  Book "1" --> "1" Category : belongs to
+  Reader "1" --> "0..*" Order : places
+  Order "1" --> "1" Book : contains
+  Order "1" --> "1" Payment : paid via
+  Reader "1" --> "0..*" Review : writes
+  Review "0..*" --> "1" Book : about
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    BOOK[Book Service]
+    ORDER[Order Service]
+    PAY[Payment Service]
+    DOWNLOAD[Download Service]
+    REVIEW[Review Service]
+    NOTIF[Notification Service]
+    SEARCH[Search Service]
+  end
+
+  subgraph Storage Layer
+    DB[(Main Database)]
+    FILES[(File Storage\nAWS S3)]
+    CACHE[(Redis Cache)]
+  end
+
+  subgraph External
+    PAYGATE[Payment Gateway]
+    EMAIL[Email Provider]
+  end
+
+  WEB --> AUTH
+  MOB --> AUTH
+  WEB --> BOOK
+  WEB --> ORDER
+  ORDER --> PAY
+  PAY --> PAYGATE
+  ORDER --> DOWNLOAD
+  DOWNLOAD --> FILES
+  BOOK --> SEARCH
+  SEARCH --> CACHE
+  BOOK --> REVIEW
+  ORDER --> NOTIF
+  NOTIF --> EMAIL
+  BOOK --> DB
+  ORDER --> DB
+  AUTH --> DB
+  REVIEW --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.ebook
+    subgraph controller
+      BC[BookController]
+      OC[OrderController]
+      UC[UserController]
+      RC[ReviewController]
+    end
+
+    subgraph service
+      BS[BookService]
+      OS[OrderService]
+      PS[PaymentService]
+      DS[DownloadService]
+      NS[NotificationService]
+      SS[SearchService]
+    end
+
+    subgraph model
+      BM[Book]
+      OM[Order]
+      UM[User]
+      RM[Review]
+      PM[Payment]
+      CM[Category]
+    end
+
+    subgraph repository
+      BR[BookRepository]
+      OR[OrderRepository]
+      UR[UserRepository]
+      RR[ReviewRepository]
+    end
+
+    subgraph util
+      JU[JWTUtil]
+      FU[FileUtil]
+      EU[EmailUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+  end
+
+  subgraph Cloud - AWS
+    subgraph Edge
+      CDN[CDN\nCloudFront]
+      LB[Load Balancer\nNGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1\nNode.js]
+      APP2[App Server 2\nNode.js]
+    end
+
+    subgraph Services
+      SRCH[Search Service\nElasticsearch]
+      DL[Download Service]
+      NOTIF[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL\nPrimary DB)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis Cache)]
+      S3[(S3 File Storage\nE-Book Files)]
+    end
+  end
+
+  subgraph External
+    PAYAPI[Payment Gateway\nStripe]
+    EMAILAPI[SendGrid Email]
+  end
+
+  Browser --> CDN
+  Mobile  --> CDN
+  CDN --> LB
+  LB  --> APP1
+  LB  --> APP2
+  APP1 --> SRCH
+  APP1 --> DL
+  APP2 --> NOTIF
+  DL  --> S3
+  APP1 --> DB
+  APP2 --> DB
+  DB  --> REPLICA
+  SRCH --> REDIS
+  APP2 --> PAYAPI
+  NOTIF --> EMAILAPI
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">E-Book Management System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

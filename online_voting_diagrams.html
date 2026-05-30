@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Voting System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Online Voting System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Online Voting System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online_voting_diagrams.html" />
+  <meta property="og:title" content="Online Voting System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Online Voting System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online_voting_diagrams.html" />
+  <meta property="twitter:title" content="Online Voting System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Online Voting System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/online_voting_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f0fff4; color: #2d3748; }
+    header {
+      background: linear-gradient(135deg, #1a3a1a, #276749);
+      color: white; text-align: center; padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+    nav {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; padding: 16px 20px; background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1); position: sticky; top: 0; z-index: 100;
+    }
+    nav a {
+      text-decoration: none; background: #e6ffed; color: #276749;
+      border: 1px solid #9ae6b4; padding: 6px 14px; border-radius: 20px;
+      font-size: 0.82rem; font-weight: 600; transition: background .2s;
+    }
+    nav a:hover { background: #276749; color: #fff; }
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+    .card {
+      background: #fff; border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08); margin-bottom: 40px; overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #276749, #48bb78);
+      color: white; padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block; background: rgba(255,255,255,.25);
+      border-radius: 12px; padding: 2px 10px; font-size: .75rem;
+      margin-left: 10px; vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+    footer { text-align: center; padding: 20px; font-size: .82rem; color: #718096; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Online Voting System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE -->
+  <div class="card" id="usecase">
+    <div class="card-header"><h2>1. Use Case Diagram <span>Use Case</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    VT(("Voter"))
+    CD(("Candidate"))
+    AD(("Admin"))
+    AU(("Auditor"))
+  end
+
+  subgraph Online Voting System
+    UC1[Register]
+    UC2[Login with OTP]
+    UC3[Verify Identity]
+    UC4[View Candidates]
+    UC5[Cast Vote]
+    UC6[View Results]
+    UC7[View Vote Receipt]
+    UC8[Register as Candidate]
+    UC9[View Profile]
+    UC10[Create Election]
+    UC11[Manage Candidates]
+    UC12[Open and Close Poll]
+    UC13[Publish Results]
+    UC14[Audit Vote Logs]
+    UC15[Generate Report]
+  end
+
+  VT --> UC1
+  VT --> UC2
+  UC2 --> UC3
+  VT --> UC4
+  VT --> UC5
+  VT --> UC6
+  VT --> UC7
+  CD --> UC8
+  CD --> UC9
+  CD --> UC6
+  AD --> UC10
+  AD --> UC11
+  AD --> UC12
+  AD --> UC13
+  AU --> UC14
+  AU --> UC15
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY -->
+  <div class="card" id="activity">
+    <div class="card-header"><h2>2. Activity Diagram <span>Activity</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Register[Voter Registers]
+  Register --> Verify{Identity Verified?}
+  Verify -- No --> Reject[Reject Registration]
+  Reject --> End([End])
+  Verify -- Yes --> Login[Login with OTP]
+  Login --> OTPCheck{OTP Valid?}
+  OTPCheck -- No --> Login
+  OTPCheck -- Yes --> PollCheck{Poll Open?}
+  PollCheck -- No --> Wait[Show Poll Not Started]
+  Wait --> End
+  PollCheck -- Yes --> AlreadyVoted{Already Voted?}
+  AlreadyVoted -- Yes --> Deny[Access Denied]
+  Deny --> End
+  AlreadyVoted -- No --> ViewCand[View Candidates]
+  ViewCand --> Select[Select Candidate]
+  Select --> Confirm{Confirm Vote?}
+  Confirm -- No --> ViewCand
+  Confirm -- Yes --> Cast[Cast Vote]
+  Cast --> Receipt[Generate Vote Receipt]
+  Receipt --> Notify[Send Confirmation SMS]
+  Notify --> Results[View Live Results]
+  Results --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE -->
+  <div class="card" id="sequence">
+    <div class="card-header"><h2>3. Sequence Diagram <span>Sequence</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Voter
+  participant WebApp
+  participant AuthService
+  participant VoteService
+  participant ElectionService
+  participant NotificationService
+  actor Admin
+
+  Voter->>WebApp: Register with ID proof
+  WebApp->>AuthService: verifyIdentity(voterId)
+  AuthService-->>WebApp: Identity Verified
+
+  Voter->>WebApp: Login
+  WebApp->>AuthService: sendOTP(phone)
+  AuthService-->>Voter: OTP via SMS
+
+  Voter->>WebApp: Submit OTP
+  WebApp->>AuthService: verifyOTP(otp)
+  AuthService-->>WebApp: Login Success
+
+  Voter->>WebApp: View Candidates
+  WebApp->>ElectionService: getCandidates(electionId)
+  ElectionService-->>WebApp: candidateList
+  WebApp-->>Voter: Show Candidates
+
+  Voter->>WebApp: Cast Vote
+  WebApp->>VoteService: castVote(voterId, candidateId)
+  VoteService->>VoteService: checkAlreadyVoted(voterId)
+  VoteService-->>WebApp: Vote Recorded
+
+  VoteService->>NotificationService: sendReceipt(voterId)
+  NotificationService-->>Voter: Vote Confirmation SMS
+
+  Admin->>WebApp: Close Poll and Publish Results
+  WebApp->>ElectionService: publishResults(electionId)
+  ElectionService-->>WebApp: Results Published
+  WebApp-->>Voter: View Final Results
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE -->
+  <div class="card" id="state">
+    <div class="card-header"><h2>4. State Machine Diagram <span>State Machine</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Created : Admin creates election
+
+  Created --> Open : Admin opens poll
+  Open --> Voting : Voter casts vote
+  Voting --> Open : Vote recorded
+
+  Open --> Closed : Admin closes poll
+  Closed --> ResultPublished : Admin publishes results
+
+  ResultPublished --> Audited : Auditor reviews logs
+  Audited --> [*]
+
+  state Voter {
+    [*] --> Unregistered
+    Unregistered --> Registered : Registers
+    Registered --> Verified : Identity verified
+    Verified --> LoggedIn : OTP login
+    LoggedIn --> Voted : Casts vote
+    Voted --> [*]
+  }
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION -->
+  <div class="card" id="communication">
+    <div class="card-header"><h2>5. Communication Diagram <span>Communication</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  VT["Voter"]
+  WEB["WebApp"]
+  AS["AuthService"]
+  VS["VoteService"]
+  ES["ElectionService"]
+  NS["NotificationService"]
+  AD["Admin"]
+  DB["Database"]
+
+  VT  -- "1: register(voterId)" --> WEB
+  WEB -- "2: verifyIdentity()" --> AS
+  AS  -- "3: checkDB()" --> DB
+  DB  -- "4: verified" --> AS
+
+  VT  -- "5: login()" --> WEB
+  WEB -- "6: sendOTP()" --> AS
+  AS  -- "7: OTP via SMS" --> VT
+  VT  -- "8: submitOTP()" --> WEB
+  WEB -- "9: verifyOTP()" --> AS
+  AS  -- "10: loginSuccess" --> WEB
+
+  VT  -- "11: viewCandidates()" --> WEB
+  WEB -- "12: getCandidates()" --> ES
+  ES  -- "13: fetchDB()" --> DB
+  DB  -- "14: candidateList" --> ES
+
+  VT  -- "15: castVote(candidateId)" --> WEB
+  WEB -- "16: recordVote()" --> VS
+  VS  -- "17: checkVoted()" --> DB
+  VS  -- "18: saveVote()" --> DB
+  VS  -- "19: sendReceipt()" --> NS
+  NS  -- "20: SMS confirmation" --> VT
+
+  AD  -- "21: closeAndPublish()" --> WEB
+  WEB -- "22: publishResults()" --> ES
+  ES  -- "23: updateDB()" --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS -->
+  <div class="card" id="class">
+    <div class="card-header"><h2>6. Class Diagram <span>Class</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String phone
+    +String password
+    +String role
+    +login()
+    +logout()
+  }
+
+  class Voter {
+    +String voterId
+    +String nationalId
+    +boolean isVerified
+    +boolean hasVoted
+    +register()
+    +castVote()
+    +viewReceipt()
+  }
+
+  class Candidate {
+    +int candidateId
+    +String party
+    +String symbol
+    +String manifesto
+    +register()
+    +viewProfile()
+  }
+
+  class Admin {
+    +createElection()
+    +manageCandidates()
+    +openPoll()
+    +closePoll()
+    +publishResults()
+  }
+
+  class Election {
+    +int electionId
+    +String title
+    +Date startDate
+    +Date endDate
+    +String status
+    +open()
+    +close()
+    +publishResults()
+  }
+
+  class Vote {
+    +int voteId
+    +DateTime castTime
+    +String receiptCode
+    +record()
+    +verify()
+  }
+
+  class Result {
+    +int resultId
+    +int totalVotes
+    +String winnerName
+    +publish()
+    +getBreakdown()
+  }
+
+  class AuditLog {
+    +int logId
+    +DateTime timestamp
+    +String action
+    +String ipAddress
+    +record()
+  }
+
+  User <|-- Voter
+  User <|-- Candidate
+  User <|-- Admin
+
+  Admin "1" --> "0..*" Election : creates
+  Election "1" --> "0..*" Candidate : has
+  Voter "1" --> "0..1" Vote : casts
+  Vote "0..*" --> "1" Candidate : for
+  Vote "0..*" --> "1" Election : in
+  Election "1" --> "1" Result : produces
+  Vote "1" --> "1" AuditLog : generates
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT -->
+  <div class="card" id="component">
+    <div class="card-header"><h2>7. Component Diagram <span>Component</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    VOTE[Vote Service]
+    ELECT[Election Service]
+    RESULT[Result Service]
+    AUDIT[Audit Service]
+    NOTIF[Notification Service]
+    VERIFY[Identity Verification]
+  end
+
+  subgraph Data Layer
+    DB[(Vote Database)]
+    CACHE[(Redis Cache)]
+    LOG[(Audit Log Store)]
+  end
+
+  subgraph External
+    OTP[OTP Gateway]
+    SMS[SMS Provider]
+    IDAPI[National ID API]
+  end
+
+  WEB    --> AUTH
+  MOB    --> AUTH
+  AUTH   --> VERIFY
+  VERIFY --> IDAPI
+  AUTH   --> OTP
+  OTP    --> SMS
+  WEB    --> VOTE
+  VOTE   --> ELECT
+  VOTE   --> AUDIT
+  AUDIT  --> LOG
+  VOTE   --> NOTIF
+  NOTIF  --> SMS
+  ELECT  --> RESULT
+  RESULT --> CACHE
+  VOTE   --> DB
+  ELECT  --> DB
+  AUTH   --> DB
+  RESULT --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE -->
+  <div class="card" id="package">
+    <div class="card-header"><h2>8. Package Diagram <span>Package</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.onlinevoting
+    subgraph controller
+      VC[VoteController]
+      EC[ElectionController]
+      AC[AuthController]
+      RC[ResultController]
+      ADC[AdminController]
+    end
+
+    subgraph service
+      VS[VoteService]
+      ES[ElectionService]
+      AS[AuthService]
+      RS[ResultService]
+      NS[NotificationService]
+      AUS[AuditService]
+      IVS[IdentityVerifyService]
+    end
+
+    subgraph model
+      VM[Vote]
+      EM[Election]
+      CM[Candidate]
+      VTM[Voter]
+      RM[Result]
+      ALM[AuditLog]
+      UM[User]
+    end
+
+    subgraph repository
+      VR[VoteRepo]
+      ER[ElectionRepo]
+      CR[CandidateRepo]
+      UR[UserRepo]
+      ALR[AuditLogRepo]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      OTPUtil[OTPUtil]
+      EncryptUtil[EncryptUtil]
+      AuditUtil[AuditUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT -->
+  <div class="card" id="deployment">
+    <div class="card-header"><h2>9. Deployment Diagram <span>Deployment</span></h2></div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge
+      WAF[Web App Firewall]
+      LB[Load Balancer NGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1 Spring Boot]
+      APP2[App Server 2 Spring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Auth and Verify Service]
+      SVC2[Vote Service]
+      SVC3[Election Service]
+      SVC4[Result Service]
+      SVC5[Audit Service]
+      SVC6[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL Primary)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis Result Cache)]
+      AUDITDB[(Audit Log DB)]
+    end
+  end
+
+  subgraph External Services
+    IDAPI[National ID Verify API]
+    OTPAPI[OTP SMS Gateway]
+    SMSAPI[Twilio SMS]
+  end
+
+  Browser --> WAF
+  Mobile  --> WAF
+  WAF --> LB
+  LB  --> APP1
+  LB  --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP2 --> SVC3
+  APP2 --> SVC4
+  APP2 --> SVC5
+  APP2 --> SVC6
+  SVC1 --> IDAPI
+  SVC1 --> OTPAPI
+  SVC5 --> AUDITDB
+  SVC4 --> REDIS
+  SVC6 --> SMSAPI
+  SVC2 --> DB
+  SVC3 --> DB
+  SVC4 --> DB
+  SVC1 --> DB
+  DB   --> REPLICA
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Online Voting System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Credit Card Processing System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Credit Card Processing System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Credit Card Processing System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/credit_card_processing_diagrams.html" />
+  <meta property="og:title" content="Credit Card Processing System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Credit Card Processing System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/credit_card_processing_diagrams.html" />
+  <meta property="twitter:title" content="Credit Card Processing System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Credit Card Processing System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/credit_card_processing_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f0ff;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #3b0764, #7c3aed);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #f3e8ff;
+      color: #7c3aed;
+      border: 1px solid #ddd6fe;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #7c3aed; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Credit Card Processing System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    CH(("Card\nHolder"))
+    M(("Merchant"))
+    B(("Bank"))
+    A(("Admin"))
+  end
+
+  subgraph Credit Card Processing System
+    UC1[Register Card]
+    UC2[Make Payment]
+    UC3[Verify Card]
+    UC4[Authorize Transaction]
+    UC5[Process Refund]
+    UC6[View Statement]
+    UC7[Block Card]
+    UC8[Send OTP]
+    UC9[Detect Fraud]
+    UC10[Generate Report]
+  end
+
+  CH --> UC1
+  CH --> UC2
+  CH --> UC6
+  CH --> UC7
+  M  --> UC2
+  UC2 --> UC3
+  UC3 --> UC8
+  UC3 --> UC4
+  UC4 --> UC9
+  M  --> UC5
+  B  --> UC4
+  B  --> UC9
+  A  --> UC10
+  A  --> UC7
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Enter[Customer Enters Card Details]
+  Enter --> Validate{Valid Card?}
+  Validate -- No --> Decline1[Decline Transaction]
+  Validate -- Yes --> OTP[Send OTP to Customer]
+  OTP --> OTPCheck{OTP Verified?}
+  OTPCheck -- No --> Decline1
+  OTPCheck -- Yes --> Balance{Sufficient Balance?}
+  Balance -- No --> Decline2[Decline - Insufficient Funds]
+  Balance -- Yes --> Fraud{Fraud Check Pass?}
+  Fraud -- No --> FFlag[Flag & Block Transaction]
+  Fraud -- Yes --> Auth[Authorize Transaction]
+  Auth --> Debit[Debit Amount from Card]
+  Debit --> Credit[Credit Merchant Account]
+  Credit --> Receipt[Generate Receipt]
+  Receipt --> Notify[Notify Cardholder via SMS/Email]
+  Notify --> End([End])
+  Decline1 --> End
+  Decline2 --> End
+  FFlag --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Customer
+  participant Merchant
+  participant PaymentGateway
+  participant Bank
+  participant FraudService
+  participant NotificationService
+
+  Customer->>Merchant: Provide Card Details
+  Merchant->>PaymentGateway: Send Payment Request
+  PaymentGateway->>Bank: Verify Card & Balance
+  Bank-->>PaymentGateway: Card Valid
+
+  PaymentGateway->>FraudService: Check for Fraud
+  FraudService-->>PaymentGateway: No Fraud Detected
+
+  PaymentGateway->>Bank: Request Authorization
+  Bank->>NotificationService: Send OTP to Customer
+  NotificationService-->>Customer: OTP via SMS
+
+  Customer->>PaymentGateway: Submit OTP
+  PaymentGateway->>Bank: Verify OTP
+  Bank-->>PaymentGateway: OTP Verified
+
+  Bank-->>PaymentGateway: Transaction Authorized
+  PaymentGateway-->>Merchant: Payment Success
+  PaymentGateway->>NotificationService: Notify Customer
+  NotificationService-->>Customer: Payment Receipt
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Initiated : Customer submits payment
+
+  Initiated --> Validating : Card details received
+  Validating --> OTPSent : Card valid
+  Validating --> Declined : Card invalid
+
+  OTPSent --> Authorized : OTP verified
+  OTPSent --> Declined : OTP failed
+
+  Authorized --> FraudCheck : Sent to fraud engine
+  FraudCheck --> Processing : No fraud
+  FraudCheck --> Blocked : Fraud detected
+
+  Processing --> Completed : Transaction success
+  Processing --> Failed : Bank error
+
+  Completed --> Refunded : Refund requested
+  Refunded --> [*]
+  Completed --> [*]
+  Declined --> [*]
+  Blocked --> [*]
+  Failed --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  CUST["Customer"]
+  MERCH["Merchant"]
+  PG["PaymentGateway"]
+  BANK["Bank"]
+  FRAUD["FraudService"]
+  NOTIF["NotificationService"]
+
+  CUST  -- "1: enterCardDetails()" --> MERCH
+  MERCH -- "2: sendPaymentRequest()" --> PG
+  PG    -- "3: verifyCard()" --> BANK
+  BANK  -- "4: cardValid" --> PG
+  PG    -- "5: checkFraud()" --> FRAUD
+  FRAUD -- "6: noFraud" --> PG
+  PG    -- "7: requestAuth()" --> BANK
+  BANK  -- "8: sendOTP()" --> NOTIF
+  NOTIF -- "9: OTP via SMS" --> CUST
+  CUST  -- "10: submitOTP()" --> PG
+  PG    -- "11: verifyOTP()" --> BANK
+  BANK  -- "12: authorized" --> PG
+  PG    -- "13: paymentSuccess" --> MERCH
+  PG    -- "14: sendReceipt()" --> NOTIF
+  NOTIF -- "15: receipt email/SMS" --> CUST
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class CardHolder {
+    +int holderId
+    +String name
+    +String email
+    +String phone
+    +makePayment()
+    +viewStatement()
+  }
+
+  class CreditCard {
+    +String cardNumber
+    +String cardType
+    +Date expiryDate
+    +float creditLimit
+    +float availableBalance
+    +activate()
+    +block()
+  }
+
+  class Transaction {
+    +int transactionId
+    +float amount
+    +String status
+    +DateTime timestamp
+    +String merchantName
+    +authorize()
+    +decline()
+    +refund()
+  }
+
+  class PaymentGateway {
+    +String gatewayId
+    +processPayment()
+    +verifyCard()
+    +sendOTP()
+  }
+
+  class Bank {
+    +String bankCode
+    +authorizeTransaction()
+    +checkBalance()
+    +processRefund()
+  }
+
+  class FraudService {
+    +checkFraud()
+    +flagTransaction()
+    +blockCard()
+  }
+
+  class Notification {
+    +String type
+    +String message
+    +sendSMS()
+    +sendEmail()
+  }
+
+  class Statement {
+    +int statementId
+    +Date fromDate
+    +Date toDate
+    +float totalSpent
+    +generate()
+    +download()
+  }
+
+  CardHolder "1" --> "1..*" CreditCard : owns
+  CreditCard "1" --> "0..*" Transaction : has
+  Transaction --> PaymentGateway : processed by
+  PaymentGateway --> Bank : contacts
+  PaymentGateway --> FraudService : uses
+  Transaction --> Notification : triggers
+  CreditCard "1" --> "0..*" Statement : generates
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    UI[Web / Mobile App]
+    POS[POS Terminal]
+  end
+
+  subgraph Application Layer
+    GW[Payment Gateway]
+    AUTH[Auth Service]
+    FRAUD[Fraud Detection Service]
+    NOTIF[Notification Service]
+    STMT[Statement Service]
+  end
+
+  subgraph Banking Layer
+    CORE[Core Banking System]
+    OTP[OTP Service]
+    REFUND[Refund Engine]
+  end
+
+  subgraph Data Layer
+    DB[(Transaction DB)]
+    CACHE[(Redis Cache)]
+    LOG[(Audit Log)]
+  end
+
+  subgraph External
+    SMS[SMS Gateway]
+    EMAIL[Email Provider]
+    VISA[Visa / MasterCard Network]
+  end
+
+  UI  --> GW
+  POS --> GW
+  GW  --> AUTH
+  GW  --> FRAUD
+  GW  --> CORE
+  CORE --> OTP
+  CORE --> REFUND
+  OTP --> NOTIF
+  GW  --> NOTIF
+  NOTIF --> SMS
+  NOTIF --> EMAIL
+  GW  --> VISA
+  GW  --> DB
+  FRAUD --> CACHE
+  GW  --> LOG
+  STMT --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.creditcard
+    subgraph controller
+      TC[TransactionController]
+      CC[CardController]
+      RC[RefundController]
+      SC[StatementController]
+    end
+
+    subgraph service
+      PS[PaymentService]
+      FS[FraudService]
+      NS[NotificationService]
+      AS[AuthService]
+      SS[StatementService]
+    end
+
+    subgraph model
+      CHM[CardHolder]
+      CCM[CreditCard]
+      TM[Transaction]
+      SM[Statement]
+    end
+
+    subgraph repository
+      TR[TransactionRepository]
+      CR[CardRepository]
+      UR[UserRepository]
+    end
+
+    subgraph util
+      OTPUtil[OTPUtil]
+      EncUtil[EncryptionUtil]
+      LogUtil[AuditLogUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+    POS[POS Terminal]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph DMZ
+      LB[Load Balancer\nNGINX]
+      WAF[Web App Firewall]
+    end
+
+    subgraph App Tier
+      APP1[App Server 1\nSpring Boot]
+      APP2[App Server 2\nSpring Boot]
+    end
+
+    subgraph Services
+      FRAUD[Fraud Detection\nService]
+      NOTIF[Notification\nService]
+      OTP[OTP Service]
+    end
+
+    subgraph Data Tier
+      DB[(Primary DB\nPostgreSQL)]
+      REPLICA[(Replica DB)]
+      REDIS[(Redis Cache)]
+      AUDIT[(Audit Log DB)]
+    end
+  end
+
+  subgraph External
+    VISANET[Visa/MasterCard\nNetwork]
+    SMSAPI[Twilio SMS]
+    EMAILAPI[SendGrid Email]
+  end
+
+  Browser --> WAF
+  Mobile  --> WAF
+  POS     --> WAF
+  WAF --> LB
+  LB  --> APP1
+  LB  --> APP2
+  APP1 --> FRAUD
+  APP1 --> NOTIF
+  APP2 --> OTP
+  APP2 --> VISANET
+  NOTIF --> SMSAPI
+  NOTIF --> EMAILAPI
+  APP1 --> DB
+  APP2 --> DB
+  DB   --> REPLICA
+  FRAUD --> REDIS
+  APP1 --> AUDIT
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Credit Card Processing System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BPO Management System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the BPO Management System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="BPO Management System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/bpo_management_diagrams.html" />
+  <meta property="og:title" content="BPO Management System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the BPO Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/bpo_management_diagrams.html" />
+  <meta property="twitter:title" content="BPO Management System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the BPO Management System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/bpo_management_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f9ff;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #0c2340, #1a6ea8);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #7dd3fc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #0369a1; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #0369a1, #38bdf8);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BPO Management System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    AG(("Agent"))
+    TL(("Team Lead"))
+    MG(("Manager"))
+    CL(("Client"))
+    AD(("Admin"))
+  end
+
+  subgraph BPO Management System
+    UC1[Login]
+    UC2[Handle Call]
+    UC3[Log Call Details]
+    UC4[View Assigned Tasks]
+    UC5[Submit Work Report]
+    UC6[Manage Agents]
+    UC7[Assign Tasks]
+    UC8[Monitor Performance]
+    UC9[View Team Report]
+    UC10[Manage Contracts]
+    UC11[View SLA Report]
+    UC12[Manage Users]
+    UC13[Generate Report]
+    UC14[Track Attendance]
+  end
+
+  AG --> UC1
+  AG --> UC2
+  UC2 --> UC3
+  AG --> UC4
+  AG --> UC5
+  AG --> UC14
+  TL --> UC6
+  TL --> UC7
+  TL --> UC8
+  TL --> UC9
+  MG --> UC10
+  MG --> UC11
+  MG --> UC13
+  CL --> UC11
+  CL --> UC10
+  AD --> UC12
+  AD --> UC13
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Login[Agent Logs In]
+  Login --> Auth{Authenticated?}
+  Auth -- No --> Login
+  Auth -- Yes --> Attend[Mark Attendance]
+  Attend --> Task[View Assigned Tasks]
+  Task --> Type{Task Type?}
+
+  Type -- Inbound Call --> Receive[Receive Incoming Call]
+  Type -- Outbound Call --> Dial[Dial Customer]
+  Type -- Back Office --> Process[Process Data / Form]
+
+  Receive --> Handle[Handle Customer Query]
+  Dial --> Handle
+  Handle --> Resolve{Issue Resolved?}
+  Resolve -- No --> Escalate[Escalate to Team Lead]
+  Escalate --> TLHandle[Team Lead Handles]
+  TLHandle --> Close[Close Call]
+  Resolve -- Yes --> Close
+
+  Process --> Submit[Submit Completed Work]
+  Close --> Log[Log Call Details]
+  Submit --> Log
+  Log --> Report[Submit Daily Report]
+  Report --> Logout[Logout]
+  Logout --> End([End])
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Agent
+  participant WebApp
+  participant TaskService
+  participant CallService
+  participant ReportService
+  participant NotificationService
+  actor TeamLead
+
+  Agent->>WebApp: Login & Mark Attendance
+  WebApp-->>Agent: Dashboard with Tasks
+
+  Agent->>WebApp: View Assigned Task
+  WebApp->>TaskService: getTasks(agentId)
+  TaskService-->>WebApp: taskList
+  WebApp-->>Agent: Show Tasks
+
+  Agent->>WebApp: Start Call / Work
+  WebApp->>CallService: logCall(agentId, taskId, details)
+  CallService-->>WebApp: callId
+
+  Agent->>WebApp: Escalate Issue
+  WebApp->>TaskService: escalate(callId, teamLeadId)
+  TaskService->>NotificationService: alertTeamLead(callId)
+  NotificationService-->>TeamLead: Escalation Alert
+
+  TeamLead->>WebApp: Resolve & Close Call
+  WebApp->>CallService: closeCall(callId, resolution)
+  CallService-->>WebApp: Closed
+
+  Agent->>WebApp: Submit Daily Report
+  WebApp->>ReportService: saveReport(agentId, reportData)
+  ReportService-->>WebApp: Report Saved
+  WebApp-->>Agent: Confirmation
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Assigned : Task assigned to agent
+
+  Assigned --> InProgress : Agent starts work
+  InProgress --> OnHold : Customer put on hold
+  OnHold --> InProgress : Customer resumed
+
+  InProgress --> Escalated : Agent escalates
+  Escalated --> InProgress : Team lead reassigns
+
+  InProgress --> Resolved : Issue resolved
+  Resolved --> Closed : Call logged and closed
+
+  InProgress --> Abandoned : Call dropped
+
+  Closed --> [*]
+  Abandoned --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  AG["Agent"]
+  WEB["WebApp"]
+  TS["TaskService"]
+  CS["CallService"]
+  RS["ReportService"]
+  NS["NotificationService"]
+  TL["Team Lead"]
+  DB["Database"]
+
+  AG  -- "1: login()" --> WEB
+  WEB -- "2: authenticate()" --> DB
+  DB  -- "3: userInfo" --> WEB
+
+  AG  -- "4: markAttendance()" --> WEB
+  WEB -- "5: saveAttendance()" --> DB
+
+  AG  -- "6: viewTasks()" --> WEB
+  WEB -- "7: getTasks(agentId)" --> TS
+  TS  -- "8: fetchTasks()" --> DB
+  DB  -- "9: taskList" --> TS
+  TS  -- "10: tasks" --> WEB
+
+  AG  -- "11: logCall()" --> WEB
+  WEB -- "12: saveCall()" --> CS
+  CS  -- "13: storeCall()" --> DB
+
+  AG  -- "14: escalate()" --> WEB
+  WEB -- "15: escalateTask()" --> TS
+  TS  -- "16: alertTeamLead()" --> NS
+  NS  -- "17: notification" --> TL
+
+  TL  -- "18: closeCall()" --> WEB
+  WEB -- "19: updateStatus(CLOSED)" --> CS
+  CS  -- "20: updateDB()" --> DB
+
+  AG  -- "21: submitReport()" --> WEB
+  WEB -- "22: saveReport()" --> RS
+  RS  -- "23: storeReport()" --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +logout()
+  }
+
+  class Agent {
+    +String agentCode
+    +String shift
+    +String skills
+    +markAttendance()
+    +handleCall()
+    +submitReport()
+  }
+
+  class TeamLead {
+    +manageAgents()
+    +assignTask()
+    +monitorPerformance()
+    +resolveEscalation()
+  }
+
+  class Manager {
+    +manageContracts()
+    +viewSLAReport()
+    +generateReport()
+  }
+
+  class Task {
+    +int taskId
+    +String title
+    +String type
+    +String priority
+    +String status
+    +assign()
+    +close()
+  }
+
+  class Call {
+    +int callId
+    +String callType
+    +DateTime startTime
+    +DateTime endTime
+    +String status
+    +String resolution
+    +log()
+    +escalate()
+    +close()
+  }
+
+  class Attendance {
+    +int attendId
+    +Date workDate
+    +DateTime loginTime
+    +DateTime logoutTime
+    +String status
+    +mark()
+  }
+
+  class Report {
+    +int reportId
+    +Date reportDate
+    +int callsHandled
+    +int issuesResolved
+    +generate()
+  }
+
+  class Client {
+    +int clientId
+    +String company
+    +String contractType
+    +viewSLA()
+  }
+
+  class Contract {
+    +int contractId
+    +Date startDate
+    +Date endDate
+    +String slaTerms
+    +float value
+    +renew()
+  }
+
+  User <|-- Agent
+  User <|-- TeamLead
+  User <|-- Manager
+
+  TeamLead "1" --> "0..*" Agent : manages
+  TeamLead "1" --> "0..*" Task : assigns
+  Agent "1" --> "0..*" Task : handles
+  Task "1" --> "0..*" Call : involves
+  Agent "1" --> "0..*" Attendance : marks
+  Agent "1" --> "0..*" Report : submits
+  Client "1" --> "0..*" Contract : signs
+  Manager "1" --> "0..*" Contract : manages
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    TASK[Task Service]
+    CALL[Call Service]
+    ATTEND[Attendance Service]
+    REPORT[Report Service]
+    NOTIF[Notification Service]
+    SLA[SLA Service]
+    CONTRACT[Contract Service]
+  end
+
+  subgraph Data Layer
+    DB[(Main Database)]
+    CACHE[(Redis Cache)]
+    LOG[(Call Log Store)]
+  end
+
+  subgraph External
+    EMAIL[Email Provider]
+    SMS[SMS Gateway]
+    PHONE[Telephony API\nTwilio]
+  end
+
+  WEB      --> AUTH
+  MOB      --> AUTH
+  WEB      --> TASK
+  WEB      --> CALL
+  CALL     --> PHONE
+  CALL     --> LOG
+  WEB      --> ATTEND
+  WEB      --> REPORT
+  REPORT   --> SLA
+  TASK     --> NOTIF
+  CALL     --> NOTIF
+  NOTIF    --> EMAIL
+  NOTIF    --> SMS
+  TASK     --> DB
+  ATTEND   --> DB
+  REPORT   --> DB
+  CONTRACT --> DB
+  AUTH     --> CACHE
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.bpo
+    subgraph controller
+      TC[TaskController]
+      CC[CallController]
+      AC[AttendanceController]
+      RC[ReportController]
+      UC[UserController]
+      CTC[ContractController]
+    end
+
+    subgraph service
+      TS[TaskService]
+      CS[CallService]
+      AS[AttendanceService]
+      RS[ReportService]
+      NS[NotificationService]
+      SS[SLAService]
+      CTS[ContractService]
+    end
+
+    subgraph model
+      TM[Task]
+      CM[Call]
+      AM[Attendance]
+      RM[Report]
+      UM[User]
+      CTM[Contract]
+      CLM[Client]
+    end
+
+    subgraph repository
+      TR[TaskRepo]
+      CR[CallRepo]
+      AR[AttendanceRepo]
+      RR[ReportRepo]
+      UR[UserRepo]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      EmailUtil[EmailUtil]
+      PhoneUtil[PhoneUtil]
+      AuditUtil[AuditUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+    Phone[Agent Phone / Headset]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge
+      LB[Load Balancer\nNGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1\nSpring Boot]
+      APP2[App Server 2\nSpring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Task Service]
+      SVC2[Call Service]
+      SVC3[Attendance Service]
+      SVC4[Report & SLA Service]
+      SVC5[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL\nPrimary DB)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis Cache)]
+      CALLLOG[(Call Log DB)]
+    end
+  end
+
+  subgraph External Services
+    TWILIO[Twilio\nTelephony API]
+    SENDGRID[SendGrid\nEmail]
+    SMSAPI[SMS Gateway]
+  end
+
+  Browser --> LB
+  Mobile  --> LB
+  Phone   --> TWILIO
+  LB  --> APP1
+  LB  --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP2 --> SVC3
+  APP2 --> SVC4
+  APP2 --> SVC5
+  SVC2 --> TWILIO
+  SVC2 --> CALLLOG
+  SVC5 --> SENDGRID
+  SVC5 --> SMSAPI
+  SVC1 --> DB
+  SVC3 --> DB
+  SVC4 --> DB
+  DB   --> REPLICA
+  SVC1 --> REDIS
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">BPO Management System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

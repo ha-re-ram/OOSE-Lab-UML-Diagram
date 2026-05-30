@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recruitment System – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Recruitment System (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Recruitment System, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/recruitment_system_diagrams.html" />
+  <meta property="og:title" content="Recruitment System – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Recruitment System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/recruitment_system_diagrams.html" />
+  <meta property="twitter:title" content="Recruitment System – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Recruitment System designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/recruitment_system_diagrams.html" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f7ff;
+      color: #2d3748;
+    }
+    header {
+      background: linear-gradient(135deg, #0d2d4e, #1565c0);
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 6px; }
+    header p  { font-size: 1rem; opacity: 0.85; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      background: #e3f2fd;
+      color: #1565c0;
+      border: 1px solid #90caf9;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    nav a:hover { background: #1565c0; color: #fff; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #1565c0, #42a5f5);
+      color: white;
+      padding: 16px 24px;
+    }
+    .card-header h2 { font-size: 1.2rem; }
+    .card-header span {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: .75rem;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .card-body { padding: 24px; overflow-x: auto; }
+    .mermaid { text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .82rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Recruitment System</h1>
+  <p>All 9 UML Diagrams — Mermaid.js</p>
+</header>
+
+<nav>
+  <a href="#usecase">1. Use Case</a>
+  <a href="#activity">2. Activity</a>
+  <a href="#sequence">3. Sequence</a>
+  <a href="#state">4. State Machine</a>
+  <a href="#communication">5. Communication</a>
+  <a href="#class">6. Class</a>
+  <a href="#component">7. Component</a>
+  <a href="#package">8. Package</a>
+  <a href="#deployment">9. Deployment</a>
+</nav>
+
+<main>
+
+  <!-- 1. USE CASE DIAGRAM -->
+  <div class="card" id="usecase">
+    <div class="card-header">
+      <h2>1. Use Case Diagram <span>Use Case</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph LR
+  subgraph Actors
+    C(("Candidate"))
+    HR(("HR Manager"))
+    I(("Interviewer"))
+    A(("Admin"))
+  end
+
+  subgraph Recruitment System
+    UC1[Register / Login]
+    UC2[Search Jobs]
+    UC3[Apply for Job]
+    UC4[Upload Resume]
+    UC5[Track Application]
+    UC6[Post Job]
+    UC7[Review Applications]
+    UC8[Schedule Interview]
+    UC9[Conduct Interview]
+    UC10[Send Offer Letter]
+    UC11[Generate Report]
+    UC12[Manage Users]
+  end
+
+  C  --> UC1
+  C  --> UC2
+  C  --> UC3
+  UC3 --> UC4
+  C  --> UC5
+  HR --> UC6
+  HR --> UC7
+  HR --> UC8
+  HR --> UC10
+  HR --> UC11
+  I  --> UC9
+  I  --> UC8
+  A  --> UC12
+  A  --> UC11
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ACTIVITY DIAGRAM -->
+  <div class="card" id="activity">
+    <div class="card-header">
+      <h2>2. Activity Diagram <span>Activity</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  Start([Start]) --> Register[Candidate Registers]
+  Register --> Login[Login]
+  Login --> Search[Search Job Openings]
+  Search --> Select[Select Job]
+  Select --> Apply[Fill Application Form]
+  Apply --> Resume[Upload Resume]
+  Resume --> Submit[Submit Application]
+  Submit --> Screen{HR Screens\nApplication}
+  Screen -- Rejected --> RejEmail[Send Rejection Email]
+  Screen -- Shortlisted --> Schedule[Schedule Interview]
+  Schedule --> Interview[Conduct Interview]
+  Interview --> Result{Interview Result}
+  Result -- Fail --> RejEmail
+  Result -- Pass --> Offer[Send Offer Letter]
+  Offer --> CandDecision{Candidate Accepts?}
+  CandDecision -- No --> RejEmail
+  CandDecision -- Yes --> Onboard[Begin Onboarding]
+  Onboard --> End([End])
+  RejEmail --> End
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEQUENCE DIAGRAM -->
+  <div class="card" id="sequence">
+    <div class="card-header">
+      <h2>3. Sequence Diagram <span>Sequence</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Candidate
+  participant WebApp
+  participant JobService
+  participant ApplicationService
+  participant NotificationService
+  actor HRManager
+
+  Candidate->>WebApp: Register & Login
+  WebApp-->>Candidate: Dashboard
+
+  Candidate->>WebApp: Search Jobs
+  WebApp->>JobService: getOpenings()
+  JobService-->>WebApp: jobList
+  WebApp-->>Candidate: Show Jobs
+
+  Candidate->>WebApp: Apply for Job
+  WebApp->>ApplicationService: submitApplication(candidateId, jobId)
+  ApplicationService-->>WebApp: applicationId
+  WebApp->>NotificationService: notifyHR(applicationId)
+  NotificationService-->>HRManager: New Application Alert
+
+  HRManager->>WebApp: Review Application
+  WebApp->>ApplicationService: shortlist(applicationId)
+  ApplicationService->>NotificationService: notifyCandidate(SHORTLISTED)
+  NotificationService-->>Candidate: Shortlist Email
+
+  HRManager->>WebApp: Schedule Interview
+  WebApp->>NotificationService: sendInterviewInvite(candidate, slot)
+  NotificationService-->>Candidate: Interview Invite
+
+  HRManager->>WebApp: Send Offer Letter
+  WebApp->>NotificationService: sendOffer(candidateId)
+  NotificationService-->>Candidate: Offer Letter Email
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STATE MACHINE DIAGRAM -->
+  <div class="card" id="state">
+    <div class="card-header">
+      <h2>4. State Machine Diagram <span>State Machine</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Applied : Candidate submits application
+
+  Applied --> Screening : HR reviews
+  Screening --> Rejected : Not qualified
+  Screening --> Shortlisted : Qualifies
+
+  Shortlisted --> InterviewScheduled : HR schedules interview
+  InterviewScheduled --> InterviewDone : Interview conducted
+
+  InterviewDone --> Selected : Passed interview
+  InterviewDone --> Rejected : Failed interview
+
+  Selected --> OfferSent : HR sends offer
+  OfferSent --> Accepted : Candidate accepts
+  OfferSent --> Declined : Candidate declines
+
+  Accepted --> Onboarded : Joins company
+  Declined --> Rejected : Position re-opened
+
+  Onboarded --> [*]
+  Rejected --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMUNICATION DIAGRAM -->
+  <div class="card" id="communication">
+    <div class="card-header">
+      <h2>5. Communication Diagram <span>Communication</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  CAND["Candidate"]
+  WEB["WebApp"]
+  JS["JobService"]
+  AS["ApplicationService"]
+  IS["InterviewService"]
+  NS["NotificationService"]
+  HR["HR Manager"]
+  DB["Database"]
+
+  CAND -- "1: login()" --> WEB
+  WEB  -- "2: authenticate()" --> DB
+  CAND -- "3: searchJob()" --> WEB
+  WEB  -- "4: getOpenings()" --> JS
+  JS   -- "5: fetchJobs()" --> DB
+  DB   -- "6: jobList" --> JS
+  JS   -- "7: results" --> WEB
+
+  CAND -- "8: applyJob()" --> WEB
+  WEB  -- "9: submitApplication()" --> AS
+  AS   -- "10: saveApplication()" --> DB
+  AS   -- "11: notifyHR()" --> NS
+  NS   -- "12: alert email" --> HR
+
+  HR   -- "13: shortlist()" --> WEB
+  WEB  -- "14: updateStatus()" --> AS
+  AS   -- "15: notifyCandidate()" --> NS
+  NS   -- "16: shortlist email" --> CAND
+
+  HR   -- "17: scheduleInterview()" --> IS
+  IS   -- "18: saveSlot()" --> DB
+  IS   -- "19: sendInvite()" --> NS
+  NS   -- "20: invite email" --> CAND
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CLASS DIAGRAM -->
+  <div class="card" id="class">
+    <div class="card-header">
+      <h2>6. Class Diagram <span>Class</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class User {
+    +int userId
+    +String name
+    +String email
+    +String password
+    +String role
+    +login()
+    +logout()
+  }
+
+  class Candidate {
+    +String resumeURL
+    +String skills
+    +int experience
+    +searchJob()
+    +applyJob()
+    +trackApplication()
+  }
+
+  class HRManager {
+    +postJob()
+    +reviewApplication()
+    +scheduleInterview()
+    +sendOffer()
+  }
+
+  class Interviewer {
+    +conductInterview()
+    +submitFeedback()
+  }
+
+  class JobPosting {
+    +int jobId
+    +String title
+    +String department
+    +String location
+    +String status
+    +publish()
+    +close()
+  }
+
+  class Application {
+    +int applicationId
+    +DateTime appliedDate
+    +String status
+    +submit()
+    +withdraw()
+  }
+
+  class Interview {
+    +int interviewId
+    +DateTime scheduledTime
+    +String mode
+    +String result
+    +String feedback
+    +schedule()
+    +complete()
+  }
+
+  class OfferLetter {
+    +int offerId
+    +float salary
+    +Date joiningDate
+    +String status
+    +send()
+    +revoke()
+  }
+
+  User <|-- Candidate
+  User <|-- HRManager
+  User <|-- Interviewer
+
+  HRManager "1" --> "0..*" JobPosting : posts
+  Candidate "1" --> "0..*" Application : submits
+  Application "0..*" --> "1" JobPosting : for
+  Application "1" --> "0..1" Interview : leads to
+  Interview "0..*" --> "1" Interviewer : conducted by
+  Application "1" --> "0..1" OfferLetter : results in
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. COMPONENT DIAGRAM -->
+  <div class="card" id="component">
+    <div class="card-header">
+      <h2>7. Component Diagram <span>Component</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Layer
+    WEB[Web Browser]
+    MOB[Mobile App]
+  end
+
+  subgraph Application Layer
+    AUTH[Auth Service]
+    JOB[Job Service]
+    APP[Application Service]
+    INT[Interview Service]
+    OFFER[Offer Service]
+    NOTIF[Notification Service]
+    REPORT[Report Service]
+  end
+
+  subgraph Data Layer
+    DB[(Main Database)]
+    CACHE[(Redis Cache)]
+    FILES[(File Storage\nResumes)]
+  end
+
+  subgraph External
+    EMAIL[Email Provider]
+    CAL[Calendar API\nGoogle Calendar]
+  end
+
+  WEB  --> AUTH
+  MOB  --> AUTH
+  WEB  --> JOB
+  WEB  --> APP
+  APP  --> FILES
+  APP  --> INT
+  INT  --> CAL
+  INT  --> NOTIF
+  APP  --> NOTIF
+  OFFER --> NOTIF
+  NOTIF --> EMAIL
+  JOB  --> DB
+  APP  --> DB
+  INT  --> DB
+  OFFER --> DB
+  JOB  --> CACHE
+  REPORT --> DB
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PACKAGE DIAGRAM -->
+  <div class="card" id="package">
+    <div class="card-header">
+      <h2>8. Package Diagram <span>Package</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph com.recruitment
+    subgraph controller
+      JC[JobController]
+      AC[ApplicationController]
+      IC[InterviewController]
+      OC[OfferController]
+      UC[UserController]
+    end
+
+    subgraph service
+      JS[JobService]
+      AS[ApplicationService]
+      IS[InterviewService]
+      OS[OfferService]
+      NS[NotificationService]
+      RS[ReportService]
+    end
+
+    subgraph model
+      JM[JobPosting]
+      AM[Application]
+      IM[Interview]
+      OM[OfferLetter]
+      UM[User]
+    end
+
+    subgraph repository
+      JR[JobRepository]
+      AR[ApplicationRepository]
+      IR[InterviewRepository]
+      UR[UserRepository]
+    end
+
+    subgraph util
+      JWTUtil[JWTUtil]
+      EmailUtil[EmailUtil]
+      FileUtil[FileUtil]
+    end
+  end
+
+  controller --> service
+  service --> model
+  service --> repository
+  service --> util
+  repository --> model
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. DEPLOYMENT DIAGRAM -->
+  <div class="card" id="deployment">
+    <div class="card-header">
+      <h2>9. Deployment Diagram <span>Deployment</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+graph TD
+  subgraph Client Devices
+    Browser[Web Browser]
+    Mobile[Mobile App]
+  end
+
+  subgraph Cloud Infrastructure
+    subgraph Edge
+      LB[Load Balancer\nNGINX]
+    end
+
+    subgraph App Servers
+      APP1[App Server 1\nSpring Boot]
+      APP2[App Server 2\nSpring Boot]
+    end
+
+    subgraph Microservices
+      SVC1[Job Service]
+      SVC2[Application Service]
+      SVC3[Interview Service]
+      SVC4[Notification Service]
+    end
+
+    subgraph Data Tier
+      DB[(PostgreSQL\nPrimary DB)]
+      REPLICA[(DB Replica)]
+      REDIS[(Redis Cache)]
+      S3[(S3 Storage\nResumes & Docs)]
+    end
+  end
+
+  subgraph External Services
+    GCAL[Google Calendar API]
+    SENDGRID[SendGrid Email]
+    TWILIO[Twilio SMS]
+  end
+
+  Browser --> LB
+  Mobile  --> LB
+  LB --> APP1
+  LB --> APP2
+  APP1 --> SVC1
+  APP1 --> SVC2
+  APP2 --> SVC3
+  APP2 --> SVC4
+  SVC2 --> S3
+  SVC3 --> GCAL
+  SVC4 --> SENDGRID
+  SVC4 --> TWILIO
+  SVC1 --> DB
+  SVC2 --> DB
+  SVC3 --> DB
+  DB   --> REPLICA
+  SVC1 --> REDIS
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 40px;">Recruitment System — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+</script>
+</body>
+</html>

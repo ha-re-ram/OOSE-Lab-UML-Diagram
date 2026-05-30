@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Registration – Interactive UML Diagrams</title>
+  <meta name="description" content="Explore interactive UML diagrams for the Exam Registration (Use Case, Activity, Sequence, State Machine, Class, Component, Package, and Deployment) designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta name="keywords" content="Exam Registration, UML Diagrams, Use Case Diagram, Activity Diagram, Sequence Diagram, Class Diagram, Component Diagram, Package Diagram, Deployment Diagram, Mermaid.js, OOSE Lab, Software Engineering, ha-re-ram" />
+  <meta name="author" content="ha-re-ram" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/exam_registration_diagrams.html" />
+  <meta property="og:title" content="Exam Registration – Interactive UML Diagrams" />
+  <meta property="og:description" content="Explore interactive UML diagrams for the Exam Registration designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="og:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/exam_registration_diagrams.html" />
+  <meta property="twitter:title" content="Exam Registration – Interactive UML Diagrams" />
+  <meta property="twitter:description" content="Explore interactive UML diagrams for the Exam Registration designed with Mermaid.js. Developed by ha-re-ram." />
+  <meta property="twitter:image" content="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/assets/og-image.png" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/exam_registration_diagrams.html" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --card: #151820;
+    --border: #232736;
+    --accent: #5b8dee;
+    --accent2: #e85d75;
+    --text: #e2e6f0;
+    --muted: #7a82a0;
+    --tag: #1e2233;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    padding: 40px 20px 80px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  header h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    color: #fff;
+    letter-spacing: -1px;
+  }
+
+  header h1 span { color: var(--accent); }
+
+  header p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 640px), 1fr));
+    gap: 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color .25s, transform .25s;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    background: var(--tag);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  .card-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .card-header .type-badge {
+    margin-left: auto;
+    font-size: 0.72rem;
+    color: var(--muted);
+    background: var(--tag);
+    border-radius: 20px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  .card-body {
+    padding: 24px;
+    overflow-x: auto;
+  }
+
+  .card-body .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Mermaid theme overrides */
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Exam <span>Registration</span> — UML Diagrams</h1>
+  <p>9 standard UML diagrams · Mermaid.js rendered</p>
+</header>
+
+<div class="grid">
+
+  <!-- 1. Use Case -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">01</span>
+      <h2>Use Case Diagram</h2>
+      <span class="type-badge">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart LR
+  subgraph System["Exam Registration System"]
+    UC1(Register for Exam)
+    UC2(View Available Exams)
+    UC3(Cancel Registration)
+    UC4(Pay Exam Fee)
+    UC5(Generate Admit Card)
+    UC6(Send Notifications)
+    UC7(Manage Exam Schedule)
+    UC8(View Results)
+  end
+
+  Student([Student]) --> UC1
+  Student --> UC2
+  Student --> UC3
+  Student --> UC4
+  Student --> UC8
+  UC1 --> UC5
+  UC1 --> UC6
+  Admin([Admin]) --> UC7
+  Admin --> UC6
+  PayGateway([Payment Gateway]) --> UC4
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Activity -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">02</span>
+      <h2>Activity Diagram</h2>
+      <span class="type-badge">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  A([Start]) --> B[Login / Register]
+  B --> C[Browse Available Exams]
+  C --> D[Select Exam]
+  D --> E{Eligible?}
+  E -- No --> F[Show Error Message]
+  F --> C
+  E -- Yes --> G[Fill Registration Form]
+  G --> H[Submit Form]
+  H --> I[Pay Exam Fee]
+  I --> J{Payment OK?}
+  J -- Failed --> K[Retry Payment]
+  K --> I
+  J -- Success --> L[Confirm Registration]
+  L --> M[Send Email Confirmation]
+  M --> N[Generate Admit Card]
+  N --> O([End])
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Sequence -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">03</span>
+      <h2>Sequence Diagram</h2>
+      <span class="type-badge">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+sequenceDiagram
+  actor Student
+  participant Portal
+  participant AuthService
+  participant ExamDB
+  participant PayService
+  participant EmailService
+
+  Student->>Portal: Open Registration Page
+  Portal->>AuthService: Verify Login
+  AuthService-->>Portal: Auth Token
+  Portal->>ExamDB: Fetch Available Exams
+  ExamDB-->>Portal: Exam List
+  Student->>Portal: Select Exam & Submit Form
+  Portal->>ExamDB: Check Eligibility
+  ExamDB-->>Portal: Eligible
+  Portal->>PayService: Initiate Payment
+  PayService-->>Portal: Payment Success
+  Portal->>ExamDB: Save Registration
+  Portal->>EmailService: Send Confirmation
+  EmailService-->>Student: Confirmation Email
+  Portal-->>Student: Show Admit Card
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. State Machine -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">04</span>
+      <h2>State Machine Diagram</h2>
+      <span class="type-badge">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+stateDiagram-v2
+  [*] --> Idle
+  Idle --> FormFilling : Start Registration
+  FormFilling --> Submitted : Submit Form
+  Submitted --> EligibilityCheck : System Validates
+  EligibilityCheck --> PaymentPending : Eligible
+  EligibilityCheck --> Rejected : Not Eligible
+  PaymentPending --> PaymentProcessing : Pay Now
+  PaymentProcessing --> Confirmed : Payment Success
+  PaymentProcessing --> PaymentFailed : Payment Failed
+  PaymentFailed --> PaymentPending : Retry
+  Confirmed --> AdmitCardGenerated : Generate Card
+  AdmitCardGenerated --> [*]
+  Rejected --> [*]
+  Confirmed --> Cancelled : Cancel Registration
+  Cancelled --> [*]
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Communication -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">05</span>
+      <h2>Communication Diagram</h2>
+      <span class="type-badge">Behavioral</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TB
+  S([Student]) -- "1: Login" --> P[Portal]
+  P -- "2: Authenticate" --> A[Auth Service]
+  A -- "3: Token" --> P
+  P -- "4: Get Exams" --> E[Exam DB]
+  E -- "5: Exam List" --> P
+  P -- "6: Register" --> E
+  P -- "7: Process Payment" --> Pay[Payment Service]
+  Pay -- "8: Confirm" --> P
+  P -- "9: Send Email" --> Em[Email Service]
+  Em -- "10: Notify" --> S
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Class -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">06</span>
+      <h2>Class Diagram</h2>
+      <span class="type-badge">Structural</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+classDiagram
+  class Student {
+    +studentId: String
+    +name: String
+    +email: String
+    +register(exam)
+    +cancelRegistration()
+    +viewAdmitCard()
+  }
+
+  class Exam {
+    +examId: String
+    +name: String
+    +date: Date
+    +fee: Float
+    +getDetails()
+  }
+
+  class Registration {
+    +regId: String
+    +status: String
+    +regDate: Date
+    +confirm()
+    +cancel()
+  }
+
+  class Payment {
+    +paymentId: String
+    +amount: Float
+    +status: String
+    +process()
+  }
+
+  class AdmitCard {
+    +cardId: String
+    +issueDate: Date
+    +generate()
+  }
+
+  Student "1" --> "many" Registration : makes
+  Exam "1" --> "many" Registration : has
+  Registration "1" --> "1" Payment : triggers
+  Registration "1" --> "1" AdmitCard : produces
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Component -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">07</span>
+      <h2>Component Diagram</h2>
+      <span class="type-badge">Structural</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart LR
+  subgraph Frontend["Frontend (Web App)"]
+    UI[Student UI]
+    AdminUI[Admin UI]
+  end
+
+  subgraph Backend["Backend Services"]
+    Auth[Auth Service]
+    ExamSvc[Exam Service]
+    RegSvc[Registration Service]
+    PaySvc[Payment Service]
+    NotifSvc[Notification Service]
+  end
+
+  subgraph DataLayer["Data Layer"]
+    DB[(Main Database)]
+  end
+
+  subgraph External["External"]
+    PG[Payment Gateway]
+    Email[Email Provider]
+  end
+
+  UI --> Auth
+  UI --> ExamSvc
+  UI --> RegSvc
+  AdminUI --> ExamSvc
+  RegSvc --> PaySvc
+  RegSvc --> NotifSvc
+  RegSvc --> DB
+  ExamSvc --> DB
+  PaySvc --> PG
+  NotifSvc --> Email
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Package -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">08</span>
+      <h2>Package Diagram</h2>
+      <span class="type-badge">Structural</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TD
+  subgraph presentation["📦 Presentation Layer"]
+    StudentView[StudentView]
+    AdminView[AdminView]
+  end
+
+  subgraph business["📦 Business Logic Layer"]
+    ExamManager[ExamManager]
+    RegistrationManager[RegistrationManager]
+    PaymentManager[PaymentManager]
+  end
+
+  subgraph data["📦 Data Access Layer"]
+    ExamRepo[ExamRepository]
+    StudentRepo[StudentRepository]
+    RegRepo[RegistrationRepository]
+  end
+
+  subgraph util["📦 Utilities"]
+    AuthUtil[AuthUtil]
+    EmailUtil[EmailUtil]
+    PDFUtil[PDFUtil]
+  end
+
+  presentation --> business
+  business --> data
+  business --> util
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Deployment -->
+  <div class="card">
+    <div class="card-header">
+      <span class="num">09</span>
+      <h2>Deployment Diagram</h2>
+      <span class="type-badge">Structural</span>
+    </div>
+    <div class="card-body">
+      <div class="mermaid">
+flowchart TB
+  subgraph Client["Client Device"]
+    Browser[Web Browser]
+    MobileApp[Mobile App]
+  end
+
+  subgraph WebServer["Web Server (Nginx)"]
+    FE[Frontend SPA]
+  end
+
+  subgraph AppServer["App Server (Node.js)"]
+    API[REST API]
+    Auth[Auth Module]
+  end
+
+  subgraph DBServer["Database Server"]
+    MySQL[(MySQL DB)]
+    Redis[(Redis Cache)]
+  end
+
+  subgraph ExtServices["External Services"]
+    PayGW[Payment Gateway]
+    SMTP[Email SMTP]
+  end
+
+  Browser --> FE
+  MobileApp --> API
+  FE --> API
+  API --> Auth
+  API --> MySQL
+  API --> Redis
+  API --> PayGW
+  API --> SMTP
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<footer id="site-footer" style="text-align: center; padding: 25px 20px; font-size: 0.85rem; color: #a0aec0; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 40px;">Exam Registration — UML Diagrams | Developed by <a id="footer-author-link" href="https://github.com/ha-re-ram" target="_blank" style="color: #63b3ed; text-decoration: none; font-weight: 600; transition: color 0.2s;">ha-re-ram</a></footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      background: '#151820',
+      primaryColor: '#1e2a45',
+      primaryTextColor: '#e2e6f0',
+      primaryBorderColor: '#5b8dee',
+      lineColor: '#5b8dee',
+      secondaryColor: '#1e2233',
+      tertiaryColor: '#0d0f14',
+      edgeLabelBackground: '#151820',
+      clusterBkg: '#1a1e2b',
+      clusterBorder: '#232736',
+      titleColor: '#e2e6f0',
+      nodeBorder: '#5b8dee',
+      mainBkg: '#1e2a45',
+      actorBkg: '#1e2a45',
+      actorBorder: '#5b8dee',
+      actorTextColor: '#e2e6f0',
+      signalColor: '#5b8dee',
+      signalTextColor: '#e2e6f0',
+      activationBorderColor: '#e85d75',
+      activationBkgColor: '#2a1e2a',
+      sequenceNumberColor: '#0d0f14',
+      labelBoxBkgColor: '#1e2233',
+      labelBoxBorderColor: '#5b8dee',
+      labelTextColor: '#e2e6f0',
+      loopTextColor: '#e2e6f0',
+      noteBorderColor: '#e85d75',
+      noteBkgColor: '#2a1e2a',
+      noteTextColor: '#e2e6f0',
+      stateBkg: '#1e2a45',
+      stateBorder: '#5b8dee',
+      attributeBackgroundColorEven: '#1e2233',
+      attributeBackgroundColorOdd: '#151820',
+    },
+    flowchart: { curve: 'basis', padding: 20 },
+    sequence: { useMaxWidth: true },
+    state: { useMaxWidth: true },
+  });
+</script>
+</body>
+</html>
