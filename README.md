@@ -36,24 +36,24 @@ This repository acts as an all-in-one blueprint directory for software engineers
 
 | Icon | System Catalog | Category | File Name | Diagrams Included |
 | :---: | :--- | :--- | :--- | :---: |
-| ✈️ | **Airline/Railway Reservation** | Reservation & Booking | `AirlineorRailway_reservation_system.html` | 9 Diagrams |
-| 📚 | **Book Bank System** | Management & Educational | `bookbank_diagrams.html` | 9 Diagrams |
-| 📞 | **BPO Management System** | Enterprise & Business | `bpo_management_diagrams.html` | 9 Diagrams |
-| 🏛️ | **Conference Management** | Enterprise & Business | `conference_management_diagrams.html` | 9 Diagrams |
-| 💳 | **Credit Card Processing** | Financial & Commercial | `credit_card_processing_diagrams.html` | 9 Diagrams |
-| 📖 | **E-Book Management** | Management & Educational | `ebook_management_diagrams.html` | 9 Diagrams |
-| 🎟️ | **E-Ticketing System** | Reservation & Booking | `eticket_system_diagrams.html` | 9 Diagrams |
-| 📝 | **Exam Registration** | Management & Educational | `exam_registration_diagrams.html` | 9 Diagrams |
-| 🌍 | **Foreign Trading System** | Financial & Commercial | `foreign_trading_system_diagrams.html` | 9 Diagrams |
-| 🏫 | **Library Management** | Management & Educational | `library_management_diagrams.html` | 9 Diagrams |
-| 🛒 | **Online Shopping** | Financial & Commercial | `online-shopping-diagrams.html` | 9 Diagrams |
-| 🎓 | **Online Course Reservation** | Reservation & Booking | `online_course_reservation_diagrams.html` | 9 Diagrams |
-| 🗳️ | **Online Voting System** | Enterprise & Business | `online_voting_diagrams.html` | 9 Diagrams |
-| 🛂 | **Passport Automation** | Enterprise & Business | `passport-automation-diagrams.html` | 9 Diagrams |
-| 🤝 | **Recruitment System** | Enterprise & Business | `recruitment_system_diagrams.html` | 9 Diagrams |
-| 💻 | **Software Personnel Mgmt** | Enterprise & Business | `Software_personnel_management_system.html` | 9 Diagrams |
-| 📦 | **Stock Maintenance** | Financial & Commercial | `stock_maintenance_diagrams.html` | 9 Diagrams |
-| 🎒 | **Student Information** | Management & Educational | `student_information_diagrams.html` | 9 Diagrams |
+| ✈️ | **Airline/Railway Reservation** | Reservation & Booking | `systems/AirlineorRailway_reservation_system.html` | 9 Diagrams |
+| 📚 | **Book Bank System** | Management & Educational | `systems/bookbank_diagrams.html` | 9 Diagrams |
+| 📞 | **BPO Management System** | Enterprise & Business | `systems/bpo_management_diagrams.html` | 9 Diagrams |
+| 🏛️ | **Conference Management** | Enterprise & Business | `systems/conference_management_diagrams.html` | 9 Diagrams |
+| 💳 | **Credit Card Processing** | Financial & Commercial | `systems/credit_card_processing_diagrams.html` | 9 Diagrams |
+| 📖 | **E-Book Management** | Management & Educational | `systems/ebook_management_diagrams.html` | 9 Diagrams |
+| 🎟️ | **E-Ticketing System** | Reservation & Booking | `systems/eticket_system_diagrams.html` | 9 Diagrams |
+| 📝 | **Exam Registration** | Management & Educational | `systems/exam_registration_diagrams.html` | 9 Diagrams |
+| 🌍 | **Foreign Trading System** | Financial & Commercial | `systems/foreign_trading_system_diagrams.html` | 9 Diagrams |
+| 🏫 | **Library Management** | Management & Educational | `systems/library_management_diagrams.html` | 9 Diagrams |
+| 🛒 | **Online Shopping** | Financial & Commercial | `systems/online-shopping-diagrams.html` | 9 Diagrams |
+| 🎓 | **Online Course Reservation** | Reservation & Booking | `systems/online_course_reservation_diagrams.html` | 9 Diagrams |
+| 🗳️ | **Online Voting System** | Enterprise & Business | `systems/online_voting_diagrams.html` | 9 Diagrams |
+| 🛂 | **Passport Automation** | Enterprise & Business | `systems/passport-automation-diagrams.html` | 9 Diagrams |
+| 🤝 | **Recruitment System** | Enterprise & Business | `systems/recruitment_system_diagrams.html` | 9 Diagrams |
+| 💻 | **Software Personnel Mgmt** | Enterprise & Business | `systems/Software_personnel_management_system.html` | 9 Diagrams |
+| 📦 | **Stock Maintenance** | Financial & Commercial | `systems/stock_maintenance_diagrams.html` | 9 Diagrams |
+| 🎒 | **Student Information** | Management & Educational | `systems/student_information_diagrams.html` | 9 Diagrams |
 
 ---
 
@@ -63,6 +63,25 @@ This repository acts as an all-in-one blueprint directory for software engineers
 - **Ultra-Modern UI/UX:** Styled using pure CSS variables, custom dark and light themes, glassmorphism, focus states, and dynamic mouse-tracking card spot-lighting.
 - **Full SEO & Metadata Optimization:** Complete meta headers including descriptive summaries, canonical urls, robots indexing instructions, Open Graph tags, and Twitter Cards injected on every single page.
 - **SEO Semantic HTML:** Adheres to semantic specifications using structural `<header>`, `<nav>`, `<main>`, `<section>`, and `<footer>` tags, accompanied by unique testing IDs.
+
+---
+
+## 📂 Repository Directory Structure
+
+The repository is organized with a clean, modular structure. All 18 system diagrams are housed in a dedicated `systems/` folder, keeping the root folder perfectly uncluttered:
+
+```text
+OOSE Lab-UML Diagram/
+├── systems/                                    # 📂 Dedicated Subfolder for Diagrams
+│   ├── AirlineorRailway_reservation_system.html # ✈️ Airline/Railway Booking Diagrams
+│   ├── bookbank_diagrams.html                   # 📚 Book Bank Diagrams
+│   ├── bpo_management_diagrams.html                # 📞 BPO Management Diagrams
+│   └── ... (All other 15 system HTML catalogs)
+├── index.html                                  # 🖥️ Interactive Portal Dashboard (Root)
+├── .gitignore                                  # ⚙️ Git Exclude Patterns
+├── LICENSE                                     # 📄 MIT License (Hareram Kushwaha)
+└── README.md                                   # 📖 Professional Documentation Guide
+```
 
 ---
 
@@ -81,7 +100,7 @@ Then, open your web browser and navigate to:
 👉 **`http://localhost:8000`**
 
 ### Method 2: Live Server Extension (VS Code)
-If you use VS Code, right-click on `index.html` and choose **"Open with Live Server"**.
+If you use VS Code, right-click on `index.html` in the root folder and choose **"Open with Live Server"**.
 
 ---
 
@@ -90,3 +109,4 @@ If you use VS Code, right-click on `index.html` and choose **"Open with Live Ser
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 Developed with 💜 by [ha-re-ram](https://github.com/ha-re-ram)
+
