@@ -66,7 +66,7 @@
     }
 
     header {
-      padding: 80px 24px 40px;
+      padding: 80px 24px 30px;
       text-align: center;
       max-width: 1200px;
       margin: 0 auto;
@@ -148,6 +148,46 @@
       padding: 0 24px 80px;
     }
 
+    /* Cute UML Tip Card */
+    .cute-tip-card {
+      background: linear-gradient(135deg, rgba(94, 92, 230, 0.1), rgba(142, 93, 236, 0.05));
+      border: 1px dashed rgba(94, 92, 230, 0.3);
+      border-radius: 20px;
+      padding: 16px 24px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .cute-tip-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(94, 92, 230, 0.6);
+      background: linear-gradient(135deg, rgba(94, 92, 230, 0.15), rgba(142, 93, 236, 0.1));
+      box-shadow: 0 4px 20px rgba(94, 92, 230, 0.1);
+    }
+
+    .cute-tip-card:active {
+      transform: translateY(0) scale(0.99);
+    }
+
+    .cute-tip-icon {
+      font-size: 1.8rem;
+      animation: cute-wiggle 2.5s infinite ease-in-out;
+      flex-shrink: 0;
+    }
+
+    @keyframes cute-wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-8deg) scale(1.05); }
+      75% { transform: rotate(8deg) scale(1.05); }
+    }
+
     /* Controls: Search and Filters */
     .controls-wrapper {
       background: var(--surface);
@@ -163,12 +203,12 @@
     .search-box {
       position: relative;
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .search-box input {
       width: 100%;
-      padding: 16px 20px 16px 52px;
+      padding: 16px 80px 16px 52px;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--surface-border);
       border-radius: 16px;
@@ -201,11 +241,79 @@
       color: var(--accent);
     }
 
+    .search-box kbd {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-family: inherit;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+    }
+
+    .search-box input:focus ~ kbd {
+      opacity: 0;
+      transform: translateY(-50%) scale(0.8);
+    }
+
+    /* Suggestion Chips */
+    .search-suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      padding-left: 4px;
+    }
+
+    .suggestion-label {
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .suggestion-chip {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .suggestion-chip:hover {
+      background: rgba(94, 92, 230, 0.1) !important;
+      color: var(--text) !important;
+      border-color: var(--accent) !important;
+      transform: translateY(-1px);
+    }
+
+    .suggestion-chip:active {
+      transform: translateY(0);
+    }
+
     .filter-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
+      border-top: 1px solid var(--surface-border);
+      padding-top: 20px;
     }
 
     .filter-label {
@@ -315,6 +423,21 @@
       display: grid;
       place-items: center;
       box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      transition: all 0.3s;
+    }
+
+    .card:hover .card-icon {
+      animation: cute-bounce 0.6s ease;
+      background: rgba(94, 92, 230, 0.1);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    
+    @keyframes cute-bounce {
+      0%, 100% { transform: scale(1); }
+      30% { transform: translateY(-6px) scale(1.08) rotate(-3deg); }
+      50% { transform: translateY(0) scale(0.95); }
+      80% { transform: translateY(-2px); }
     }
 
     .card-category {
@@ -480,10 +603,33 @@
   </header>
 
   <main>
+    <!-- Cute UML Tip Card -->
+    <div class="cute-tip-card" id="trivia-box" onclick="rotateTrivia()">
+      <div class="cute-tip-icon" id="trivia-icon">✨</div>
+      <div style="flex-grow: 1;">
+        <h4 style="font-family: 'Outfit', sans-serif; font-size: 0.92rem; font-weight: 700; color: #9b9aff; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+          UML Fun Fact of the Day! 
+          <span style="font-size: 0.72rem; font-weight: 500; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 100px; color: var(--text-muted); cursor: pointer;">Click to cycle 🔄</span>
+        </h4>
+        <p id="trivia-text" style="font-size: 0.88rem; color: var(--text); line-height: 1.4;">Did you know? Mermaid.js compiles markdown directly into crisp vector SVGs on-the-fly! Zoom infinitely without losing clarity! 🧜‍♀️✨</p>
+      </div>
+    </div>
+
     <div class="controls-wrapper">
       <div class="search-box">
         <input type="text" id="search-input" placeholder="Search systems by name, keyword, or design pattern...">
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <kbd id="search-kbd">/</kbd>
+      </div>
+
+      <!-- Quick Suggestion Chips (Search First UX!) -->
+      <div class="search-suggestions">
+        <span class="suggestion-label">Try Searching:</span>
+        <button class="suggestion-chip" onclick="applySuggestion('Airline')">✈️ Airline</button>
+        <button class="suggestion-chip" onclick="applySuggestion('Shopping')">🛒 Shopping</button>
+        <button class="suggestion-chip" onclick="applySuggestion('Library')">🏫 Library</button>
+        <button class="suggestion-chip" onclick="applySuggestion('Credit Card')">💳 Transaction</button>
+        <button class="suggestion-chip" onclick="applySuggestion('Voting')">🗳️ Voting</button>
       </div>
 
       <div class="filter-tags" id="filter-container">
@@ -517,6 +663,55 @@
   </footer>
 
   <script>
+    // Cute UML Trivia Items (Educational & Cute)
+    const triviaList = [
+      {
+        icon: "🧜‍♀️",
+        text: "Did you know? All 162 UML diagrams in this repository are compiled directly from text via Mermaid.js! Vector SVGs are crisp at any zoom level! ✨"
+      },
+      {
+        icon: "👥",
+        text: "Did you know? Use Case Diagrams map out *who* interacts with the system, not *how* they do it. Keep them clean and high-level! 🧐"
+      },
+      {
+        icon: "🔄",
+        text: "Pro tip: In sequence diagrams, use `alt` for if/else logic, and `loop` for loops or cyclic sequences. Super tidy! 🤫"
+      },
+      {
+        icon: "🛡️",
+        text: "Double-Click Prevention: The Online Voting system prevents double-voting by implementing a strict state validation check before registering cast votes! 🗳️"
+      },
+      {
+        icon: "🌊",
+        text: "Activity diagrams are essentially flowchart powerhouses, charting dynamic behavioral execution paths step-by-step! 🚀"
+      },
+      {
+        icon: "☁️",
+        text: "Deployment diagrams are vital for cloud setups, mapping out where services run—like app containers, load balancers, and db replicas! 📦"
+      },
+      {
+        icon: "🏗️",
+        text: "Class diagrams represent the static system structures. Arrows like `<|--` indicate inheritance relationships (e.g. Student is-a User). 📐"
+      }
+    ];
+
+    let currentTriviaIndex = 0;
+
+    function rotateTrivia() {
+      const iconEl = document.getElementById('trivia-icon');
+      const textEl = document.getElementById('trivia-text');
+      
+      // Trigger a visual trigger animation
+      iconEl.style.animation = 'none';
+      void iconEl.offsetWidth; // Trigger reflow
+      iconEl.style.animation = 'cute-wiggle 0.6s ease-in-out';
+      
+      currentTriviaIndex = (currentTriviaIndex + 1) % triviaList.length;
+      const current = triviaList[currentTriviaIndex];
+      iconEl.textContent = current.icon;
+      textEl.textContent = current.text;
+    }
+
     // System Data Array
     const systems = [
       {
@@ -591,10 +786,9 @@
       },
       {
         title: "Online Shopping System",
-        file: "financial",
+        file: "online-shopping-diagrams.html",
         category: "financial",
         icon: "🛒",
-        file: "online-shopping-diagrams.html",
         desc: "Advanced e-commerce infrastructure supporting catalog queries, persistent cart state, checkout pipelines, payment gateways, and shipment log tracking."
       },
       {
@@ -735,6 +929,16 @@
       renderSystems(filtered);
     }
 
+    // Apply quick suggestions (Search First UX!)
+    window.applySuggestion = function(text) {
+      searchInput.value = text;
+      searchQuery = text;
+      
+      // Auto wiggle suggestion chip feedback
+      filterAndSearch();
+      searchInput.focus();
+    };
+
     // Event Listeners
     searchInput.addEventListener('input', e => {
       searchQuery = e.target.value;
@@ -750,6 +954,15 @@
       
       activeFilter = btn.getAttribute('data-filter');
       filterAndSearch();
+    });
+
+    // Hotkey '/' to focus search
+    window.addEventListener('keydown', e => {
+      if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
     });
 
     // Initial render
