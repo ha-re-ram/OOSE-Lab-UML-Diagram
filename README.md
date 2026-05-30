@@ -85,59 +85,6 @@ If you use VS Code, right-click on `index.html` and choose **"Open with Live Ser
 
 ---
 
-## 📦 Push to GitHub & Deploy to GitHub Pages (Step-by-Step)
-
-Follow these exact steps to initialize, push this repository, and host it live on the web!
-
-### Step 1: Initialize Git and Add Files
-Open your terminal in the root directory and run:
-```bash
-# Initialize a blank Git repository
-git init
-
-# Set the default branch to main
-git branch -M main
-
-# Track all project files
-git add .
-
-# Create the initial commit
-git commit -m "feat: initial commit of 18 interactive UML diagrams with premium portal hub"
-```
-
-### Step 2: Link to Your GitHub Repository
-1. Go to your GitHub profile: **[github.com/ha-re-ram](https://github.com/ha-re-ram)**.
-2. Create a new repository:
-   - Repository Name: `OOSE-Lab-UML-Diagram`
-   - Description: `Interactive UML Diagram Hub for 18 enterprise-grade systems designed via Mermaid.js`
-   - Public: **Yes** (required for GitHub Pages)
-   - Initialize with README: **No** (we already have a stunning one!)
-3. Copy the Git URL and link it locally:
-```bash
-# Add the remote link pointing to your repository
-git remote add origin https://github.com/ha-re-ram/OOSE-Lab-UML-Diagram.git
-```
-
-### Step 3: Push Your Code
-```bash
-# Push the branch to origin
-git push -u origin main
-```
-
-### Step 4: Activate GitHub Pages (100% Free Hosting)
-1. On GitHub, navigate to your repository **`OOSE-Lab-UML-Diagram`**.
-2. Click on the **Settings** tab (the cog icon in the top navigation).
-3. Scroll down the left sidebar and click on **Pages** (under the "Code and automation" section).
-4. Under **Build and deployment**, set:
-   - Source: **Deploy from a branch**
-   - Branch: **`main`**
-   - Folder: **`/ (root)`**
-5. Click **Save**.
-6. Wait 30-60 seconds! GitHub will generate a green banner at the top of the Pages settings showing your live URL:
-   👉 **`https://ha-re-ram.github.io/OOSE-Lab-UML-Diagram/`**
-
----
-
 ## 🛡️ License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
